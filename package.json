@@ -1,0 +1,47 @@
+{
+  "name": "sk2021-nuxt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "nuxt": "^2.14.6",
+    "aos": "3.0.0-beta.6",
+    "google-maps": "3.3.0",
+    "nouislider": "14.1.1",
+    "v-tooltip": "2.0.2",
+    "vue": "2.6.12",
+    "vue-clickaway": "2.2.2",
+    "vue-github-buttons": "3.1.0",
+    "vue-lazyload": "1.3.3",
+    "vue-material": "1.0.0-beta-11",
+    "vue-product-zoomer": "2.0.11",
+    "vue-router": "3.1.3",
+    "vue2-transitions": "0.3.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "4.1.1",
+    "@vue/cli-plugin-eslint": "4.1.1",
+    "@vue/cli-service": "4.1.1",
+    "@vue/eslint-config-prettier": "6.0.0",
+    "babel-eslint": "10.0.3",
+    "babel-plugin-component": "1.1.1",
+    "eslint": "6.7.2",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-vue": "6.0.1",
+    "fibers": "4.0.2",
+    "node-sass": "^4.13.0",
+    "prettier": "1.19.1",
+    "sass": "1.23.7",
+    "sass-loader": "8.0.0",
+    "vue-template-compiler": "2.6.12",
+    "webpack-cli": "^4.0.0",
+    "webpack-dev-server": "^3.0.0"
+  }
+}
