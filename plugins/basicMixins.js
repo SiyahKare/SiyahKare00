@@ -1,4 +1,4 @@
-import { API_KEY } from "../API_KEY";
+import {API_KEY} from "../API_KEY";
 // import GoogleMapsLoader from "google-maps";
 // GoogleMapsLoader.KEY = API_KEY;
 
@@ -111,7 +111,7 @@ const VerticalNav = {
     scrollToElement(elem) {
       let element_id = document.getElementById(elem);
       if (element_id) {
-        element_id.scrollIntoView({ block: "start", behavior: "smooth" });
+        element_id.scrollIntoView({block: "start", behavior: "smooth"});
       }
     },
     scrollListener() {
@@ -146,7 +146,7 @@ const VerticalNav = {
   },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollListener);
-  }
+  },
 };
 
 const ShoppingCart = {
@@ -178,7 +178,7 @@ const Mixins = {
   InitMap,
   VerticalNav,
   ShoppingCart,
-  HeaderImage
+  HeaderImage,
 };
 
 export default Mixins;
