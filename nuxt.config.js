@@ -33,6 +33,36 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    [
+      'nuxt-i18n',
+      {
+        locales: ['tr', 'en', 'ru'],
+        defaultLocale: 'tr',
+        vueI18n: {
+          fallbackLocale: 'tr',
+          messages: {
+            tr: {
+              greeting: 'Merhaba!',
+              navbar:{
+                contact:'İletişim'
+              }
+            },
+            en: {
+              greeting: 'Hello world!',
+              navbar:{
+                contact:'Contact'
+              }
+            },
+            ru: {
+              greeting: 'Здравствуйте',
+              navbar:{
+                contact:'Contact'
+              }
+            }
+          }
+        }
+      }
+    ]
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
