@@ -9,108 +9,67 @@
       <div class="content">
         <div class="md-layout">
           <div
-            class="md-layout-item md-medium-size-15 md-large-size-15 md-small-size-100"
+            :class="colClass"
           >
-            <h5>About Us</h5>
+            <h5>SiyahKare</h5>
+            <div class="footer-logo">
+              <nuxt-link :to="'/'">
+                <img :src="logo" alt="">
+              </nuxt-link>
+            </div>
+            <div class="footer-login">
+              <md-button class="md-primary" style="width: 100%; margin: 15px 0 0 0" @click="loginModal = true">
+                <i class="material-icons">fingerprint</i> {{ $t('footer.login') }}
+              </md-button>
+            </div>
+          </div>
+          <div
+            :class="colClass"
+            v-for="(item, i) in navLinks"
+            :key="i"
+          >
+            <h5>{{item.title[$i18n.locale]}}</h5>
             <ul class="links-vertical">
-              <li>
-                <a href="#pablo">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Presentation
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Contact Us
-                </a>
+              <li
+                v-for="(li, index) in item.subMenu"
+                :key="index"
+              >
+                <nuxt-link :to="'/' + li.nLink">
+                  {{
+                  li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)
+                  }}
+                </nuxt-link>
               </li>
             </ul>
           </div>
           <div
-            class="md-layout-item md-medium-size-15 md-large-size-15 md-small-size-100"
+            :class="colClass"
           >
-            <h5>Market</h5>
-            <ul class="links-vertical">
+            <h5>{{ $t('footer.apps') }}</h5>
+            <ul class="links-vertical footer-apps">
               <li>
-                <a href="#pablo">
-                  Sales FAQ
-                </a>
+                <nuxt-link :to="'/'">
+                  <img :src="pwaApp" alt="pwa">
+                </nuxt-link>
               </li>
               <li>
-                <a href="#pablo">
-                  How to Register
-                </a>
+                <nuxt-link :to="'/'">
+                  <img :src="appleStore" alt="apple store">
+                </nuxt-link>
               </li>
               <li>
-                <a href="#pablo">
-                  Sell Goods
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Receive Payment
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Transactions Issues
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Affiliates Program
-                </a>
+                <nuxt-link :to="'/'">
+                  <img :src="playStore" alt="play store">
+                </nuxt-link>
               </li>
             </ul>
-          </div>
-          <div
-            class="md-layout-item md-medium-size-15 md-large-size-15 md-small-size-100"
-          >
-            <h5>Market</h5>
-            <ul class="links-vertical">
-              <li>
-                <a href="#pablo">
-                  Sales FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  How to Register
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Sell Goods
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Receive Payment
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Transactions Issues
-                </a>
-              </li>
-              <li>
-                <a href="#pablo">
-                  Affiliates Program
-                </a>
-              </li>
-            </ul>
+
           </div>
 
-          <div class="md-layout-item md-medium-size-33 md-small-size-100">
+        </div>
+
+        <div class="md-layout">
+          <div class="footer-social">
             <h5>Follow Us</h5>
             <ul class="social-buttons">
               <li>
@@ -119,7 +78,7 @@
                   target="_blank"
                   class="md-twitter md-just-icon md-simple"
                 >
-                  <i class="fa fa-twitter" />
+                  <i class="fa fa-twitter"/>
                 </md-button>
               </li>
               <li>
@@ -128,16 +87,16 @@
                   target="_blank"
                   class="md-facebook md-just-icon md-simple"
                 >
-                  <i class="fa fa-facebook" />
+                  <i class="fa fa-facebook"/>
                 </md-button>
               </li>
               <li>
                 <md-button
                   href="javascript:void(0)"
                   target="_blank"
-                  class="md-dribbble md-just-icon md-simple"
+                  class="md-whatsapp md-just-icon md-simple"
                 >
-                  <i class="fa fa-whatsapp" />
+                  <i class="fa fa-whatsapp"/>
                 </md-button>
               </li>
               <li>
@@ -146,7 +105,7 @@
                   target="_blank"
                   class="md-google md-just-icon md-simple"
                 >
-                  <i class="fa fa-google" />
+                  <i class="fa fa-google"/>
                 </md-button>
               </li>
               <li>
@@ -155,41 +114,38 @@
                   target="_blank"
                   class="md-instagram md-just-icon md-simple"
                 >
-                  <i class="fa fa-instagram" />
+                  <i class="fa fa-instagram"/>
                 </md-button>
               </li>
               <li>
                 <md-button
                   href="javascript:void(0)"
                   target="_blank"
-                  class="md-instagram md-just-icon md-simple"
+                  class="md-slack md-just-icon md-simple"
                 >
-                  <i class="fa fa-slack" />
+                  <i class="fa fa-slack"/>
                 </md-button>
               </li>
               <li>
                 <md-button
                   href="javascript:void(0)"
                   target="_blank"
-                  class="md-instagram md-just-icon md-simple"
+                  class="md-github md-just-icon md-simple"
                 >
-                  <i class="fa fa-github" />
+                  <i class="fa fa-github"/>
                 </md-button>
               </li>
               <li>
                 <md-button
                   href="javascript:void(0)"
                   target="_blank"
-                  class="md-instagram md-just-icon md-simple"
+                  class="md-youtube md-just-icon md-simple"
                 >
-                  <i class="fa fa-youtube-play" />
+                  <i class="fa fa-youtube-play"/>
                 </md-button>
               </li>
             </ul>
 
-            <h5>Numbers Don't Lie</h5>
-            <h4>14.521 <small>Freelancers</small></h4>
-            <h4>1.423.183 <small>Transactions</small></h4>
           </div>
         </div>
       </div>
@@ -197,31 +153,92 @@
       <hr>
 
       <div class="copyright">
-        Copyright © {{ year }} Siyahkare All Rights Reserved.
+        Copyright © 1999 - 2021 Siyahkare All Rights Reserved.
       </div>
     </div>
+    <modal class="fade" v-if="loginModal" @close="loginModal = false">
+      <template slot="header">
+        <h4 class="modal-title">{{ $t('footer.login') }}</h4>
+        <md-button class="md-simple md-just-icon md-round modal-default-button" @click="loginModal = false">
+          <md-icon>clear</md-icon>
+        </md-button>
+      </template>
+
+      <template slot="body">
+        <div class="login-form">
+          <md-field>
+            <label>Initial Value</label>
+            <md-input></md-input>
+          </md-field>
+          <md-field>
+            <label>Type here!</label>
+            <md-input></md-input>
+          </md-field>
+        </div>
+      </template>
+
+      <template slot="footer">
+        <md-button class="md-simple">Login</md-button>
+        <md-button class="md-danger md-simple" @click="loginModal = false">Close</md-button>
+      </template>
+    </modal>
   </footer>
 </template>
 <script>
-export default {
-  props: {
-    backgroundColor: String,
-    type: String,
-    size: String
-  },
-  data() {
-    return {
-      year: new Date().getFullYear(),
-      img1: require("@/assets/img/faces/card-profile6-square.jpg"),
-      img2: require("@/assets/img/faces/christian.jpg"),
-      img3: require("@/assets/img/faces/card-profile4-square.jpg"),
-      img4: require("@/assets/img/faces/card-profile1-square.jpg"),
-      img5: require("@/assets/img/faces/marc.jpg"),
-      img6: require("@/assets/img/faces/kendall.jpg"),
-      img7: require("@/assets/img/faces/card-profile5-square.jpg"),
-      img8: require("@/assets/img/faces/card-profile2-square.jpg")
-    };
-  }
-};
+
+  import {Modal} from '@/components'
+
+  export default {
+    props: {
+      backgroundColor: String,
+      type: String,
+      size: String
+    },
+    components: {
+      Modal
+    },
+    computed: {
+      navLinks() {
+        return this.$store.state.app.navLinks
+      }
+    },
+    data() {
+      return {
+        loginModal: false,
+        colClass: 'md-layout-item md-medium-size-20 md-large-size-20 md-small-size-100',
+        year: new Date().getFullYear(),
+        logo: require("@/assets/images/SiyahKare.jpg"),
+        appleStore: require("@/assets/images/appstore.png"),
+        playStore: require("@/assets/images/googlestore.png"),
+        pwaApp: require("@/assets/images/pwapp.png"),
+      };
+    }
+  };
 </script>
-<style></style>
+<style lang="scss">
+  .footer-social {
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .footer-apps {
+    a, img {
+      max-width: 135px;
+    }
+  }
+
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+</style>

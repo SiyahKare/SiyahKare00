@@ -116,9 +116,13 @@ const VerticalNav = {
     },
     scrollListener() {
       var contentSections = document.getElementsByClassName("cd-section");
+
+      if (!document.getElementById("cd-vertical-nav")) return;
+
       var navigationItems = document
         .getElementById("cd-vertical-nav")
         .getElementsByTagName("a");
+
 
       for (let i = 0; i < contentSections.length; i++) {
         var activeSection =
