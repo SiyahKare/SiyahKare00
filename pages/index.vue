@@ -48,7 +48,7 @@
                 Pro
               </span>
               <h3 class="title">
-                Gelecekte yapılabileceklerin sınırı nedir?
+                {{ $t('pageIndex.headDesc') }}
               </h3>
             </div>
           </div>
