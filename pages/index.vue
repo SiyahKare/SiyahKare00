@@ -8,11 +8,12 @@
       <div class="header-video">
         <span class="video-overlay"></span>
         <div class="video-frame">
-          <iframe src="https://player.vimeo.com/video/23385554?background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe src="https://player.vimeo.com/video/23385554?background=1" frameborder="0" webkitallowfullscreen
+                  mozallowfullscreen allowfullscreen></iframe>
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
-      <div class="md-layout">
+      <div class="header-layout md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
             <img
@@ -47,8 +48,7 @@
                 Pro
               </span>
               <h3 class="title">
-                All components
-                <div>&nbsp;</div>
+                Gelecekte yapılabileceklerin sınırı nedir?
               </h3>
             </div>
           </div>
@@ -59,218 +59,143 @@
       id="main-panel"
       class="main main-raised"
     >
-      <div
-        id="basic-elements"
-        class="cd-section section section-basic"
-      >
+
+
+      <div class="section index-card">
         <div class="container">
-          <div class="title">
-            <h2>Basic Elements</h2>
+          <div class="md-layout">
+            <div
+              class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
+            >
+              <h2 class="title text-center">
+                SiyahKare
+                Digital Çözümler
+              </h2>
+            </div>
+
           </div>
-          <basic-elements/>
-        </div>
-      </div>
-      <div
-        id="navigation"
-        class="cd-section section section-navbars"
-      >
-        <div class="container">
-          <small-navigation/>
-        </div>
-        <navigation/>
-      </div>
-      <div class="section section-tabs">
-        <div class="container">
-          <tabs/>
-        </div>
-      </div>
-      <div class="section section-white mb-0">
-        <div class="container">
-          <nav-pills/>
-        </div>
-      </div>
-      <div
-        id="notifications"
-        class="cd-section section section-notifications"
-      >
-        <div class="container">
-          <div class="title">
-            <h3>Notifications</h3>
-          </div>
-        </div>
-        <notifications/>
-      </div>
-      <div
-        id="footers"
-        class="cd-section"
-      >
-        <div class="section section-gray">
-          <div class="container">
-            <div class="title">
-              <h3>Pre-Footer Areas</h3>
+          <div class="features-list">
+            <div class="f-list-item" v-for="(item, i) in features" :key="i">
+              <info-areas
+                icon-color="default"
+                :icon="item.icon"
+                text-center
+              >
+                <h4
+                  slot="title"
+                  class="info-title"
+                >
+                  {{item.text}}
+                </h4>
+                <!--                <p slot="content">-->
+                <!--                  {{item.text}}-->
+                <!--                </p>-->
+              </info-areas>
             </div>
           </div>
-          <pre-footer-areas/>
-        </div>
-        <div class="section section-gray">
-          <div class="container">
-            <div class="title">
-              <h3>Footer Areas</h3>
+
+          <div class="md-layout">
+            <div v-for="(item, index) in cardSection" class="md-layout-item md-large-size-33 md-small-size-100"
+                 :key="index">
+              <blog-card
+                :shadow-normal="false"
+                :no-colored-shadow="false"
+                :card-image="item.img"
+                class="sk-card"
+              >
+                <template slot="cardContent">
+                  <h6 class="card-category text-info">
+                    {{item.title}}
+                  </h6>
+                  <p class="card-description">
+                    {{item.text}}
+                  </p>
+                </template>
+              </blog-card>
             </div>
           </div>
-          <footer-areas/>
+
         </div>
       </div>
+
+
       <div
-        id="typography"
-        class="cd-section section"
+        class="section section-team-5 section-image"
+        :style="setBg(pageMiddle.bgImg)"
       >
         <div class="container">
-          <typography-images/>
-        </div>
-      </div>
-      <div
-        id="content-areas"
-        class="cd-section section"
-      >
-        <div class="container">
-          <tables/>
-        </div>
-      </div>
-      <div class="section">
-        <div class="container">
-          <comments/>
-        </div>
-      </div>
-      <div class="cd-section">
-        <div
-          id="cards"
-          class="section section-gray pb-0"
-        >
-          <div class="container">
-            <cards/>
-          </div>
-        </div>
-        <div
-          id="morphing-cards"
-          class="cd-section section section-gray"
-        >
-          <div class="container">
-            <cards section-morphing-cards/>
-          </div>
-        </div>
-        <div class="section">
-          <div class="container">
-            <cards section-card-plain/>
+          <div class="md-layout">
+            <div
+              class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
+            >
+              <h2 class="title">
+                The Executive Team 5
+              </h2>
+              <h5 class="description">
+                This is the paragraph where you can write more details about your
+                team. Keep you user engaged by providing meaningful information.
+              </h5>
+            </div>
           </div>
         </div>
       </div>
-      <div
-        id="javascript"
-        class="cd-section section section-javascript"
-      >
+
+      <div class="section index-card">
         <div class="container">
-          <javascript-components/>
+          <div class="md-layout">
+            <div
+              class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
+            >
+              <h2 class="title text-center">
+                Diğer Card Alanı
+              </h2>
+            </div>
+
+          </div>
         </div>
+
+        <div class="md-layout">
+          <div v-for="(item, index) in cardSection2" class="md-layout-item md-large-size-33 md-small-size-100"
+               :key="index">
+            <full-bg-card :card-image="item.img">
+              <template slot="cardContent">
+                <h6 class="card-category text-info">
+                  Productivy Apps
+                </h6>
+                <a href="javascript:void(0)">
+                  <h3 class="card-title">
+                    The Best Productivity Apps on Market
+                  </h3>
+                </a>
+                <p class="card-description">
+                  Don't be scared of the truth because we need to restart the
+                  human foundation in truth And I love you like Kanye loves
+                  Kanye I love Rick Owens’ bed design but the back is...
+                </p>
+                <md-button
+                  href="javascript:void(0)"
+                  class="md-white md-simple"
+                >
+                  <md-icon>subject</md-icon>
+                  Read Article
+                </md-button>
+                <md-button
+                  href="javascript:void(0)"
+                  class="md-white md-simple"
+                >
+                  <md-icon>watch_later</md-icon>
+                  Watch Later
+                </md-button>
+              </template>
+            </full-bg-card>
+
+          </div>
+        </div>
+
       </div>
     </div>
-    <nav
-      id="cd-vertical-nav"
-      class="vertical-nav-active"
-    >
-      <ul>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="1"
-            @click="scrollToElement('basic-elements')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Basic Elements</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="2"
-            @click="scrollToElement('navigation')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Navigation</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="3"
-            @click="scrollToElement('notifications')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Notifications</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="4"
-            @click="scrollToElement('footers')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Footers</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="5"
-            @click="scrollToElement('typography')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Typography</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="6"
-            @click="scrollToElement('content-areas')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Content Areas</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="7"
-            @click="scrollToElement('cards')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Cards</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="8"
-            @click="scrollToElement('morphing-cards')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Morphing Cards</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            data-number="9"
-            @click="scrollToElement('javascript')"
-          >
-            <span class="cd-dot"/>
-            <span class="cd-label">Javascript</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+
+
   </div>
 </template>
 
@@ -344,7 +269,60 @@
         firstname: null,
         email: null,
         password: null,
-        leafShow: false
+        leafShow: false,
+        features: [
+          {
+            text: 'Dijital çağda kapsamlı deneyimler geliştiriyoruz',
+            icon: 'code',
+          },
+          {
+            text: 'Eşsiz deneyimler yaratmak için kapsamlı bir hizmet yelpazesi sunuyoruz',
+            icon: 'format_paint'
+          },
+          {
+            text: 'her zaman benzersiz fikirlere odaklanıyoruz',
+            icon: 'dashboard'
+          },
+          {
+            text: 'gelecek için olasılıkların sınırlarını zorluyoruz',
+            icon: 'access_time'
+          },
+          {
+            text: 'Gelecek nesil için imkansız olan nedir ?',
+            icon: 'view_carousel'
+          },
+        ],
+        cardSection: [
+          {
+            img: require("@/assets/images/card-header/1.jpeg"),
+            title: 'Blockchain Tabanlı Küresel Ödeme Araçları',
+            text: 'Blockchain, Büyük Veri ve Yapay Zeka ile Finansal Hizmetlerin Yeniden Tasarlanması'
+          },
+          {
+            img: require("@/assets/images/card-header/3.jpeg"),
+            title: 'TEKNOLOJİ DESTEĞİ',
+            text: 'Teknoloji Projelerinize Danışmanlık Destek Hizmetleri',
+          },
+          {
+            img: require("@/assets/images/card-header/4.jpeg"),
+            title: 'DİJİTAL PAZARLAMA',
+            text: 'Doğru insanlara doğru kanaldan ulaşın',
+          }
+        ],
+        pageMiddle: {
+          bgImg: require("@/assets/images/pages/index/middle.jpg")
+        },
+        cardSection2: [
+          {
+            img: require("@/assets/images/card-header/5.jpeg"),
+          },
+          {
+            img: require("@/assets/images/card-header/8.jpeg"),
+          },
+          {
+            img: require("@/assets/images/card-header/11.jpeg"),
+          }
+        ]
       };
     },
     mounted() {
@@ -363,6 +341,11 @@
         } else {
           this.leafShow = true;
         }
+      },
+      setBg(img) {
+        return {
+          backgroundImage: `url(${img})`
+        };
       }
     }
   };
@@ -416,9 +399,50 @@
       right: 0;
       bottom: 0;
       z-index: 2;
+
       iframe {
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+
+  .header-layout {
+    z-index: 5 !important;
+  }
+
+  .sk-card {
+    background: red;
+    height: 100%;
+    margin-top: 15px;
+
+    .md-card-header {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      margin-top: 0;
+
+      .img {
+        height: 280px;
+        object-fit: cover;
+      }
+    }
+
+    .md-card-content {
+
+    }
+  }
+
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0;
+
+    .f-list-item {
+      flex-grow: 1;
+      width: 33%;
+
+      .md-icon {
+        font-size: 3rem !important;
       }
     }
   }

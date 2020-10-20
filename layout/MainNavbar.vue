@@ -10,11 +10,11 @@
     }"
     :color-on-scroll="colorOnScroll"
   >
-    <div class="md-toolbar-row md-collapse-lateral">
+    <div class="md-toolbar-row md-collapse-lateral" :lang="$i18n.locale">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <nuxt-link to="/"><i class="material-icons">home</i>
-            {{ brand }} - {{$i18n.locale}}
+          <nuxt-link to="/" style="color: #ffffff">
+            <i class="fa fa-cube"></i> <b>SiyahKare</b>
           </nuxt-link>
         </h3>
       </div>
@@ -313,7 +313,7 @@
                     <md-button
                       class="md-success md-round"
                     >
-                      <md-icon>shopping_cart</md-icon>
+                      <i class="fa fa-whatsapp"></i>
                       {{ $t('navbar.contact') }}
                     </md-button>
                   </div>
@@ -419,8 +419,7 @@
     },
     data() {
       return {
-        devMode: false,
-        showPages: false,
+        showPages: true,
         docs_link:
           "https://demos.creative-tim.com/vue-material-kit-pro/documentation/",
         extraNavClasses: "",
@@ -437,6 +436,7 @@
           {name: "contacts", icon: "call", nLink: 'sections/ContactUs'}
         ],
         linksExamples: [
+          {name: "Index Old", href: "index_old", icon: "view_day", nLink: 'index_old'},
           {name: "About Us", href: "about-us", icon: "account_balance", nLink: 'examples/AboutUs'},
           {name: "Blog Post", href: "blog-post", icon: "art_track", nLink: 'examples/BlogPost'},
           {name: "Blog Posts", href: "blog-posts", icon: "view_quilt", nLink: 'examples/BlogPosts'},
@@ -706,8 +706,8 @@
       document.removeEventListener("scroll", this.scrollListener);
     },
     created() {
-      console.log('navLinks', this.navLinks)
-      console.log('this.getLangObj')
+      // console.log('navLinks', this.navLinks)
+      // console.log('this.getLangObj')
     },
     methods: {
       getLangObj(tr = '', en = '', ru = '') {

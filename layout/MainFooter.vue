@@ -36,12 +36,7 @@
           </ul>
         </nav>
         <div class="copyright">
-          &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-          <a
-            href="https://www.creative-tim.com/"
-            target="_blank"
-          >Creative Tim</a>
-          for a better web.
+          &copy; {{ year }}, Siyahkare
         </div>
       </div>
     </template>
@@ -166,7 +161,7 @@
             </ul>
           </nav>
           <div class="copyright float-right">
-            Copyright © {{ year }} Creative Tim All Rights Reserved.
+            SiyahKare
           </div>
         </div>
       </div>
