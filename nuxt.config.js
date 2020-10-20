@@ -47,19 +47,28 @@ export default {
             tr: {
               greeting: 'Merhaba!',
               navbar: {
-                contact: 'İletişim'
+                contact: 'İLETİŞİM'
+              },
+              pageIndex: {
+                headDesc: 'Gelecekte Yapılabileceklerin Sınırı Nedir?'
               }
             },
             en: {
               greeting: 'Hello world!',
               navbar: {
-                contact: 'Contact'
+                contact: 'CONTACT'
+              },
+              pageIndex: {
+                headDesc: 'What is the Limit of What You Can Do in the Future?'
               }
             },
             ru: {
               greeting: 'Здравствуйте',
               navbar: {
-                contact: 'Contact'
+                contact: 'CONTACT'
+              },
+              pageIndex: {
+                headDesc: 'What is the Limit of What You Can Do in the Future?'
               }
             }
           }

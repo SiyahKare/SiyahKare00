@@ -129,6 +129,42 @@
                 </a>
               </li>
 
+              <li
+                v-if="!showPages"
+                class="md-list-item"
+              >
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                >
+                  <div class="md-list-item-content">
+                    <drop-down direction="down">
+                      <md-button
+                        slot="title"
+                        class="md-button md-button-link md-white md-simple dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        <img :src="languages[$i18n.locale].flag" alt="flag">
+                      </md-button>
+                      <ul class="dropdown-menu dropdown-with-icons">
+                        <li
+                          v-for="(li, key) in languages"
+                          :key="key"
+                          v-if="key !== $i18n.locale"
+                        >
+                          <nuxt-link
+                            :to="switchLocalePath(li.short)"
+                          >
+                            <img :src="li.flag" alt="flag" style="padding-right: 3px">
+                            {{ li.title[$i18n.locale] }}
+                          </nuxt-link>
+                        </li>
+                      </ul>
+                    </drop-down>
+                  </div>
+                </a>
+              </li>
+
 
               <li
                 class="md-list-item"
@@ -424,7 +460,36 @@
           "https://demos.creative-tim.com/vue-material-kit-pro/documentation/",
         extraNavClasses: "",
         toggledClass: false,
-        brand: "Vue Material Kit PRO",
+        brand: "SiyahKare",
+        languages: {
+          tr: {
+            flag: require("@/assets/images/flags/TR.png"),
+            title: {
+              tr: 'Türkçe',
+              en: 'Turkish',
+              ru: 'турецкий'
+            },
+            short: 'tr'
+          },
+          en: {
+            flag: require("@/assets/images/flags/EN.png"),
+            title: {
+              tr: 'İngilizce',
+              en: 'English',
+              ru: 'Ингилизце'
+            },
+            short: 'en'
+          },
+          ru: {
+            flag: require("@/assets/images/flags/RU.png"),
+            title: {
+              tr: 'Rusca',
+              en: 'Russian',
+              ru: 'русский'
+            },
+            short: 'ru'
+          }
+        },
         linksSections: [
           {name: "headers", icon: "dns", nLink: 'sections/Headers'},
           {name: "features", icon: "build", nLink: 'sections/Features'},
