@@ -5,6 +5,13 @@
       parallax-active="true"
       :style="headerStyle"
     >
+      <div class="header-video">
+        <span class="video-overlay"></span>
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/23385554?background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
@@ -34,7 +41,7 @@
             >
             <div class="brand">
               <h1>
-                Vue Material Kit
+                SiyahKare
               </h1>
               <span class="pro-badge">
                 Pro
@@ -60,7 +67,7 @@
           <div class="title">
             <h2>Basic Elements</h2>
           </div>
-          <basic-elements />
+          <basic-elements/>
         </div>
       </div>
       <div
@@ -68,18 +75,18 @@
         class="cd-section section section-navbars"
       >
         <div class="container">
-          <small-navigation />
+          <small-navigation/>
         </div>
-        <navigation />
+        <navigation/>
       </div>
       <div class="section section-tabs">
         <div class="container">
-          <tabs />
+          <tabs/>
         </div>
       </div>
       <div class="section section-white mb-0">
         <div class="container">
-          <nav-pills />
+          <nav-pills/>
         </div>
       </div>
       <div
@@ -91,7 +98,7 @@
             <h3>Notifications</h3>
           </div>
         </div>
-        <notifications />
+        <notifications/>
       </div>
       <div
         id="footers"
@@ -103,7 +110,7 @@
               <h3>Pre-Footer Areas</h3>
             </div>
           </div>
-          <pre-footer-areas />
+          <pre-footer-areas/>
         </div>
         <div class="section section-gray">
           <div class="container">
@@ -111,7 +118,7 @@
               <h3>Footer Areas</h3>
             </div>
           </div>
-          <footer-areas />
+          <footer-areas/>
         </div>
       </div>
       <div
@@ -119,7 +126,7 @@
         class="cd-section section"
       >
         <div class="container">
-          <typography-images />
+          <typography-images/>
         </div>
       </div>
       <div
@@ -127,12 +134,12 @@
         class="cd-section section"
       >
         <div class="container">
-          <tables />
+          <tables/>
         </div>
       </div>
       <div class="section">
         <div class="container">
-          <comments />
+          <comments/>
         </div>
       </div>
       <div class="cd-section">
@@ -141,7 +148,7 @@
           class="section section-gray pb-0"
         >
           <div class="container">
-            <cards />
+            <cards/>
           </div>
         </div>
         <div
@@ -149,12 +156,12 @@
           class="cd-section section section-gray"
         >
           <div class="container">
-            <cards section-morphing-cards />
+            <cards section-morphing-cards/>
           </div>
         </div>
         <div class="section">
           <div class="container">
-            <cards section-card-plain />
+            <cards section-card-plain/>
           </div>
         </div>
       </div>
@@ -163,7 +170,7 @@
         class="cd-section section section-javascript"
       >
         <div class="container">
-          <javascript-components />
+          <javascript-components/>
         </div>
       </div>
     </div>
@@ -178,7 +185,7 @@
             data-number="1"
             @click="scrollToElement('basic-elements')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Basic Elements</span>
           </a>
         </li>
@@ -188,7 +195,7 @@
             data-number="2"
             @click="scrollToElement('navigation')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Navigation</span>
           </a>
         </li>
@@ -198,7 +205,7 @@
             data-number="3"
             @click="scrollToElement('notifications')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Notifications</span>
           </a>
         </li>
@@ -208,7 +215,7 @@
             data-number="4"
             @click="scrollToElement('footers')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Footers</span>
           </a>
         </li>
@@ -218,7 +225,7 @@
             data-number="5"
             @click="scrollToElement('typography')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Typography</span>
           </a>
         </li>
@@ -228,7 +235,7 @@
             data-number="6"
             @click="scrollToElement('content-areas')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Content Areas</span>
           </a>
         </li>
@@ -238,7 +245,7 @@
             data-number="7"
             @click="scrollToElement('cards')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Cards</span>
           </a>
         </li>
@@ -248,7 +255,7 @@
             data-number="8"
             @click="scrollToElement('morphing-cards')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Morphing Cards</span>
           </a>
         </li>
@@ -258,7 +265,7 @@
             data-number="9"
             @click="scrollToElement('javascript')"
           >
-            <span class="cd-dot" />
+            <span class="cd-dot"/>
             <span class="cd-label">Javascript</span>
           </a>
         </li>
@@ -268,125 +275,151 @@
 </template>
 
 <script>
-import BasicElements from "./components/BasicElementsSection";
-import Navigation from "./components/NavigationSection";
-import SmallNavigation from "./components/SmallNavigationSection";
-import Tabs from "./components/TabsSection";
-import NavPills from "./components/NavPillsSection";
-import Notifications from "./components/NotificationsSection";
-import TypographyImages from "./components/TypographyImagesSection";
-import JavascriptComponents from "./components/JavascriptComponentsSection";
-import PreFooterAreas from "./components/PreFooterSection";
-import FooterAreas from "./components/FooterSection";
-import Tables from "./components/TablesSection";
-import Comments from "./components/CommentsSection";
-import Cards from "./components/CardsSection";
-import Mixins from "@/plugins/basicMixins";
+  import BasicElements from "./components/BasicElementsSection";
+  import Navigation from "./components/NavigationSection";
+  import SmallNavigation from "./components/SmallNavigationSection";
+  import Tabs from "./components/TabsSection";
+  import NavPills from "./components/NavPillsSection";
+  import Notifications from "./components/NotificationsSection";
+  import TypographyImages from "./components/TypographyImagesSection";
+  import JavascriptComponents from "./components/JavascriptComponentsSection";
+  import PreFooterAreas from "./components/PreFooterSection";
+  import FooterAreas from "./components/FooterSection";
+  import Tables from "./components/TablesSection";
+  import Comments from "./components/CommentsSection";
+  import Cards from "./components/CardsSection";
+  import Mixins from "@/plugins/basicMixins";
 
-export default {
-  name: "Index",
-  components: {
-    BasicElements,
-    Navigation,
-    SmallNavigation,
-    Tabs,
-    NavPills,
-    Notifications,
-    TypographyImages,
-    JavascriptComponents,
-    PreFooterAreas,
-    FooterAreas,
-    Tables,
-    Comments,
-    Cards
-  },
-  mixins: [Mixins.VerticalNav, Mixins.HeaderImage],
-  bodyClass: "index-page",
-  props: {
-    image: {
-      type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
+  export default {
+    name: "Index",
+    components: {
+      BasicElements,
+      Navigation,
+      SmallNavigation,
+      Tabs,
+      NavPills,
+      Notifications,
+      TypographyImages,
+      JavascriptComponents,
+      PreFooterAreas,
+      FooterAreas,
+      Tables,
+      Comments,
+      Cards
     },
-    leaf4: {
-      type: String,
-      default: require("@/assets/img/leaf4.png")
+    mixins: [Mixins.VerticalNav, Mixins.HeaderImage],
+    bodyClass: "index-page",
+    props: {
+      image: {
+        type: String,
+        default: require("@/assets/img/vue-mk-header.jpg")
+      },
+      leaf4: {
+        type: String,
+        default: require("@/assets/img/leaf4.png")
+      },
+      leaf3: {
+        type: String,
+        default: require("@/assets/img/leaf3.png")
+      },
+      leaf2: {
+        type: String,
+        default: require("@/assets/img/leaf2.png")
+      },
+      leaf1: {
+        type: String,
+        default: require("@/assets/img/leaf1.png")
+      },
+      landing: {
+        type: String,
+        default: require("@/assets/img/landing.jpg")
+      },
+      profile: {
+        type: String,
+        default: require("@/assets/img/profile.jpg")
+      }
     },
-    leaf3: {
-      type: String,
-      default: require("@/assets/img/leaf3.png")
+    data() {
+      return {
+        firstname: null,
+        email: null,
+        password: null,
+        leafShow: false
+      };
     },
-    leaf2: {
-      type: String,
-      default: require("@/assets/img/leaf2.png")
+    mounted() {
+      this.leafActive();
+      window.addEventListener("resize", this.leafActive);
+      document.addEventListener("scroll", this.scrollListener);
     },
-    leaf1: {
-      type: String,
-      default: require("@/assets/img/leaf1.png")
+    beforeDestroy() {
+      window.removeEventListener("resize", this.leafActive);
+      document.removeEventListener("scroll", this.scrollListener);
     },
-    landing: {
-      type: String,
-      default: require("@/assets/img/landing.jpg")
-    },
-    profile: {
-      type: String,
-      default: require("@/assets/img/profile.jpg")
+    methods: {
+      leafActive() {
+        if (window.innerWidth < 768) {
+          this.leafShow = false;
+        } else {
+          this.leafShow = true;
+        }
+      }
     }
-  },
-  data() {
-    return {
-      firstname: null,
-      email: null,
-      password: null,
-      leafShow: false
-    };
-  },
-  mounted() {
-    this.leafActive();
-    window.addEventListener("resize", this.leafActive);
-    document.addEventListener("scroll", this.scrollListener);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.leafActive);
-    document.removeEventListener("scroll", this.scrollListener);
-  },
-  methods: {
-    leafActive() {
-      if (window.innerWidth < 768) {
-        this.leafShow = false;
-      } else {
-        this.leafShow = true;
+  };
+</script>
+<style lang="scss">
+  .section-download {
+    .md-button + .md-button {
+      margin-left: 5px;
+    }
+  }
+
+  .vertical-nav-active {
+    display: block;
+  }
+
+  @media all and (min-width: 991px) {
+    .btn-container {
+      display: flex;
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    .vertical-nav-active {
+      display: none;
+    }
+  }
+
+  .mb-0 {
+    padding-bottom: 0 !important;
+  }
+
+  #morphing-cards {
+    padding-top: 70px;
+  }
+
+  .header-video {
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 3;
+    }
+
+    .video-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      iframe {
+        width: 100%;
+        height: 100%;
       }
     }
   }
-};
-</script>
-<style lang="scss">
-.section-download {
-  .md-button + .md-button {
-    margin-left: 5px;
-  }
-}
-
-.vertical-nav-active {
-  display: block;
-}
-
-@media all and (min-width: 991px) {
-  .btn-container {
-    display: flex;
-  }
-}
-@media all and (max-width: 768px) {
-  .vertical-nav-active {
-    display: none;
-  }
-}
-
-.mb-0 {
-  padding-bottom: 0 !important;
-}
-
-#morphing-cards {
-  padding-top: 70px;
-}
 </style>
