@@ -6,54 +6,60 @@
         class="modal-container"
         :class="type"
       >
-        <template v-if="!modalWithCard">
-          <div class="modal-header">
-            <slot name="header" />
-          </div>
-
-          <div
-            v-if="$slots.body"
-            class="modal-body text-center"
-          >
-            <slot name="body" />
-          </div>
-
-          <div
-            v-if="$slots.footer"
-            class="modal-footer"
-          >
-            <slot name="footer" />
-          </div>
-        </template>
-
-        <template v-else>
-          <md-card :class="cardClasses">
-            <div
-              v-if="$slots.header"
-              class="modal-header"
-            >
+        <div v-if="!custom">
+          <template v-if="!modalWithCard">
+            <div class="modal-header">
               <slot name="header" />
             </div>
 
             <div
               v-if="$slots.body"
-              class="modal-body"
+              class="modal-body text-center"
             >
-              <md-card-content>
-                <slot name="body" />
-              </md-card-content>
+              <slot name="body" />
             </div>
 
             <div
               v-if="$slots.footer"
               class="modal-footer"
             >
-              <md-card-actions>
-                <slot name="footer" />
-              </md-card-actions>
+              <slot name="footer" />
             </div>
-          </md-card>
-        </template>
+          </template>
+
+          <template v-else>
+            <md-card :class="cardClasses">
+              <div
+                v-if="$slots.header"
+                class="modal-header"
+              >
+                <slot name="header" />
+              </div>
+
+              <div
+                v-if="$slots.body"
+                class="modal-body"
+              >
+                <md-card-content>
+                  <slot name="body" />
+                </md-card-content>
+              </div>
+
+              <div
+                v-if="$slots.footer"
+                class="modal-footer"
+              >
+                <md-card-actions>
+                  <slot name="footer" />
+                </md-card-actions>
+              </div>
+            </md-card>
+          </template>
+        </div>
+        <div v-else>
+          <slot />
+        </div>
+
       </div>
     </div>
   </slide-y-up-transition>
@@ -70,7 +76,10 @@ export default {
   props: {
     type: String,
     cardClasses: String,
-    modalWithCard: Boolean
+    modalWithCard: Boolean,
+    custom:{
+      default:false
+    }
   },
   methods: {
     closeModal: function() {

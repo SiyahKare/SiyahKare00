@@ -156,31 +156,33 @@
         Copyright © 1999 - 2021 Siyahkare All Rights Reserved.
       </div>
     </div>
-    <modal class="fade" v-if="loginModal" @close="loginModal = false">
-      <template slot="header">
-        <h4 class="modal-title">{{ $t('footer.login') }}</h4>
-        <md-button class="md-simple md-just-icon md-round modal-default-button" @click="loginModal = false">
-          <md-icon>clear</md-icon>
-        </md-button>
-      </template>
+    <modal class="login-modal fade" custom="true" v-if="loginModal" @close="loginModal = false">
+      <blog-card
+        card-plain
+        :shadow-normal="false"
+        :no-colored-shadow="false"
+        :card-image="logo"
+      >
+        <template slot="cardContent">
+          <div class="login-form">
+            <md-field class="md-form-group">
+              <md-icon>mail</md-icon>
+              <md-input
+                :placeholder="$t('basic.mail')"
+              />
+            </md-field>
+            <md-field class="md-form-group">
+              <md-icon>lock_outline</md-icon>
+              <md-input
+                :placeholder="$t('basic.psw')"
+              />
+            </md-field>
+            <md-button class="md-simple">{{ $t('footer.login') }}</md-button>
+          </div>
 
-      <template slot="body">
-        <div class="login-form">
-          <md-field>
-            <label>Initial Value</label>
-            <md-input></md-input>
-          </md-field>
-          <md-field>
-            <label>Type here!</label>
-            <md-input></md-input>
-          </md-field>
-        </div>
-      </template>
+        </template>
+      </blog-card>
 
-      <template slot="footer">
-        <md-button class="md-simple">Login</md-button>
-        <md-button class="md-danger md-simple" @click="loginModal = false">Close</md-button>
-      </template>
     </modal>
   </footer>
 </template>
@@ -239,6 +241,16 @@
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
+  }
+
+  .login-modal {
+    .card-blog {
+      margin: 0;
+      padding: 0 15px;
+      .md-card-header {
+        margin-top: -30px;
+      }
+    }
   }
 
 </style>

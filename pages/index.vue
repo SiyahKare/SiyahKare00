@@ -1,12 +1,7 @@
 <template>
   <div class="wrapper">
 
-
-<!--    <video poster=""-->
-<!--           style="position: absolute; width: 100vw; height: 100vh; top: 0; left: 0; z-index: 999; object-fit: cover">-->
-<!--      <source :src="video" type="video/mp4">-->
-<!--    </video>-->
-
+    <loader v-if="!isReady"></loader>
 
     <parallax
       class="page-header index header-filter clear-filter"
@@ -266,6 +261,7 @@
     },
     data() {
       return {
+        isReady: false,
         video: require("@/assets/images/siyahkare_video.mp4"),
         videoPoster: require("@/assets/images/video_poster.png"),
         firstname: null,
@@ -332,6 +328,12 @@
       this.leafActive();
       window.addEventListener("resize", this.leafActive);
       document.addEventListener("scroll", this.scrollListener);
+
+      if (process.browser) {
+        window.onNuxtReady((app) => {
+          this.isReady = true
+        })
+      }
     },
     beforeDestroy() {
       window.removeEventListener("resize", this.leafActive);
@@ -462,4 +464,5 @@
     max-width: 730px;
     margin: 0 auto;
   }
+
 </style>

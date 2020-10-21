@@ -101,6 +101,10 @@ export default {
           messages: {
             tr: {
               greeting: 'Merhaba!',
+              basic: {
+                mail: 'E-Posta',
+                pssw: 'Şifre'
+              },
               navbar: {
                 contact: 'İLETİŞİM'
               },
@@ -114,6 +118,10 @@ export default {
             },
             en: {
               greeting: 'Hello world!',
+              basic: {
+                mail: 'E-Mail',
+                pssw: 'Password'
+              },
               navbar: {
                 contact: 'CONTACT'
               },
@@ -127,6 +135,10 @@ export default {
             },
             ru: {
               greeting: 'Здравствуйте',
+              basic: {
+                mail: 'E-Mail',
+                pssw: 'Password'
+              },
               navbar: {
                 contact: 'CONTACT',
                 apps: 'Apps'
