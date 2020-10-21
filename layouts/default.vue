@@ -31,12 +31,12 @@
       }
     },
     created() {
-      if (process.browser) {
-        const devmode = window.localStorage.getItem('dev');
-        if (devmode === 'true') {
-          this.devMode = true
-        }
-      }
+      // if (process.browser) {
+      //   const devmode = window.localStorage.getItem('dev');
+      //   if (devmode === 'true') {
+      //     this.devMode = true
+      //   }
+      // }
 
     },
     components: {
@@ -57,7 +57,7 @@
     },
     methods: {
       setDev() {
-        if (this.devInput === 'SiyahKare') {
+        if (this.devInput === 'sk') {
           localStorage.setItem('dev', true)
           this.devMode = true
         }
