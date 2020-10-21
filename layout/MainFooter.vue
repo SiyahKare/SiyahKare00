@@ -177,7 +177,9 @@
                 :placeholder="$t('basic.psw')"
               />
             </md-field>
-            <md-button class="md-simple">{{ $t('footer.login') }}</md-button>
+            <md-button class="md-primary">
+              <i class="material-icons">fingerprint</i> {{ $t('footer.login') }}
+            </md-button>
           </div>
 
         </template>
@@ -244,11 +246,24 @@
   }
 
   .login-modal {
-    .card-blog {
+    .md-card-blog {
       margin: 0;
       padding: 0 15px;
+      min-width: 360px;
       .md-card-header {
-        margin-top: -30px;
+        margin: -30px auto 0  auto;
+        max-width: 312px;
+        a {
+          background: #9c27b0;
+          padding: 15px;
+        }
+      }
+
+      .md-card-content {
+        padding-bottom: 0;
+        button {
+          margin-bottom: 0;
+        }
       }
     }
   }
