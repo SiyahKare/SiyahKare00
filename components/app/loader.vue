@@ -16,16 +16,16 @@
     name: 'loader',
     props: {
       width: {
-        default: '130px'
+        default: '100px'
       },
       height: {
-        default: '130px'
+        default: '100px'
       },
       background: {
         default: 'none'
       },
       color: {
-        default: '#000000'
+        default: '#212121'
       }
     }
   }

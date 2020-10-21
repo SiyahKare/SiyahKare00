@@ -614,6 +614,6 @@
 
 <style lang="scss" scoped>
   .md-toolbar {
-    background-color: #000000 !important;
+    background-color: #212121!important;
   }
 </style>
