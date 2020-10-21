@@ -5,10 +5,65 @@ export default {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''}
+      {hid: 'description', name: 'description', content: 'SiyahKare Digital Solutions Consulting | 1.0.0'},
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'SiyahKare Digital Solutions Consulting | Gelecekte yapılabileceklerin sınırı nedir?'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'SiyahKare Digital Solutions Consulting | Gelecekte yapılabileceklerin sınırı nedir?'
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: 'SiyahKare'
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'SiyahKare Digital Solutions Consulting | Gelecekte yapılabileceklerin sınırı nedir?'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'twitter_card_image.jpg'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'SiyahKare Digital Solutions Consulting | Gelecekte yapılabileceklerin sınırı nedir?'
+      },
+      {
+        hid: 'author',
+        name: 'author',
+        content: 'SiyahKare DSC'
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: ''
+      },
+      {
+        hid: 'og:type',
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: ''
+      }
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'icon', type: 'image/x-icon', href: '/assets/images/favicon.png'},
       {rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css'},
       {
         rel: 'stylesheet',
@@ -49,6 +104,10 @@ export default {
               navbar: {
                 contact: 'İLETİŞİM'
               },
+              footer: {
+                login: 'Giriş',
+                apps: 'Uygulamalar'
+              },
               pageIndex: {
                 headDesc: 'Gelecekte Yapılabileceklerin Sınırı Nedir?'
               }
@@ -58,6 +117,10 @@ export default {
               navbar: {
                 contact: 'CONTACT'
               },
+              footer: {
+                login: 'Login',
+                apps: 'Apps'
+              },
               pageIndex: {
                 headDesc: 'What is the Limit of What You Can Do in the Future?'
               }
@@ -65,7 +128,11 @@ export default {
             ru: {
               greeting: 'Здравствуйте',
               navbar: {
-                contact: 'CONTACT'
+                contact: 'CONTACT',
+                apps: 'Apps'
+              },
+              footer: {
+                login: 'Login'
               },
               pageIndex: {
                 headDesc: 'What is the Limit of What You Can Do in the Future?'

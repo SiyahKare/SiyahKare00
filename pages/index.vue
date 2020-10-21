@@ -1,52 +1,30 @@
 <template>
   <div class="wrapper">
+
+
+<!--    <video poster=""-->
+<!--           style="position: absolute; width: 100vw; height: 100vh; top: 0; left: 0; z-index: 999; object-fit: cover">-->
+<!--      <source :src="video" type="video/mp4">-->
+<!--    </video>-->
+
+
     <parallax
-      class="page-header header-filter clear-filter"
+      class="page-header index header-filter clear-filter"
       parallax-active="true"
       :style="headerStyle"
     >
       <div class="header-video">
         <span class="video-overlay"></span>
         <div class="video-frame">
-          <iframe src="https://player.vimeo.com/video/23385554?background=1" frameborder="0" webkitallowfullscreen
-                  mozallowfullscreen allowfullscreen></iframe>
+          <video autoplay muted loop :poster="videoPoster" class="video">
+            <source :src="video" type="video/mp4">
+          </video>
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
       <div class="header-layout md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
-            <img
-              v-show="leafShow"
-              :src="leaf4"
-              alt="leaf4"
-              class="leaf4"
-            >
-            <img
-              v-show="leafShow"
-              :src="leaf3"
-              alt="leaf3"
-              class="leaf3"
-            >
-            <img
-              v-show="leafShow"
-              :src="leaf2"
-              alt="leaf2"
-              class="leaf2"
-            >
-            <img
-              v-show="leafShow"
-              :src="leaf1"
-              alt="leaf1"
-              class="leaf1"
-            >
             <div class="brand">
-              <h1>
-                SiyahKare
-              </h1>
-              <span class="pro-badge">
-                Pro
-              </span>
               <h3 class="title">
                 {{ $t('pageIndex.headDesc') }}
               </h3>
@@ -64,34 +42,57 @@
       <div class="section index-card">
         <div class="container">
           <div class="md-layout">
-            <div
-              class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
-            >
-              <h2 class="title text-center">
-                SiyahKare
-                Digital Çözümler
-              </h2>
-            </div>
+            <!--            <div-->
+            <!--              class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"-->
+            <!--            >-->
+            <!--              <h2 class="title text-center">-->
+            <!--                <img :src="logo2" alt="logo" style="max-width: 150px">-->
+            <!--                <br>-->
+            <!--                SiyahKare-->
+            <!--                Digital Çözümler-->
+            <!--              </h2>-->
+            <!--            </div>-->
 
           </div>
-          <div class="features-list">
-            <div class="f-list-item" v-for="(item, i) in features" :key="i">
-              <info-areas
-                icon-color="default"
-                :icon="item.icon"
-                text-center
-              >
-                <h4
-                  slot="title"
-                  class="info-title"
-                >
-                  {{item.text}}
-                </h4>
-                <!--                <p slot="content">-->
-                <!--                  {{item.text}}-->
-                <!--                </p>-->
-              </info-areas>
-            </div>
+          <!--          <div class="features-list">-->
+          <!--            <div class="f-list-item" v-for="(item, i) in features" :key="i">-->
+          <!--              <info-areas-->
+          <!--                icon-color="default"-->
+          <!--                :icon="item.icon"-->
+          <!--                text-center-->
+          <!--              >-->
+          <!--                <h4-->
+          <!--                  slot="title"-->
+          <!--                  class="info-title"-->
+          <!--                >-->
+          <!--                  {{item.text}}-->
+          <!--                </h4>-->
+          <!--                &lt;!&ndash;                <p slot="content">&ndash;&gt;-->
+          <!--                &lt;!&ndash;                  {{item.text}}&ndash;&gt;-->
+          <!--                &lt;!&ndash;                </p>&ndash;&gt;-->
+          <!--              </info-areas>-->
+          <!--            </div>-->
+          <!--          </div>-->
+
+          <div class="features text-center">
+            <img :src="logo2" alt="logo" style="max-width: 150px">
+            <h1 class="description text-center">
+              <b>SiyahKare</b> <br>
+              <b>Digital Çözümler</b> <br>
+            </h1>
+            <h2 class="description text-center">
+              Dijital çağda kapsamlı deneyimler geliştiriyoruz <br>
+              <br>
+              Eşsiz deneyimler yaratmak için kapsamlı bir hizmet yelpazesi sunuyoruz <br>
+            </h2>
+            <h3 class="description text-center">
+              <b>her zaman benzersiz fikirlere odaklanıyoruz</b> <br>
+              gelecek için olasılıkların <br>
+              sınırlarını zorluyoruz <br>
+            </h3>
+            <h1 class="description text-center">
+              <b>Gelecek nesil için <br> imkansız olan nedir ?</b><br>
+            </h1>
           </div>
 
           <div class="md-layout">
@@ -154,43 +155,42 @@
           </div>
         </div>
 
-        <div class="md-layout">
-          <div v-for="(item, index) in cardSection2" class="md-layout-item md-large-size-33 md-small-size-100"
-               :key="index">
-            <full-bg-card :card-image="item.img">
-              <template slot="cardContent">
-                <h6 class="card-category text-info">
-                  Productivy Apps
-                </h6>
-                <a href="javascript:void(0)">
-                  <h3 class="card-title">
-                    The Best Productivity Apps on Market
-                  </h3>
-                </a>
-                <p class="card-description">
-                  Don't be scared of the truth because we need to restart the
-                  human foundation in truth And I love you like Kanye loves
-                  Kanye I love Rick Owens’ bed design but the back is...
-                </p>
-                <md-button
-                  href="javascript:void(0)"
-                  class="md-white md-simple"
-                >
-                  <md-icon>subject</md-icon>
-                  Read Article
-                </md-button>
-                <md-button
-                  href="javascript:void(0)"
-                  class="md-white md-simple"
-                >
-                  <md-icon>watch_later</md-icon>
-                  Watch Later
-                </md-button>
-              </template>
-            </full-bg-card>
+        <div class="container">
+          <div class="md-layout">
+            <div v-for="(item, index) in cardSection2" class="md-layout-item md-large-size-33 md-small-size-100"
+                 :key="index">
+              <full-bg-card :card-image="item.img">
+                <template slot="cardContent">
+                  <h6 class="card-category text-info">
+                    Productivy Apps
+                  </h6>
+                  <a href="javascript:void(0)">
+                    <h3 class="card-title">
+                      The Best Productivity Apps on Market
+                    </h3>
+                  </a>
+                  <md-button
+                    href="javascript:void(0)"
+                    class="md-white md-simple"
+                  >
+                    <md-icon>subject</md-icon>
+                    Read Article
+                  </md-button>
+                  <md-button
+                    href="javascript:void(0)"
+                    class="md-white md-simple"
+                  >
+                    <md-icon>watch_later</md-icon>
+                    Watch Later
+                  </md-button>
+                </template>
+              </full-bg-card>
 
+            </div>
           </div>
+
         </div>
+
 
       </div>
     </div>
@@ -237,7 +237,7 @@
     props: {
       image: {
         type: String,
-        default: require("@/assets/img/vue-mk-header.jpg")
+        default: require("@/assets/images/video_poster.png")
       },
       leaf4: {
         type: String,
@@ -266,10 +266,13 @@
     },
     data() {
       return {
+        video: require("@/assets/images/siyahkare_video.mp4"),
+        videoPoster: require("@/assets/images/video_poster.png"),
         firstname: null,
         email: null,
         password: null,
         leafShow: false,
+        logo2: require("@/assets/images/siyahkare2.png"),
         features: [
           {
             text: 'Dijital çağda kapsamlı deneyimler geliştiriyoruz',
@@ -400,9 +403,10 @@
       bottom: 0;
       z-index: 2;
 
-      iframe {
+      iframe, .video {
         width: 100%;
         height: 100%;
+        object-fit: fill;
       }
     }
   }
@@ -445,5 +449,17 @@
         font-size: 3rem !important;
       }
     }
+  }
+
+  .page-header {
+    &.index {
+      align-items: flex-end;
+      padding-bottom: 150px;
+    }
+  }
+
+  .features {
+    max-width: 730px;
+    margin: 0 auto;
   }
 </style>
