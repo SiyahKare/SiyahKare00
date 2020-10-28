@@ -1,6 +1,6 @@
 <template>
   <div
-    id="vue-material-kit-pro"
+    id="main-app"
     :class="{ 'nav-open': NavbarStore.showNavbar }"
     v-if="devMode"
   >
@@ -23,7 +23,7 @@
   export default {
     data() {
       return {
-        devMode: true,
+        devMode: false,
         devInput: '',
         NavbarStore: {
           showNavbar: false

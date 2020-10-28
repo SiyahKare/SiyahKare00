@@ -35,50 +35,6 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <!--              <li-->
-              <!--                v-if="showDownload"-->
-              <!--                class="md-list-item"-->
-              <!--              >-->
-              <!--                <a-->
-              <!--                  href="javascript:void(0)"-->
-              <!--                  class="md-list-item-router md-list-item-container md-button-clean dropdown"-->
-              <!--                >-->
-              <!--                  <div class="md-list-item-content">-->
-              <!--                    <drop-down direction="down">-->
-              <!--                      <md-button-->
-              <!--                        slot="title"-->
-              <!--                        class="md-button md-button-link md-white md-simple dropdown-toggle"-->
-              <!--                        data-toggle="dropdown"-->
-              <!--                      >-->
-              <!--                        <i class="material-icons">apps</i>-->
-              <!--                        <p>Components</p>-->
-              <!--                      </md-button>-->
-              <!--                      <ul class="dropdown-menu dropdown-with-icons">-->
-              <!--                        <li>-->
-              <!--                          <a href="/">-->
-              <!--                            <i class="material-icons">layers</i>-->
-              <!--                            Presentation-->
-              <!--                          </a>-->
-              <!--                        </li>-->
-              <!--                        <li>-->
-              <!--                          <a href="/">-->
-              <!--                            <i class="material-icons">line_style</i>-->
-              <!--                            All Components-->
-              <!--                          </a>-->
-              <!--                        </li>-->
-              <!--                        <li>-->
-              <!--                          <a :href="docs_link">-->
-              <!--                            <i class="material-icons">content_paste</i>-->
-              <!--                            Documentation-->
-              <!--                          </a>-->
-              <!--                        </li>-->
-              <!--                      </ul>-->
-              <!--                    </drop-down>-->
-              <!--                  </div>-->
-              <!--                </a>-->
-              <!--              </li>-->
-
-
               <li v-if="!showPages" class="md-list-item" v-for="item in navLinks">
                 <a
                   href="javascript:void(0)"
@@ -99,29 +55,12 @@
                           v-for="(li, index) in item.subMenu"
                           :key="index"
                         >
-
                           <nuxt-link v-if="li.nLink !== undefined" :to="'/' + li.nLink">
                             <i class="material-icons">{{ li.icon }}</i>
                             {{
-                            li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)
+                              li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)
                             }}
                           </nuxt-link>
-
-                          <!--                          <a-->
-                          <!--                            v-else-->
-                          <!--                            :href="'#/sections#' + li.text"-->
-                          <!--                            @click="-->
-                          <!--                              () => {-->
-                          <!--                                NavbarStore.showNavbar = false;-->
-                          <!--                                toggledClass = false;-->
-                          <!--                              }-->
-                          <!--                            "-->
-                          <!--                          >-->
-                          <!--                            <i class="material-icons">{{ li.icon }}</i>-->
-                          <!--                            {{-->
-                          <!--                            li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)-->
-                          <!--                            }}-->
-                          <!--                          </a>-->
                         </li>
                       </ul>
                     </drop-down>
@@ -189,11 +128,6 @@
                           v-for="(li, index) in linksComponents"
                           :key="li.name"
                         >
-                          <!--                          <a :href="'#/' + li.href">-->
-                          <!--                            <i class="material-icons">{{ li.icon }}</i>-->
-                          <!--                            {{ li.name }}-->
-                          <!--                          </a>-->
-
                           <nuxt-link :to="'/' + li.nLink"><i class="material-icons">{{ linksExamples[index].icon }}</i>
                             {{ li.name }}
                           </nuxt-link>
@@ -391,8 +325,6 @@
                   </div>
                 </a>
               </li>
-
-
             </md-list>
           </div>
         </div>
@@ -456,7 +388,7 @@
     },
     data() {
       return {
-        showPages: true,
+        showPages: false,
         docs_link:
           "https://demos.creative-tim.com/vue-material-kit-pro/documentation/",
         extraNavClasses: "",

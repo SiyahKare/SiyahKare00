@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
 
-    <loader v-if="!isReady"></loader>
+    <!--    <loader v-if="!isReady"></loader>-->
 
     <parallax
       class="page-header index header-filter clear-filter"
@@ -73,20 +73,20 @@
             <img :src="logo2" alt="logo" style="max-width: 150px">
             <h1 class="description text-center">
               <b>SiyahKare</b> <br>
-              <b>Digital Çözümler</b> <br>
+              <b> {{ $t('pageIndex.about.p1') }}</b> <br>
             </h1>
             <h2 class="description text-center">
-              Dijital çağda kapsamlı deneyimler geliştiriyoruz <br>
+              {{ $t('pageIndex.about.p2') }} <br>
               <br>
-              Eşsiz deneyimler yaratmak için kapsamlı bir hizmet yelpazesi sunuyoruz <br>
+              {{ $t('pageIndex.about.p3') }} <br>
             </h2>
             <h3 class="description text-center">
-              <b>her zaman benzersiz fikirlere odaklanıyoruz</b> <br>
-              gelecek için olasılıkların <br>
-              sınırlarını zorluyoruz <br>
+              <b>{{ $t('pageIndex.about.p4') }}</b> <br>
+              {{ $t('pageIndex.about.p5') }}<br>
+              {{ $t('pageIndex.about.p6') }} <br>
             </h3>
             <h1 class="description text-center">
-              <b>Gelecek nesil için <br> imkansız olan nedir ?</b><br>
+              <b>{{ $t('pageIndex.about.p7') }} <br> {{ $t('pageIndex.about.p8') }}</b><br>
             </h1>
           </div>
 
@@ -125,14 +125,116 @@
               class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
             >
               <h2 class="title">
-                The Executive Team 5
+                {{ $t('pageIndex.offerForm.title') }}
               </h2>
-              <h5 class="description">
-                This is the paragraph where you can write more details about your
-                team. Keep you user engaged by providing meaningful information.
-              </h5>
             </div>
           </div>
+          <div class="md-layout">
+            <div
+              class="md-layout-item md-size-50 md-small-size-100 mx-auto text-center"
+            >
+              <div class="offer-form">
+
+                <p class="description color-white">
+                  {{ $t('pageIndex.offerForm.desc') }}
+                </p>
+
+                <form class="form">
+                  <div class="form-item">
+                    <md-field class="has-white">
+                      <label>{{ $t('pageIndex.offerForm.name') }}</label>
+                      <md-input
+                        v-model="offerForm.name"
+                        type="text"
+                      />
+                    </md-field>
+                  </div>
+                  <div class="form-item">
+                    <md-field class="has-white">
+                      <label>{{ $t('pageIndex.offerForm.phone') }}</label>
+                      <md-input
+                        v-model="offerForm.phone"
+                        type="number"
+                      />
+                    </md-field>
+                  </div>
+                  <div class="form-item">
+                    <md-field class="has-white">
+                      <label>{{ $t('pageIndex.offerForm.company') }}</label>
+                      <md-input
+                        v-model="offerForm.company"
+                        type="email"
+                      />
+                    </md-field>
+
+                  </div>
+                  <div class="form-item">
+                    <md-field class="has-white">
+                      <label>{{ $t('pageIndex.offerForm.service') }}</label>
+                      <md-select
+                        id="selectSize"
+                        v-model="offerForm.service"
+                        name="selectSize"
+                      >
+                        <md-option v-for="(service, index) in offerServiceItems" :key="index" :value="service.value">
+                          {{service.text}}
+                        </md-option>
+                      </md-select>
+                    </md-field>
+                  </div>
+                  <div class="form-item">
+                    <md-field class="has-white">
+                      <label>{{ $t('pageIndex.offerForm.mail') }}</label>
+                      <md-input
+                        v-model="offerForm.mail"
+                        type="email"
+                      />
+                    </md-field>
+                  </div>
+                  <div class="form-item">
+                    <span class="color-white">Im not a robot</span>
+                  </div>
+                  <div class="form-item w-100">
+                    <div class="submit mt-3">
+                      <button class="offer-btn">{{ $t('pageIndex.offerForm.submit') }}</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+            <div
+              class="md-layout-item md-size-50 md-small-size-100 mx-auto text-center"
+            >
+              <div class="offer-video">
+                <iframe width='500px' style="border: 0" height='294px'
+                        src='https://player.vimeo.com/video/349107223?'></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="section index-references">
+        <div class="container">
+          <h2 class="title text-center">
+            {{ $t('basic.references') }}
+          </h2>
+          <el-carousel
+            indicator-position="none"
+            class="no-border no-height ref-slider"
+            trigger="click"
+            height="150px !important"
+          >
+
+            <el-carousel-item class="reference-list" v-for="(item, index) in references" :key="index">
+              <div class="reference-item" v-for="(subItem, i) in item.images" :key="i"><img :src="subItem.src" alt="">
+              </div>
+            </el-carousel-item>
+
+          </el-carousel>
         </div>
       </div>
 
@@ -321,6 +423,89 @@
           {
             img: require("@/assets/images/card-header/11.jpeg"),
           }
+        ],
+        references: [
+          {
+            "images": [
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2018/05/englishhome.png"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2020/01/dardenia.png"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2018/05/uğur-okulları.png"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2018/05/pimapen.png"
+              }
+            ]
+          },
+          {
+            "images": [
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2018/05/alfa.png"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2019/09/glovo.jpg"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2020/04/borel-2.jpg"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2020/01/cartonnetwork.png"
+              }
+            ]
+          },
+          {
+            "images": [
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2019/12/bosch.png"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2018/05/panasonic-1.png"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2020/01/burgan_leasing.png"
+              },
+              {
+                "src": "https://www.videosanat.com/wp-content/uploads/2019/02/ibrahim_ethem.jpg"
+              }
+            ]
+          },
+        ],
+        offerForm: {
+          name: '',
+          phone: '',
+          company: '',
+          service: '',
+          mail: '',
+        },
+        offerServiceItems: [
+          {
+            text: 'Tanıtım Filmi',
+            value: '1'
+          },
+          {
+            text: 'Reklam Filmi',
+            value: '2'
+          },
+          {
+            text: 'Kurumsal Video Çözümleri',
+            value: '3'
+          },
+          {
+            text: 'Animasyon',
+            value: '4'
+          },
+          {
+            text: 'Etkinlik',
+            value: '5'
+          },
+          {
+            text: 'Diğer',
+            value: '6'
+          }
         ]
       };
     },
@@ -328,9 +513,13 @@
       this.leafActive();
       window.addEventListener("resize", this.leafActive);
       document.addEventListener("scroll", this.scrollListener);
-
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    },
+    created() {
+      console.log('cratete index', process.browser)
       if (process.browser) {
         window.onNuxtReady((app) => {
+          console.log('ASD', app)
           this.isReady = true
         })
       }
@@ -375,6 +564,22 @@
   @media all and (max-width: 768px) {
     .vertical-nav-active {
       display: none;
+    }
+
+    .footer {
+      .footer-logo {
+        margin: 0 auto;
+      }
+
+      .md-layout-item {
+        text-align: center;
+      }
+
+      .footer-apps {
+        a {
+          margin: 0 auto;
+        }
+      }
     }
   }
 
@@ -464,5 +669,80 @@
     max-width: 730px;
     margin: 0 auto;
   }
+
+  .reference-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+    .ref-slider {
+      .el-carousel__container {
+        height: 150px !important;
+      }
+    }
+
+    .index-references {
+      .reference-item {
+        img {
+          max-width: 120px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .index-references {
+    padding-bottom: 0;
+  }
+
+  .offer-form {
+    .form {
+      display: inline-block;
+      width: 100%;
+      margin: -10px 0;
+
+      .form-item {
+        width: 50%;
+        float: left;
+        margin: 10px 0;
+        padding: 0 10px;
+
+        &.w-100 {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .offer-btn {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    width: 100%;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 30px;
+  }
+
+  .color-white {
+    color: #ffffff;
+  }
+
+  .offer-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.27198%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
 
 </style>

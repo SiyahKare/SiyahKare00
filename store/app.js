@@ -35,7 +35,7 @@ export const state = () => ({
             "ru": "Formula"
           },
           "icon": "lightbulb_outline",
-          "nLink": "nLink"
+          "nLink": "page/formula"
         },
         {
           "title": {
@@ -44,7 +44,7 @@ export const state = () => ({
             "ru": "About Us"
           },
           "icon": "info_outline",
-          "nLink": "nLink"
+          "nLink": "page/about"
         },
         {
           "title": {
@@ -53,7 +53,7 @@ export const state = () => ({
             "ru": "Technology Stack"
           },
           "icon": "layers",
-          "nLink": "nLink"
+          "nLink": "page/technology-stack"
         },
         {
           "title": {

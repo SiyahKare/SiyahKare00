@@ -1,5 +1,5 @@
 <template>
-  <div class="app-loading">
+  <div class="app-loading" v-if="loading">
     <svg :width="width" :height="height" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
          preserveAspectRatio="xMidYMid" class="lds-rolling" :style="'background:'+background">
       <circle cx="50" cy="50" fill="none" :stroke="color" stroke-width="10" r="35"
@@ -26,6 +26,17 @@
       },
       color: {
         default: '#212121'
+      }
+    },
+    data: () => ({
+      loading: true
+    }),
+    methods: {
+      start() {
+        this.loading = true
+      },
+      finish() {
+        this.loading = false
       }
     }
   }
