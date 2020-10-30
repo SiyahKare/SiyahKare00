@@ -62,7 +62,7 @@ export const state = () => ({
             "ru": "Cloud Architecture"
           },
           "icon": "cloud",
-          "nLink": "nLink"
+          "nLink": "page/cloud-server-architecture"
         },
         {
           "title": {
@@ -71,7 +71,7 @@ export const state = () => ({
             "ru": "References"
           },
           "icon": "content_paste",
-          "nLink": "nLink"
+          "nLink": "page/references"
         },
         {
           "title": {
@@ -80,7 +80,7 @@ export const state = () => ({
             "ru": "Contact"
           },
           "icon": "call",
-          "nLink": "nLink"
+          "nLink": "page/contact"
         }
       ]
     },
@@ -100,7 +100,7 @@ export const state = () => ({
             "ru": "Digital Marketing"
           },
           "icon": "dns",
-          "nLink": "nLink"
+          "nLink": "page/financial-services"
         },
         {
           "title": {

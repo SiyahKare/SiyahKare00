@@ -12,7 +12,7 @@
             class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
           >
             <h1 class="title">
-              {{ $t('pageTechnologyStack.title') }}
+              {{ $t('pageReferences.title') }}
             </h1>
           </div>
         </div>
@@ -26,23 +26,23 @@
               <full-bg-card :card-image="cardProject.cardProject1">
                 <template slot="cardContent">
                   <h6 class="card-category text-info">
-                    SOFTWARE
+                    {{ $t('basic.webpage') }}
                   </h6>
                   <a href="javascript:void(0)">
                     <h3 class="card-title">
-                      PHP Programming Language
+                      Melek Arıcı
                     </h3>
                   </a>
                   <p class="card-description">
-                    Don't be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens’ bed design but the back is...
+                    <br><br><br>
                   </p>
                   <md-button
-                    href="javascript:void(0)"
-                    class="md-danger md-round"
+                    href="https://melekarici.com"
+                    class="md-primary md-round"
+                    target="_blank"
                   >
-                    <md-icon>format_align_left</md-icon> Read Article
+                    <md-icon>format_align_left</md-icon>
+                    {{ $t('basic.goToWebSite') }}
                   </md-button>
                 </template>
               </full-bg-card>
@@ -51,57 +51,73 @@
               <full-bg-card :card-image="cardProject.cardProject2">
                 <template slot="cardContent">
                   <h6 class="card-category text-info">
-                    SOFTWARE
+                    {{ $t('basic.webpage') }}
                   </h6>
                   <a href="javascript:void(0)">
                     <h3 class="card-title">
-                      C# Microsoft
+                      Mutlu Kurs
                     </h3>
                   </a>
                   <p class="card-description">
-                    Don't be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens’ bed design but the back is...
+                    <br><br><br>
                   </p>
                   <md-button
-                    href="javascript:void(0)"
+                    href="https://mutluozelkurs.com"
                     class="md-primary md-round"
+                    target="_blank"
                   >
-                    <md-icon>format_align_left</md-icon> Read Article
+                    <md-icon>format_align_left</md-icon>
+                    {{ $t('basic.goToWebSite') }}
                   </md-button>
                 </template>
               </full-bg-card>
             </div>
-            <div class="md-layout-item md-size-100">
+            <div class="md-layout-item md-size-50 md-small-size-100">
               <full-bg-card :card-image="cardProject.cardProject3">
                 <template slot="cardContent">
                   <h6 class="card-category text-info">
-                    FRONT-END
+                    {{ $t('basic.webpage') }}
                   </h6>
                   <a href="javascript:void(0)">
                     <h3 class="card-title">
-                      VueJS
+                      Hello Barefoot
                     </h3>
                   </a>
                   <p class="card-description">
-                    Don't be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens’ bed design but the back is...
+                    <br><br><br>
                   </p>
                   <md-button
-                    href="javascript:void(0)"
-                    class="md-warning md-round"
+                    href="https://hellobarefoot.com/"
+                    class="md-primary md-round"
+                    target="_blank"
                   >
-                    <md-icon>format_align_left</md-icon> Read Case Study
+                    <md-icon>format_align_left</md-icon>
+                    {{ $t('basic.goToWebSite') }}
                   </md-button>
+                </template>
+              </full-bg-card>
+            </div>
+            <div class="md-layout-item md-size-50 md-small-size-100">
+              <full-bg-card :card-image="cardProject.cardProject4">
+                <template slot="cardContent">
+                  <h6 class="card-category text-info">
+                    Blockchain Wallet
+                  </h6>
+                  <a href="javascript:void(0)">
+                    <h3 class="card-title">
+                      CMDX
+                    </h3>
+                  </a>
+                  <p class="card-description">
+                    <br><br><br>
+                  </p>
                   <md-button
-                    href="javascript:void(0)"
-                    class="md-simple md-just-icon md-white"
+                    href="https://cmdx.io"
+                    class="md-primary md-round"
+                    target="_blank"
                   >
-                    <i class="fab fa-get-pocket" />
-                    <md-tooltip md-direction="top">
-                      Save to Pocket
-                    </md-tooltip>
+                    <md-icon>format_align_left</md-icon>
+                    {{ $t('basic.goToWebSite') }}
                   </md-button>
                 </template>
               </full-bg-card>
@@ -121,13 +137,14 @@
   export default {
     name: 'detail',
     mixins: [Mixins.HeaderImage],
-    data(){
+    data() {
       return {
-        image: require("@/assets/images/uploads/technology-bg.jpg"),
+        image: require("@/assets/images/uploads/reference-bg.jpg"),
         cardProject: {
-          cardProject1: require("@/assets/images/card/card-php.jpg"),
-          cardProject2: require("@/assets/images/card/card-csharp.jpg"),
-          cardProject3: require("@/assets/images/card/card-vue.jpg"),
+          cardProject1: require("@/assets/images/uploads/melek-arici.png"),
+          cardProject2: require("@/assets/images/uploads/mutlu-kurs.png"),
+          cardProject3: require("@/assets/images/uploads/barefoot.png"),
+          cardProject4: require("@/assets/images/uploads/cmdx.png"),
         },
       }
     },

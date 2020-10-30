@@ -12,7 +12,7 @@
             class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
           >
             <h1 class="title">
-              {{ $t('pageTechnologyStack.title') }}
+              {{ $t('pageCloudServer.title') }}
             </h1>
           </div>
         </div>
@@ -123,7 +123,7 @@
     mixins: [Mixins.HeaderImage],
     data(){
       return {
-        image: require("@/assets/images/uploads/technology-bg.jpg"),
+        image: require("@/assets/images/uploads/cloud-computing-bg.png"),
         cardProject: {
           cardProject1: require("@/assets/images/card/card-php.jpg"),
           cardProject2: require("@/assets/images/card/card-csharp.jpg"),

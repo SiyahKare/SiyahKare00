@@ -1,5 +1,9 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
+  server: {
+    port: 4000, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
   head: {
     title: 'Siyahkare',
     meta: [
@@ -104,7 +108,9 @@ export default {
               basic: {
                 mail: 'E-Posta',
                 pssw: 'Şifre',
-                references: 'Referanslarımız'
+                references: 'Referanslarımız',
+                webpage: 'Web Sitesi',
+                goToWebSite: 'Web Siteye Git'
               },
               navbar: {
                 contact: 'İLETİŞİM'
@@ -178,6 +184,18 @@ export default {
               },
               pageTechnologyStack: {
                 title: 'Teknoloji Altyapımız'
+              },
+              pageContact: {
+                title: 'İletişim'
+              },
+              pageCloudServer: {
+                title: 'Bulut Mimarisi'
+              },
+              pageReferences: {
+                title: 'Referanslar'
+              },
+              pageFinancialServices: {
+                title: 'Blockchain Finansal Hizmetler'
               }
             },
             en: {
@@ -185,7 +203,9 @@ export default {
               basic: {
                 mail: 'E-Mail',
                 pssw: 'Password',
-                references: 'References'
+                references: 'References',
+                webpage: 'Web Page',
+                goToWebSite: 'Visit Website'
               },
               navbar: {
                 contact: 'CONTACT'
@@ -226,7 +246,9 @@ export default {
               basic: {
                 mail: 'E-Mail',
                 pssw: 'Password',
-                references: 'References'
+                references: 'References',
+                webpage: 'Web Page',
+                goToWebSite: 'Visit Website'
               },
               navbar: {
                 contact: 'CONTACT',

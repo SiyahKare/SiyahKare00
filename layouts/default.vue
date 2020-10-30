@@ -23,7 +23,7 @@
   export default {
     data() {
       return {
-        devMode: false,
+        devMode: true,
         devInput: '',
         NavbarStore: {
           showNavbar: false
