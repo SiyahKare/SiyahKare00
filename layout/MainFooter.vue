@@ -1,259 +1,288 @@
 <template>
-  <footer
-    class="footer"
-    :class="{
-      [`footer-${type}`]: type,
-      [`footer-${size}`]: size
-    }"
-    :data-background-color="backgroundColor"
+  <footer class="footer footer-big"
+          :class="{
+    [`footer-${type}`]: type,
+    [`footer-${size}`]: size
+  }"
+          :data-background-color="backgroundColor"
   >
-    <template
-      v-if="$route.name !== 'ecommerce-page' && $route.name !== 'presentation'"
-    >
-      <div class="container">
-        <nav>
-          <ul>
-            <li>
-              <a href="https://www.creative-tim.com">
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a href="https://www.creative-tim.com/presentation">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="http://blog.creative-tim.com">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="https://www.creative-tim.com/license">
-                Licenses
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright">
-          &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-          <a
-            href="https://www.creative-tim.com/"
-            target="_blank"
-          >Creative Tim</a>
-          for a better web.
-        </div>
-      </div>
-    </template>
-
-    <template v-else-if="$route.name !== 'presentation'">
-      <div class="container">
-        <div class="content">
-          <div class="md-layout">
-            <div class="md-layout-item md-size-33 md-small-size-100">
-              <h5>About Us</h5>
-              <p>
-                Creative Tim is a startup that creates design tools that make
-                the web development process faster and easier.
-              </p>
-              <p>
-                We love the web and care deeply for how users interact with a
-                digital product. We power businesses and individuals to create
-                better looking web projects around the world.
-              </p>
-            </div>
-
-            <div class="md-layout-item md-size-33 md-small-size-100">
-              <h5>Social Feed</h5>
-              <div class="social-feed">
-                <div class="feed-line">
-                  <i class="fab fa-twitter" />
-                  <p>How to handle ethical disagreements with your clients.</p>
-                </div>
-                <div class="feed-line">
-                  <i class="fab fa-instagram" />
-                  <p>The tangible benefits of designing at 1x pixel density.</p>
-                </div>
-                <div class="feed-line">
-                  <i class="fab fa-facebook-square" />
-                  <p>
-                    A collection of 25 stunning sites that you can use for
-                    inspiration.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="md-layout-item md-size-33 md-small-size-100">
-              <h5>Instagram Feed</h5>
-              <div class="gallery-feed">
-                <img
-                  :src="img1"
-                  class="img img-raised rounded"
-                  alt=""
-                >
-                <img
-                  :src="img2"
-                  class="img img-raised rounded"
-                  alt=""
-                >
-                <img
-                  :src="img3"
-                  class="img img-raised rounded"
-                  alt=""
-                >
-                <img
-                  :src="img4"
-                  class="img img-raised rounded"
-                  alt=""
-                >
-
-                <img
-                  :src="img5"
-                  class="img img-raised rounded"
-                  alt=""
-                >
-                <img
-                  :src="img6"
-                  class="img img-raised rounded"
-                  alt=""
-                >
-                <img
-                  :src="img7"
-                  class="img img-raised rounded"
-                  alt=""
-                >
-                <img
-                  :src="img8"
-                  class="img img-raised rounded"
-                  alt=""
-                >
+    <div class="container">
+      <div class="content">
+        <div class="md-layout">
+          <div
+            :class="colClass1"
+          >
+            <h5>SiyahKare</h5>
+            <div class="footer-logo">
+              <nuxt-link :to="'/'">
+                <img :src="logo" alt="">
+              </nuxt-link>
+              <div class="footer-login">
+                <md-button class="md-primary" style="width: 100%; margin: 15px 0 0 0" @click="loginModal = true">
+                  <i class="material-icons">fingerprint</i> {{ $t('footer.login') }}
+                </md-button>
               </div>
             </div>
           </div>
-        </div>
-
-        <hr>
-
-        <div class="flex flex-direction-row space-between">
-          <nav>
-            <ul>
-              <li>
-                <a href="javascript:void(0)">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  Presentation
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  Discover
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  Payment
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  Contact Us
-                </a>
+          <div
+            :class="colClass2"
+            v-for="(item, i) in navLinks"
+            :key="i"
+          >
+            <h5>{{item.title[$i18n.locale]}}</h5>
+            <ul class="links-vertical">
+              <li
+                v-for="(li, index) in item.subMenu"
+                :key="index"
+              >
+                <nuxt-link :to="'/' + li.nLink">
+                  {{
+                  li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)
+                  }}
+                </nuxt-link>
               </li>
             </ul>
-          </nav>
-          <div class="copyright float-right">
-            Copyright © {{ year }} Creative Tim All Rights Reserved.
+          </div>
+          <div
+            :class="colClass3"
+          >
+            <h5>{{ $t('footer.apps') }}</h5>
+            <ul class="links-vertical footer-apps">
+              <li>
+                <nuxt-link :to="'/'">
+                  <img :src="pwaApp" alt="pwa">
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link :to="'/'">
+                  <img :src="appleStore" alt="apple store">
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link :to="'/'">
+                  <img :src="playStore" alt="play store">
+                </nuxt-link>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="copyright">
+        <div class="md-layout">
+          <div class="footer-social">
+            <ul class="social-buttons">
+              <li>
+                <md-button
+                  href="javascript:void(0)"
+                  target="_blank"
+                  class="md-instagram md-just-icon md-simple"
+                >
+                  <i class="fa fa-instagram"/>
+                </md-button>
+              </li>
+              <li>
+                <md-button
+                  href="javascript:void(0)"
+                  target="_blank"
+                  class="md-twitter md-just-icon md-simple"
+                >
+                  <i class="fa fa-twitter"/>
+                </md-button>
+              </li>
+              <li>
+                <md-button
+                  href="javascript:void(0)"
+                  target="_blank"
+                  class="md-facebook md-just-icon md-simple"
+                >
+                  <i class="fa fa-facebook"/>
+                </md-button>
+              </li>
+              <li>
+                <md-button
+                  href="javascript:void(0)"
+                  target="_blank"
+                  class="md-whatsapp md-just-icon md-simple"
+                >
+                  <i class="fa fa-whatsapp"/>
+                </md-button>
+              </li>
+              <li>
+                <md-button
+                  href="javascript:void(0)"
+                  target="_blank"
+                  class="md-slack md-just-icon md-simple"
+                >
+                  <i class="fa fa-slack"/>
+                </md-button>
+              </li>
+              <li>
+                <md-button
+                  href="javascript:void(0)"
+                  target="_blank"
+                  class="md-github md-just-icon md-simple"
+                >
+                  <i class="fa fa-github"/>
+                </md-button>
+              </li>
+              <li>
+                <md-button
+                  href="javascript:void(0)"
+                  target="_blank"
+                  class="md-youtube md-just-icon md-simple"
+                >
+                  <i class="fa fa-youtube-play"/>
+                </md-button>
+              </li>
+            </ul>
+
           </div>
         </div>
-      </div>
-    </template>
 
-    <template v-else>
-      <div class="container flex-direction-row">
-        <a
-          class="footer-brand"
-          href="http://www.creative-tim.com"
-        >Material Kit PRO</a>
-        <ul>
-          <li>
-            <a href="javascript:void(0)">
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              Licenses
-            </a>
-          </li>
-        </ul>
-
-        <ul class="social-buttons">
-          <li>
-            <md-button
-              href="https://twitter.com/CreativeTim"
-              target="_blank"
-              class="md-twitter md-just-icon md-simple"
-            >
-              <i class="fab fa-twitter" />
-            </md-button>
-          </li>
-          <li>
-            <md-button
-              href="https://dribbble.com/creativetim"
-              target="_blank"
-              class="md-dribbble md-just-icon md-simple"
-            >
-              <i class="fab fa-dribbble" />
-            </md-button>
-          </li>
-          <li>
-            <md-button
-              href="https://www.instagram.com/CreativeTimOfficial"
-              target="_blank"
-              class="md-instagram md-just-icon md-simple"
-            >
-              <i class="fab fa-instagram" />
-            </md-button>
-          </li>
-        </ul>
+        <div class="copytext">
+          Copyright © 1999 - 2021 Siyahkare All Rights Reserved.
+        </div>
       </div>
-    </template>
+    </div>
+    <modal class="login-modal fade" custom="true" v-if="loginModal" @close="loginModal = false">
+      <blog-card
+        card-plain
+        :shadow-normal="false"
+        :no-colored-shadow="false"
+        :card-image="logo"
+      >
+        <template slot="cardContent">
+          <div class="login-form">
+            <md-field class="md-form-group">
+              <md-icon>mail</md-icon>
+              <md-input
+                :placeholder="$t('basic.mail')"
+              />
+            </md-field>
+            <md-field class="md-form-group">
+              <md-icon>lock_outline</md-icon>
+              <md-input
+                :placeholder="$t('basic.psw')"
+              />
+            </md-field>
+            <md-button class="md-primary">
+              <i class="material-icons">fingerprint</i> {{ $t('footer.login') }}
+            </md-button>
+          </div>
+
+        </template>
+      </blog-card>
+
+    </modal>
   </footer>
 </template>
 <script>
-export default {
-  props: {
-    backgroundColor: String,
-    type: String,
-    size: String
-  },
-  data() {
-    return {
-      year: new Date().getFullYear(),
-      img1: require("@/assets/img/faces/card-profile6-square.jpg"),
-      img2: require("@/assets/img/faces/christian.jpg"),
-      img3: require("@/assets/img/faces/card-profile4-square.jpg"),
-      img4: require("@/assets/img/faces/card-profile1-square.jpg"),
-      img5: require("@/assets/img/faces/marc.jpg"),
-      img6: require("@/assets/img/faces/kendall.jpg"),
-      img7: require("@/assets/img/faces/card-profile5-square.jpg"),
-      img8: require("@/assets/img/faces/card-profile2-square.jpg")
-    };
-  }
-};
+
+  import {Modal} from '@/components'
+
+  export default {
+    props: {
+      backgroundColor: {
+        type: String,
+        default: '#EEEEEE'
+      },
+      type: String,
+      size: String
+    },
+    components: {
+      Modal
+    },
+    computed: {
+      navLinks() {
+        return this.$store.state.app.navLinks
+      }
+    },
+    data() {
+      return {
+        loginModal: false,
+        colClass1: 'md-layout-item md-medium-size-25 md-large-size-25 md-small-size-100',
+        colClass2: 'md-layout-item md-medium-size-20 md-large-size-20 md-small-size-100',
+        colClass3: 'md-layout-item md-medium-size-15 md-large-size-15 md-small-size-100',
+        year: new Date().getFullYear(),
+        logo: require("@/assets/images/SiyahKare.jpg"),
+        appleStore: require("@/assets/images/appstore.png"),
+        playStore: require("@/assets/images/googlestore.png"),
+        pwaApp: require("@/assets/images/pwapp.png"),
+      };
+    }
+  };
 </script>
-<style></style>
+<style lang="scss">
+
+
+  .footer-social {
+    text-align: center;
+    width: 100%;
+
+    .social-buttons {
+      a {
+        margin: 0;
+      }
+    }
+  }
+
+  .copytext {
+    padding-top: 15px;
+  }
+
+  .footer-apps {
+    a, img {
+      max-width: 130px;
+    }
+  }
+
+  .footer-logo {
+    max-width: 165px;
+  }
+
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .login-modal {
+    .md-card-blog {
+      margin: 0;
+      padding: 0 15px;
+      min-width: 360px;
+
+      .md-card-header {
+        margin: -30px auto 0 auto;
+        max-width: 312px;
+
+        a {
+          background: #9c27b0;
+          padding: 15px;
+        }
+      }
+
+      .md-card-content {
+        padding-bottom: 0;
+
+        button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+</style>

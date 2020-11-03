@@ -10,11 +10,11 @@
     }"
     :color-on-scroll="colorOnScroll"
   >
-    <div class="md-toolbar-row md-collapse-lateral">
+    <div class="md-toolbar-row md-collapse-lateral" :lang="$i18n.locale">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <nuxt-link to="/"><i class="material-icons">home</i>
-            {{ brand }} - {{$i18n.locale}}
+          <nuxt-link to="/" style="color: #ffffff">
+            <i class="fa fa-cube"></i> <b>SiyahKare</b>
           </nuxt-link>
         </h3>
       </div>
@@ -35,50 +35,6 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <!--              <li-->
-              <!--                v-if="showDownload"-->
-              <!--                class="md-list-item"-->
-              <!--              >-->
-              <!--                <a-->
-              <!--                  href="javascript:void(0)"-->
-              <!--                  class="md-list-item-router md-list-item-container md-button-clean dropdown"-->
-              <!--                >-->
-              <!--                  <div class="md-list-item-content">-->
-              <!--                    <drop-down direction="down">-->
-              <!--                      <md-button-->
-              <!--                        slot="title"-->
-              <!--                        class="md-button md-button-link md-white md-simple dropdown-toggle"-->
-              <!--                        data-toggle="dropdown"-->
-              <!--                      >-->
-              <!--                        <i class="material-icons">apps</i>-->
-              <!--                        <p>Components</p>-->
-              <!--                      </md-button>-->
-              <!--                      <ul class="dropdown-menu dropdown-with-icons">-->
-              <!--                        <li>-->
-              <!--                          <a href="/">-->
-              <!--                            <i class="material-icons">layers</i>-->
-              <!--                            Presentation-->
-              <!--                          </a>-->
-              <!--                        </li>-->
-              <!--                        <li>-->
-              <!--                          <a href="/">-->
-              <!--                            <i class="material-icons">line_style</i>-->
-              <!--                            All Components-->
-              <!--                          </a>-->
-              <!--                        </li>-->
-              <!--                        <li>-->
-              <!--                          <a :href="docs_link">-->
-              <!--                            <i class="material-icons">content_paste</i>-->
-              <!--                            Documentation-->
-              <!--                          </a>-->
-              <!--                        </li>-->
-              <!--                      </ul>-->
-              <!--                    </drop-down>-->
-              <!--                  </div>-->
-              <!--                </a>-->
-              <!--              </li>-->
-
-
               <li v-if="!showPages" class="md-list-item" v-for="item in navLinks">
                 <a
                   href="javascript:void(0)"
@@ -99,29 +55,48 @@
                           v-for="(li, index) in item.subMenu"
                           :key="index"
                         >
-
                           <nuxt-link v-if="li.nLink !== undefined" :to="'/' + li.nLink">
                             <i class="material-icons">{{ li.icon }}</i>
                             {{
-                            li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)
+                              li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)
                             }}
                           </nuxt-link>
+                        </li>
+                      </ul>
+                    </drop-down>
+                  </div>
+                </a>
+              </li>
 
-                          <!--                          <a-->
-                          <!--                            v-else-->
-                          <!--                            :href="'#/sections#' + li.text"-->
-                          <!--                            @click="-->
-                          <!--                              () => {-->
-                          <!--                                NavbarStore.showNavbar = false;-->
-                          <!--                                toggledClass = false;-->
-                          <!--                              }-->
-                          <!--                            "-->
-                          <!--                          >-->
-                          <!--                            <i class="material-icons">{{ li.icon }}</i>-->
-                          <!--                            {{-->
-                          <!--                            li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)-->
-                          <!--                            }}-->
-                          <!--                          </a>-->
+              <li
+                v-if="!showPages"
+                class="md-list-item"
+              >
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                >
+                  <div class="md-list-item-content">
+                    <drop-down direction="down">
+                      <md-button
+                        slot="title"
+                        class="md-button md-button-link md-white md-simple dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        <img :src="languages[$i18n.locale].flag" alt="flag">
+                      </md-button>
+                      <ul class="dropdown-menu dropdown-with-icons">
+                        <li
+                          v-for="(li, key) in languages"
+                          :key="key"
+                          v-if="key !== $i18n.locale"
+                        >
+                          <nuxt-link
+                            :to="switchLocalePath(li.short)"
+                          >
+                            <img :src="li.flag" alt="flag" style="padding-right: 3px">
+                            {{ li.title[$i18n.locale] }}
+                          </nuxt-link>
                         </li>
                       </ul>
                     </drop-down>
@@ -153,11 +128,6 @@
                           v-for="(li, index) in linksComponents"
                           :key="li.name"
                         >
-                          <!--                          <a :href="'#/' + li.href">-->
-                          <!--                            <i class="material-icons">{{ li.icon }}</i>-->
-                          <!--                            {{ li.name }}-->
-                          <!--                          </a>-->
-
                           <nuxt-link :to="'/' + li.nLink"><i class="material-icons">{{ linksExamples[index].icon }}</i>
                             {{ li.name }}
                           </nuxt-link>
@@ -313,7 +283,7 @@
                     <md-button
                       class="md-success md-round"
                     >
-                      <md-icon>shopping_cart</md-icon>
+                      <i class="fa fa-whatsapp"></i>
                       {{ $t('navbar.contact') }}
                     </md-button>
                   </div>
@@ -355,8 +325,6 @@
                   </div>
                 </a>
               </li>
-
-
             </md-list>
           </div>
         </div>
@@ -381,6 +349,7 @@
   }
 
   import MobileMenu from "@/layout/MobileMenu";
+
 
   export default {
     components: {
@@ -419,13 +388,41 @@
     },
     data() {
       return {
-        devMode: false,
         showPages: false,
         docs_link:
           "https://demos.creative-tim.com/vue-material-kit-pro/documentation/",
         extraNavClasses: "",
         toggledClass: false,
-        brand: "Vue Material Kit PRO",
+        brand: "SiyahKare",
+        languages: {
+          tr: {
+            flag: require("@/assets/images/flags/TR.png"),
+            title: {
+              tr: 'Türkçe',
+              en: 'Turkish',
+              ru: 'турецкий'
+            },
+            short: 'tr'
+          },
+          en: {
+            flag: require("@/assets/images/flags/EN.png"),
+            title: {
+              tr: 'İngilizce',
+              en: 'English',
+              ru: 'Ингилизце'
+            },
+            short: 'en'
+          },
+          ru: {
+            flag: require("@/assets/images/flags/RU.png"),
+            title: {
+              tr: 'Rusca',
+              en: 'Russian',
+              ru: 'русский'
+            },
+            short: 'ru'
+          }
+        },
         linksSections: [
           {name: "headers", icon: "dns", nLink: 'sections/Headers'},
           {name: "features", icon: "build", nLink: 'sections/Features'},
@@ -437,6 +434,7 @@
           {name: "contacts", icon: "call", nLink: 'sections/ContactUs'}
         ],
         linksExamples: [
+          {name: "Index Old", href: "index_old", icon: "view_day", nLink: 'index_old'},
           {name: "About Us", href: "about-us", icon: "account_balance", nLink: 'examples/AboutUs'},
           {name: "Blog Post", href: "blog-post", icon: "art_track", nLink: 'examples/BlogPost'},
           {name: "Blog Posts", href: "blog-posts", icon: "view_quilt", nLink: 'examples/BlogPosts'},
@@ -474,222 +472,6 @@
           {name: "Tabs Section", icon: "account_balance", nLink: 'components/TabsSection'},
           {name: "Typography Images Section", icon: "account_balance", nLink: 'components/TypographyImagesSection'},
         ],
-        navLinks: [
-          // {
-          //   title: {
-          //     tr: 'Formül',
-          //     en: 'Formül-EN',
-          //     ru: 'Formül-RU',
-          //   },
-          //   nLink: '',
-          //   subMenu: [
-          //     {
-          //       text: {
-          //         tr: 'example_TR',
-          //         en: 'example_EN',
-          //         ru: 'example_RU',
-          //       },
-          //       nLink: 'account_balance',
-          //       icon: 'account_balance'
-          //     }
-          //   ]
-          // },
-          {
-            title: {
-              tr: 'FORMÜL',
-              en: 'FORMULA',
-              ru: 'FORMULA',
-            },
-            icon: 'apps',
-            nLink: '',
-            subMenu: [
-              {
-                "title": {
-                  "tr": "Formül",
-                  "en": "Formula",
-                  "ru": "Formula"
-                },
-                "icon": "lightbulb_outline",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Hakkımızda",
-                  "en": "About Us",
-                  "ru": "About Us"
-                },
-                "icon": "info_outline",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Teknoloji Altyapımız",
-                  "en": "Technology Stack",
-                  "ru": "Technology Stack"
-                },
-                "icon": "layers",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Bulut Mimarisi",
-                  "en": "Cloud Architecture",
-                  "ru": "Cloud Architecture"
-                },
-                "icon": "cloud",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Referanslar",
-                  "en": "References",
-                  "ru": "References"
-                },
-                "icon": "content_paste",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "İletişim",
-                  "en": "Contact",
-                  "ru": "Contact"
-                },
-                "icon": "call",
-                "nLink": "nLink"
-              }
-            ]
-          },
-          {
-            title: {
-              tr: 'SERVİSLER',
-              en: 'SERVICES',
-              ru: 'SERVICES',
-            },
-            icon: 'view_day',
-            nLink: '',
-            subMenu: [
-              {
-                "title": {
-                  "tr": "Finansal Hizmetler",
-                  "en": "Digital Marketing",
-                  "ru": "Digital Marketing"
-                },
-                "icon": "dns",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Teknoloji Desteği",
-                  "en": "Media Production",
-                  "ru": "Media Production"
-                },
-                "icon": "build",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Dijital Pazarlama",
-                  "en": "Growth Hacking",
-                  "ru": "Growth Hacking"
-                },
-                "icon": "security",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Growth Hacking",
-                  "en": "Web Development",
-                  "ru": "Web Development"
-                },
-                "icon": "people",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Web Geliştirme",
-                  "en": "Mobile Development",
-                  "ru": "Mobile Development"
-                },
-                "icon": "assignment",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Mobil Geliştirme",
-                  "en": "Fullstack Development",
-                  "ru": "Fullstack Development"
-                },
-                "icon": "monetization_on",
-                "nLink": "nLink"
-              }
-            ]
-          },
-          {
-            title: {
-              tr: 'ÇÖZÜMLER',
-              en: 'SOLUTIONS',
-              ru: 'SOLUTIONS',
-            },
-            icon: 'view_carousel',
-            nLink: '',
-            subMenu: [
-              {
-                "title": {
-                  "tr": "E-Ticaret Çözümleri",
-                  "en": "E-Commerce Solutions",
-                  "ru": "E-Commerce Solutions"
-                },
-                "icon": "shopping_cart",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "İş Otomasyonları",
-                  "en": "Business Automations",
-                  "ru": "Business Automations"
-                },
-                "icon": "fingerprint",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Endüstriyel Blokzinciri",
-                  "en": "Industrial Blockchain",
-                  "ru": "Industrial Blockchain"
-                },
-                "icon": "art_track",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Kurs Otomasyonu",
-                  "en": "Course Automation",
-                  "ru": "Course Automation"
-                },
-                "icon": "view_quilt",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Proaktif Yönetim",
-                  "en": "Proactive Management",
-                  "ru": "Proactive Management"
-                },
-                "icon": "location_on",
-                "nLink": "nLink"
-              },
-              {
-                "title": {
-                  "tr": "Yazılım Mühendisliği",
-                  "en": "Software Engineering",
-                  "ru": "Software Engineering"
-                },
-                "icon": "attach_money",
-                "nLink": "nLink"
-              }
-            ]
-          },
-        ],
         test1: 'greeting'
       };
     },
@@ -697,6 +479,9 @@
       showDownload() {
         const excludedRoutes = ["index"];
         return excludedRoutes.every(r => r !== this.$route.name);
+      },
+      navLinks() {
+        return this.$store.state.app.navLinks
       }
     },
     mounted() {
@@ -706,8 +491,8 @@
       document.removeEventListener("scroll", this.scrollListener);
     },
     created() {
-      console.log('navLinks', this.navLinks)
-      console.log('this.getLangObj')
+      // console.log('navLinks', this.navLinks)
+      // console.log('this.getLangObj')
     },
     methods: {
       getLangObj(tr = '', en = '', ru = '') {
@@ -761,6 +546,6 @@
 
 <style lang="scss" scoped>
   .md-toolbar {
-    background-color: #000000 !important;
+    background-color: #212121!important;
   }
 </style>
