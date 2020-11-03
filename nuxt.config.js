@@ -196,6 +196,39 @@ export default {
               },
               pageFinancialServices: {
                 title: 'Blockchain Finansal Hizmetler'
+              },
+              pageDigitalMarketing: {
+                title: 'Dijital Pazarlama'
+              },
+              pageTechnologySupport: {
+                title: 'Teknoloji Desteği'
+              },
+              pageGrowthHacking: {
+                title: 'Growth Hacking'
+              },
+              pageWebDevelopment: {
+                title: 'Web Geliştirme'
+              },
+              pageMobileDevelopment: {
+                title: 'Mobil Geliştirme'
+              },
+              pageEcommerceSolutions: {
+                title: 'E-Ticaret Çözümleri'
+              },
+              pageBusinessAutomations: {
+                title: 'İş Otomasyonları'
+              },
+              pageIndustrialBlockchain: {
+                title: 'Endüstriyel Blockchain'
+              },
+              pageCourseAutomation: {
+                title: 'Ders Otomasyonu'
+              },
+              pageProactiveManagement: {
+                title: 'Proaktif Yönetim'
+              },
+              pageSoftwareEngineering: {
+                title: 'Yazılım Mühendisliği'
               }
             },
             en: {
@@ -294,5 +327,5 @@ export default {
   generate: {
     dir: 'public'
   },
-  // loading: '~/components/app/loader.vue'
+  loading: '~/components/app/loader.vue'
 }
