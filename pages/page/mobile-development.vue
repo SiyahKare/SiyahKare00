@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper app-sub-page">
     <parallax
       class="page-header header-filter"
       parallax-active="true"
@@ -22,22 +22,7 @@
         <div class="container">
           <div class="md-layout">
             <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-              <h3 class="title">
-                The Castle Looks Different at Night...
-              </h3>
-              <p>
-                This is the paragraph where you can write more details about
-                your product. Keep you user engaged by providing meaningful
-                information. Remember that by this time, the user is curious,
-                otherwise he wouldn't scroll to get here. Add a button if you
-                want the user to see more. We are here to make life better.
-                <br>
-                <br>
-                And now I look and look around and there’s so many Kanyes I've
-                been trying to figure out the bed design for the master bedroom
-                at our Hidden Hills compound... and thank you for turning my
-                personal jean jacket into a couture piece.
-              </p>
+
             </div>
           </div>
         </div>
@@ -56,7 +41,7 @@
     mixins: [Mixins.HeaderImage],
     data(){
       return {
-        image: require("@/assets/images/uploads/financial-services-bg.jpg"),
+        image: require("@/assets/images/uploads/mobile-development-bg.jpg"),
       }
     },
     mounted() {

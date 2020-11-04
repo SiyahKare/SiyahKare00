@@ -65,3 +65,11 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .app-sub-page {
+    .page-header {
+      height: 65vh;
+    }
+  }
+</style>

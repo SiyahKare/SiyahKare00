@@ -109,7 +109,7 @@ export const state = () => ({
             "ru": "Media Production"
           },
           "icon": "build",
-          "nLink": "nLink"
+          "nLink": "page/technology-support"
         },
         {
           "title": {
@@ -118,7 +118,7 @@ export const state = () => ({
             "ru": "Growth Hacking"
           },
           "icon": "security",
-          "nLink": "nLink"
+          "nLink": "page/digital-marketing"
         },
         {
           "title": {
@@ -127,7 +127,7 @@ export const state = () => ({
             "ru": "Web Development"
           },
           "icon": "people",
-          "nLink": "nLink"
+          "nLink": "page/growth-hacking"
         },
         {
           "title": {
@@ -136,7 +136,7 @@ export const state = () => ({
             "ru": "Mobile Development"
           },
           "icon": "assignment",
-          "nLink": "nLink"
+          "nLink": "page/web-development"
         },
         {
           "title": {
@@ -145,7 +145,7 @@ export const state = () => ({
             "ru": "Fullstack Development"
           },
           "icon": "monetization_on",
-          "nLink": "nLink"
+          "nLink": "page/mobile-development"
         }
       ]
     },
@@ -165,7 +165,7 @@ export const state = () => ({
             "ru": "E-Commerce Solutions"
           },
           "icon": "shopping_cart",
-          "nLink": "nLink"
+          "nLink": "page/ecommerce-solutions"
         },
         {
           "title": {
@@ -174,7 +174,7 @@ export const state = () => ({
             "ru": "Business Automations"
           },
           "icon": "fingerprint",
-          "nLink": "nLink"
+          "nLink": "page/business-automations"
         },
         {
           "title": {
@@ -183,7 +183,7 @@ export const state = () => ({
             "ru": "Industrial Blockchain"
           },
           "icon": "art_track",
-          "nLink": "nLink"
+          "nLink": "page/industrial-blockchain"
         },
         {
           "title": {
@@ -192,7 +192,7 @@ export const state = () => ({
             "ru": "Course Automation"
           },
           "icon": "view_quilt",
-          "nLink": "nLink"
+          "nLink": "page/course-automation"
         },
         {
           "title": {
@@ -201,7 +201,7 @@ export const state = () => ({
             "ru": "Proactive Management"
           },
           "icon": "location_on",
-          "nLink": "nLink"
+          "nLink": "page/proactive-management"
         },
         {
           "title": {
@@ -210,7 +210,7 @@ export const state = () => ({
             "ru": "Software Engineering"
           },
           "icon": "attach_money",
-          "nLink": "nLink"
+          "nLink": "page/software-engineering"
         }
       ]
     },
