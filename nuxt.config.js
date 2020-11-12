@@ -239,6 +239,9 @@ export default {
               },
               pageSoftwareEngineering: {
                 title: 'Yazılım Mühendisliği'
+              },
+              pageCorporateIdentity: {
+                title: 'Kurumsal Kimlik'
               }
             },
             en: {

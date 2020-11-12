@@ -146,6 +146,15 @@ export const state = () => ({
           },
           "icon": "monetization_on",
           "nLink": "page/mobile-development"
+        },
+        {
+          "title": {
+            "tr": "Kurumsal Kimlik",
+            "en": "Corporate Identity",
+            "ru": "Corporate Identity"
+          },
+          "icon": "view_quilt",
+          "nLink": "page/corporate-identity"
         }
       ]
     },

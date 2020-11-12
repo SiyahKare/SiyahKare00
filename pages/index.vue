@@ -196,7 +196,7 @@
                   </div>
                   <div class="form-item w-100">
                     <div class="submit mt-3">
-                      <button class="offer-btn">{{ $t('pageIndex.offerForm.submit') }}</button>
+                      <button class="offer-btn" type="button" @click="sendOffer">{{ $t('pageIndex.offerForm.submit') }}</button>
                     </div>
                   </div>
                 </form>
@@ -363,6 +363,7 @@
     },
     data() {
       return {
+        errors:[],
         isReady: false,
         video: require("@/assets/images/siyahkare_video.mp4"),
         videoPoster: require("@/assets/images/video_poster.png"),
@@ -519,7 +520,6 @@
       console.log('cratete index', process.browser)
       if (process.browser) {
         window.onNuxtReady((app) => {
-          console.log('ASD', app)
           this.isReady = true
         })
       }
@@ -540,6 +540,26 @@
         return {
           backgroundImage: `url(${img})`
         };
+      },
+      sendOffer(){
+        const self = this;
+
+        if(self.checkForm(self.offerForm)){
+          console.log('send api')
+        }
+
+      },
+      checkForm(object){
+
+        let status = true;
+
+        for (const [key, value] of Object.entries(object)) {
+          // console.log(`${key}: ${value}`);
+          if(value.trim() === '') status = false
+        }
+
+        return status
+
       }
     }
   };
