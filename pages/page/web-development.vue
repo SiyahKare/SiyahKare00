@@ -246,7 +246,6 @@
                   görmek bazen aylar sürebilmektedir. Google ilk sayfalara yükselmek bir yolla başarılsa bile bu konumda
                   kalabilmeyi başarabilmek ayrı bir çalışma gerektiren iştir. Rakiplerinizin durumuna göre kendi konum
                   değişimlerinizi takip etmek bu süreçte önem kazanmaktadır.
-
                 </p>
               </section>
 
