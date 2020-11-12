@@ -98,8 +98,8 @@ export default {
     [
       'nuxt-i18n',
       {
-        locales: ['tr', 'en', 'ru'],
         defaultLocale: 'tr',
+        locales: ['en', 'ru', 'tr'],
         vueI18n: {
           fallbackLocale: 'tr',
           messages: {
@@ -186,7 +186,17 @@ export default {
                 title: 'Teknoloji Altyapımız'
               },
               pageContact: {
-                title: 'İletişim'
+                title: 'İletişim',
+                sendUs: 'Bize Ulaşın',
+                sendUsText: 'Ürünlerimizle ilgili her konuda bizimle iletişime geçebilirsiniz.en kısa sürede sizinle iletişime geçeceğiz.',
+                form: {
+                  name: 'İsim Soyisim',
+                  mail: 'Mail adresiniz',
+                  phone: 'Telefon',
+                  msg: 'Mesajınız',
+                  send:'Gönder'
+                }
+
               },
               pageCloudServer: {
                 title: 'Bulut Mimarisi'

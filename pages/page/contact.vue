@@ -23,43 +23,42 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-50 md-small-size-100 ml-auto">
               <h2 class="title mt-0">
-                Send us a message
+                {{ $t('pageContact.sendUs') }}
               </h2>
               <p class="description">
-                You can contact us with anything related to our Products. We'll
-                get in touch with you as soon as possible.
+                {{ $t('pageContact.sendUsText') }}
                 <br>
                 <br>
               </p>
               <form>
                 <md-field>
-                  <label>Your Name</label>
+                  <label>{{ $t('pageContact.form.name') }}</label>
                   <md-input
                     v-model="name"
                     type="text"
                   />
                 </md-field>
                 <md-field>
-                  <label>Email Adress</label>
+                  <label>{{ $t('pageContact.form.mail') }}</label>
                   <md-input
                     v-model="email"
                     type="email"
                   />
                 </md-field>
                 <md-field>
-                  <label>Phone</label>
+                  <label>{{ $t('pageContact.form.phone') }}</label>
                   <md-input
                     v-model="phone"
                     type="number"
                   />
                 </md-field>
                 <md-field>
-                  <label>Your message</label>
+                  <label>{{ $t('pageContact.form.msg') }}</label>
                   <md-textarea v-model="textarea" />
                 </md-field>
                 <div class="submit text-center mt-3">
                   <md-button class="md-primary md-round">
-                    Contact Us
+                    {{ $t('pageContact.form.send') }}2
                   </md-button>
                 </div>
               </form>

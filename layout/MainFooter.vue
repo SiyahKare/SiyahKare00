@@ -17,11 +17,11 @@
               <nuxt-link :to="'/'">
                 <img :src="logo" alt="">
               </nuxt-link>
-              <div class="footer-login">
-                <md-button class="md-primary" style="width: 100%; margin: 15px 0 0 0" @click="loginModal = true">
-                  <i class="material-icons">fingerprint</i> {{ $t('footer.login') }}
-                </md-button>
-              </div>
+<!--              <div class="footer-login">-->
+<!--                <md-button class="md-primary" style="width: 100%; margin: 15px 0 0 0" @click="loginModal = true">-->
+<!--                  <i class="material-icons">fingerprint</i> {{ $t('footer.login') }}-->
+<!--                </md-button>-->
+<!--              </div>-->
             </div>
           </div>
           <div
