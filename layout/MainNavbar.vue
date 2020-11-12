@@ -35,7 +35,7 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <li v-if="!showPages" class="md-list-item" v-for="item in navLinks">
+              <li class="md-list-item" v-for="item in navLinks">
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -68,10 +68,7 @@
                 </a>
               </li>
 
-              <li
-                v-if="!showPages"
-                class="md-list-item"
-              >
+              <li class="md-list-item">
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -104,177 +101,7 @@
                 </a>
               </li>
 
-
-              <li
-                class="md-list-item"
-                v-if="showPages"
-              >
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">apps</i>
-                        <p>Components</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li
-                          v-for="(li, index) in linksComponents"
-                          :key="li.name"
-                        >
-                          <nuxt-link :to="'/' + li.nLink"><i class="material-icons">{{ linksExamples[index].icon }}</i>
-                            {{ li.name }}
-                          </nuxt-link>
-                        </li>
-                        <li>
-                          <a :href="docs_link">
-                            <i class="material-icons">content_paste</i>
-                            Documentation
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-
-
-              <li v-if="showPages" class="md-list-item">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">view_day</i>
-                        <p>Sections</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <nuxt-link
-                            v-if="$i18n.locale !== 'tr'"
-                            :to="switchLocalePath('tr')"
-                          >
-                            Tr
-                          </nuxt-link>
-                        </li>
-                        <li>
-                          <nuxt-link
-                            v-if="$i18n.locale !== 'en'"
-                            :to="switchLocalePath('en')"
-                          >
-                            En
-                          </nuxt-link>
-                        </li>
-                        <li>
-                          <nuxt-link
-                            v-if="$i18n.locale !== 'ru'"
-                            :to="switchLocalePath('ru')"
-                          >
-                            Ru
-                          </nuxt-link>
-                        </li>
-                        <li
-                          v-for="li in linksSections"
-                          :key="li.name"
-                        >
-
-                          <nuxt-link v-if="li.nLink !== undefined" :to="'/' + li.nLink">
-                            <i class="material-icons">{{ li.icon }}</i>
-                            {{
-                            li.name.charAt(0).toUpperCase() + li.name.slice(1)
-                            }}
-                          </nuxt-link>
-
-                          <a
-                            v-else
-                            :href="'#/sections#' + li.name"
-                            @click="
-                              () => {
-                                NavbarStore.showNavbar = false;
-                                toggledClass = false;
-                              }
-                            "
-                          >
-                            <i class="material-icons">{{ li.icon }}</i>
-                            {{
-                            li.name.charAt(0).toUpperCase() + li.name.slice(1)
-                            }}
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-
-              <li v-if="showPages" class="md-list-item">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">view_carousel</i>
-                        <p>Examples</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li
-                          v-for="li in linksExamples"
-                          :key="li.name"
-                        >
-                          <!--                          <a :href="'#/' + li.href">-->
-                          <!--                            <i class="material-icons">{{ li.icon }}</i>-->
-                          <!--                            {{ li.name }}-->
-                          <!--                          </a>-->
-
-                          <nuxt-link v-if="li.nLink !== undefined" :to="'/' + li.nLink"><i class="material-icons">{{
-                            li.icon }}</i>
-                            {{ li.name }}
-                          </nuxt-link>
-                          <nuxt-link v-else :to="li.href" no-prefetch><i class="material-icons">{{ li.icon }}</i>
-                            {{ li.name }}
-                          </nuxt-link>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-
-              <li v-if="showPages" class="md-list-item">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean"
-                >
-                  <div class="md-list-item-content">
-                    <md-button
-                      class="md-success md-round"
-                    >
-                      <md-icon>shopping_cart</md-icon>
-                      Buy now
-                    </md-button>
-                  </div>
-                </a>
-              </li>
-
-              <li v-if="!showPages" class="md-list-item">
+              <li class="md-list-item">
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean"
@@ -290,41 +117,6 @@
                 </a>
               </li>
 
-              <li
-                class="md-list-item"
-              >
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">apps</i>
-                        <p>Dev</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#" @click.prevent="showPages = true">
-                            <i class="material-icons">content_paste</i>
-                            Material Menü
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#" @click.prevent="showPages = false">
-                            <i class="material-icons">content_paste</i>
-                            SiyahKare Menü
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
             </md-list>
           </div>
         </div>
@@ -388,9 +180,6 @@
     },
     data() {
       return {
-        showPages: false,
-        docs_link:
-          "https://demos.creative-tim.com/vue-material-kit-pro/documentation/",
         extraNavClasses: "",
         toggledClass: false,
         brand: "SiyahKare",
@@ -422,57 +211,7 @@
             },
             short: 'ru'
           }
-        },
-        linksSections: [
-          {name: "headers", icon: "dns", nLink: 'sections/Headers'},
-          {name: "features", icon: "build", nLink: 'sections/Features'},
-          {name: "blogs", icon: "list", nLink: 'sections/Blogs'},
-          {name: "teams", icon: "people", nLink: 'sections/Teams'},
-          {name: "projects", icon: "assignment", nLink: 'sections/Projects'},
-          {name: "pricing", icon: "monetization_on", nLink: 'sections/Pricing'},
-          {name: "testimonials", icon: "chat", nLink: 'sections/Testimonials'},
-          {name: "contacts", icon: "call", nLink: 'sections/ContactUs'}
-        ],
-        linksExamples: [
-          {name: "Index Old", href: "index_old", icon: "view_day", nLink: 'index_old'},
-          {name: "About Us", href: "about-us", icon: "account_balance", nLink: 'examples/AboutUs'},
-          {name: "Blog Post", href: "blog-post", icon: "art_track", nLink: 'examples/BlogPost'},
-          {name: "Blog Posts", href: "blog-posts", icon: "view_quilt", nLink: 'examples/BlogPosts'},
-          {name: "Contact Us", href: "contact-us", icon: "location_on", nLink: 'examples/ContactUs'},
-          {name: "Landing Page", href: "landing-page", icon: "view_day", nLink: 'examples/Landing'},
-          {name: "Login Page", href: "login-page", icon: "fingerprint", nLink: 'examples/Login'},
-          {name: "Pricing Page", href: "pricing-page", icon: "attach_money", nLink: 'examples/Pricing'},
-          {
-            name: "Shopping Cart",
-            href: "shopping-cart",
-            icon: "shopping_basket", nLink: 'examples/Shopping'
-          },
-          {name: "Ecommerce Page", href: "ecommerce-page", icon: "store", nLink: 'examples/Ecommerce'},
-          {name: "Product Page", href: "product-page", icon: "shopping_cart", nLink: 'examples/Product'},
-          {name: "Profile Page", href: "profile-page", icon: "account_circle", nLink: 'examples/Profile'},
-          {name: "Signup Page", href: "signup-page", icon: "person_add", nLink: 'examples/Signup'},
-          {name: "Error Page", href: "error-page", icon: "error", nLink: 'examples/Error'}
-        ],
-        linksComponents: [
-          {name: "Basic Elements Section", icon: "account_balance", nLink: 'components/BasicElementsSection'},
-          {name: "Cards Section", icon: "account_balance", nLink: 'components/CardsSection'},
-          {name: "Comments Section", icon: "account_balance", nLink: 'components/CommentsSection'},
-          {name: "Footer Section", icon: "account_balance", nLink: 'components/FooterSection'},
-          {
-            name: "Javascript Components Section",
-            icon: "account_balance",
-            nLink: 'components/JavascriptComponentsSection'
-          },
-          {name: "Navigation Section", icon: "account_balance", nLink: 'components/NavigationSection'},
-          {name: "NavPills Section", icon: "account_balance", nLink: 'components/NavPillsSection'},
-          {name: "Notifications Section", icon: "account_balance", nLink: 'components/NotificationsSection'},
-          {name: "PreFooter Section", icon: "account_balance", nLink: 'components/PreFooterSection'},
-          {name: "Small Navigation Section", icon: "account_balance", nLink: 'components/SmallNavigationSection'},
-          {name: "Tables Section", icon: "account_balance", nLink: 'components/TablesSection'},
-          {name: "Tabs Section", icon: "account_balance", nLink: 'components/TabsSection'},
-          {name: "Typography Images Section", icon: "account_balance", nLink: 'components/TypographyImagesSection'},
-        ],
-        test1: 'greeting'
+        }
       };
     },
     computed: {
