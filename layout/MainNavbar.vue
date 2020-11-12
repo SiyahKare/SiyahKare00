@@ -13,7 +13,7 @@
     <div class="md-toolbar-row md-collapse-lateral" :lang="$i18n.locale">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <nuxt-link to="/" style="color: #ffffff">
+          <nuxt-link class="logo-link" to="/" style="color: #ffffff">
             <i class="fa fa-cube"></i> <b>SiyahKare</b>
           </nuxt-link>
         </h3>
@@ -544,6 +544,13 @@
   };
 </script>
 
+
+<style>
+
+  .logo-link:hover {
+    color: inherit !important;
+  }
+</style>
 <style lang="scss" scoped>
   .md-toolbar {
     background-color: #212121!important;
