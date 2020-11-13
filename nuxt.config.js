@@ -199,7 +199,7 @@ export default {
                   msg: 'Mesajınız',
                   send: 'Gönder'
                 },
-                openTime:'Paz - Cum'
+                openTime:'Paz - Cuma'
               },
               pageCloudServer: {
                 title: 'Bulut Mimarisi'
