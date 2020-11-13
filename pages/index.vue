@@ -196,7 +196,23 @@
                   </div>
                   <div class="form-item w-100">
                     <div class="submit mt-3">
-                      <button class="offer-btn" type="button" @click="sendOffer">{{ $t('pageIndex.offerForm.submit') }}</button>
+                      <button class="offer-btn" type="button" @click="sendOffer">{{ $t('pageIndex.offerForm.submit')
+                        }}
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-item w-100" v-if="errors.length > 0">
+                    <div class="alert alert-danger" v-for="(item, index) in errors" :key="index">
+                      <div class="container">
+<!--                        <button type="button" aria-hidden="true" class="close"-->
+<!--                                @click="event => removeNotify(event,'alert-danger')">-->
+<!--                          <md-icon>clear</md-icon>-->
+<!--                        </button>-->
+                        <div class="alert-icon">
+                          <md-icon>info_outline</md-icon>
+                        </div>
+                        <b> {{item}} </b>
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -238,7 +254,7 @@
         </div>
       </div>
 
-      <div class="section index-card">
+      <div class="section index-card" style="display: none !important;">
         <div class="container">
           <div class="md-layout">
             <div
@@ -363,7 +379,7 @@
     },
     data() {
       return {
-        errors:[],
+        errors: [],
         isReady: false,
         video: require("@/assets/images/siyahkare_video.mp4"),
         videoPoster: require("@/assets/images/video_poster.png"),
@@ -541,25 +557,24 @@
           backgroundImage: `url(${img})`
         };
       },
-      sendOffer(){
+      sendOffer() {
         const self = this;
+        self.errors = [];
 
-        if(self.checkForm(self.offerForm)){
-          console.log('send api')
+        if (self.checkForm(self.offerForm)) {
+          // TODO send api
+        } else {
+          self.errors.push(self.$t('errors.allRequired'))
         }
 
       },
-      checkForm(object){
-
+      checkForm(object) {
         let status = true;
-
         for (const [key, value] of Object.entries(object)) {
           // console.log(`${key}: ${value}`);
-          if(value.trim() === '') status = false
+          if (value.trim() === '') status = false
         }
-
         return status
-
       }
     }
   };
@@ -743,6 +758,11 @@
     color: #ffffff;
     cursor: pointer;
     line-height: 30px;
+    transition: 300ms;
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
   }
 
   .color-white {

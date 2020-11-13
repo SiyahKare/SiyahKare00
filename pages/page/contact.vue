@@ -34,32 +34,42 @@
                 <md-field>
                   <label>{{ $t('pageContact.form.name') }}</label>
                   <md-input
-                    v-model="name"
+                    v-model="form.name"
                     type="text"
                   />
                 </md-field>
                 <md-field>
                   <label>{{ $t('pageContact.form.mail') }}</label>
                   <md-input
-                    v-model="email"
+                    v-model="form.email"
                     type="email"
                   />
                 </md-field>
                 <md-field>
                   <label>{{ $t('pageContact.form.phone') }}</label>
                   <md-input
-                    v-model="phone"
+                    v-model="form.phone"
                     type="number"
                   />
                 </md-field>
                 <md-field>
                   <label>{{ $t('pageContact.form.msg') }}</label>
-                  <md-textarea v-model="textarea" />
+                  <md-textarea v-model="form.textarea"/>
                 </md-field>
                 <div class="submit text-center mt-3">
-                  <md-button class="md-primary md-round">
-                    {{ $t('pageContact.form.send') }}2
+                  <md-button class="md-primary md-round" @click="sendContact">
+                    {{ $t('pageContact.form.send') }}
                   </md-button>
+                </div>
+                <div class="form-item w-100" v-if="errors.length > 0">
+                  <div class="alert alert-danger" v-for="(item, index) in errors" :key="index">
+                    <div class="container">
+                      <div class="alert-icon">
+                        <md-icon>info_outline</md-icon>
+                      </div>
+                      <b> {{item}} </b>
+                    </div>
+                  </div>
                 </div>
               </form>
             </div>
@@ -74,16 +84,15 @@
                   slot="title"
                   class="info-title"
                 >
-                  Find us at the office
                 </h4>
                 <div
                   slot="content"
                   class="description"
                 >
                   <p>
-                    Bld Mihail Kogalniceanu, nr. 8, <br>
-                    7652 Bucharest, <br>
-                    Romania
+                    Körfez Mah. Yüce Rıfat Sokak <br>
+                    NO: 73 Kat: 4 Daire: 9 <br>
+                    İzmit/Kocaeli
                   </p>
                 </div>
               </info-areas>
@@ -97,40 +106,15 @@
                   slot="title"
                   class="info-title"
                 >
-                  Give us a ring
                 </h4>
                 <div
                   slot="content"
                   class="description"
                 >
                   <p>
-                    Michael Jordan <br>
-                    +40 762 321 762 <br>
-                    Mon - Fri, 8:00-22:00
-                  </p>
-                </div>
-              </info-areas>
-              <info-areas
-                class="pt-0"
-                info-horizontal
-                icon-color="primary"
-                icon="business_center"
-              >
-                <h4
-                  slot="title"
-                  class="info-title"
-                >
-                  Legal Information
-                </h4>
-                <div
-                  slot="content"
-                  class="description"
-                >
-                  <p>
-                    Creative Tim Ltd. <br>
-                    VAT · EN2341241 <br>
-                    IBAN · EN8732ENGB2300099123 <br>
-                    Bank · Great Britain Bank
+                    Siyahkare <br>
+                    <a style="color: #999999" href="tel:+902622910101">+90 262 291 0101</a> <br>
+                    {{ $t('pageContact.openTime') }}, 8:00-18:00
                   </p>
                 </div>
               </info-areas>
@@ -150,19 +134,49 @@
   export default {
     name: 'detail',
     mixins: [Mixins.HeaderImage],
-    data(){
+    data() {
       return {
         image: require("@/assets/images/uploads/contact-bg.jpg"),
-        name:'',
-        email:'',
-        phone:'',
-        textarea:''
+        form: {
+          name: '',
+          email: '',
+          phone: '',
+          textarea: '',
+        },
+        errors: [],
       }
     },
     mounted() {
       this.$nextTick(() => {
         setTimeout(() => this.$nuxt.$loading.finish(), 500)
       })
+    },
+    methods: {
+      sendContact() {
+        const self = this;
+        self.errors = [];
+
+        if (self.checkForm(self.form)) {
+          // TODO send api
+        } else {
+          self.errors.push(self.$t('errors.allRequired'))
+        }
+
+      },
+      checkForm(object) {
+        let status = true;
+        for (const [key, value] of Object.entries(object)) {
+          // console.log(`${key}: ${value}`);
+          if (value.trim() === '') status = false
+        }
+        return status
+      }
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .info .info-title {
+    margin: 1.35rem 0 0.875rem;
+  }
+</style>

@@ -33,17 +33,17 @@
                       PHP Programming Language
                     </h3>
                   </a>
-                  <p class="card-description">
-                    Don't be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens’ bed design but the back is...
-                  </p>
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-danger md-round"
-                  >
-                    <md-icon>format_align_left</md-icon> Read Article
-                  </md-button>
+<!--                  <p class="card-description">-->
+<!--                    Don't be scared of the truth because we need to restart the-->
+<!--                    human foundation in truth And I love you like Kanye loves-->
+<!--                    Kanye I love Rick Owens’ bed design but the back is...-->
+<!--                  </p>-->
+<!--                  <md-button-->
+<!--                    href="javascript:void(0)"-->
+<!--                    class="md-danger md-round"-->
+<!--                  >-->
+<!--                    <md-icon>format_align_left</md-icon> Read Article-->
+<!--                  </md-button>-->
                 </template>
               </full-bg-card>
             </div>
@@ -58,17 +58,17 @@
                       C# Microsoft
                     </h3>
                   </a>
-                  <p class="card-description">
-                    Don't be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens’ bed design but the back is...
-                  </p>
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-primary md-round"
-                  >
-                    <md-icon>format_align_left</md-icon> Read Article
-                  </md-button>
+<!--                  <p class="card-description">-->
+<!--                    Don't be scared of the truth because we need to restart the-->
+<!--                    human foundation in truth And I love you like Kanye loves-->
+<!--                    Kanye I love Rick Owens’ bed design but the back is...-->
+<!--                  </p>-->
+<!--                  <md-button-->
+<!--                    href="javascript:void(0)"-->
+<!--                    class="md-primary md-round"-->
+<!--                  >-->
+<!--                    <md-icon>format_align_left</md-icon> Read Article-->
+<!--                  </md-button>-->
                 </template>
               </full-bg-card>
             </div>
@@ -83,26 +83,17 @@
                       VueJS
                     </h3>
                   </a>
-                  <p class="card-description">
-                    Don't be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens’ bed design but the back is...
-                  </p>
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-warning md-round"
-                  >
-                    <md-icon>format_align_left</md-icon> Read Case Study
-                  </md-button>
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-simple md-just-icon md-white"
-                  >
-                    <i class="fab fa-get-pocket" />
-                    <md-tooltip md-direction="top">
-                      Save to Pocket
-                    </md-tooltip>
-                  </md-button>
+<!--                  <p class="card-description">-->
+<!--                    Don't be scared of the truth because we need to restart the-->
+<!--                    human foundation in truth And I love you like Kanye loves-->
+<!--                    Kanye I love Rick Owens’ bed design but the back is...-->
+<!--                  </p>-->
+<!--                  <md-button-->
+<!--                    href="javascript:void(0)"-->
+<!--                    class="md-warning md-round"-->
+<!--                  >-->
+<!--                    <md-icon>format_align_left</md-icon> Read Case Study-->
+<!--                  </md-button>-->
                 </template>
               </full-bg-card>
             </div>

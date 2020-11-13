@@ -119,6 +119,9 @@ export default {
                 login: 'Giriş',
                 apps: 'Uygulamalar'
               },
+              errors: {
+                allRequired: 'Lütfen Tüm Alanları Doldurunuz'
+              },
               pageIndex: {
                 headDesc: 'Gelecekte Yapılabileceklerin Sınırı Nedir?',
                 about: {
@@ -194,9 +197,9 @@ export default {
                   mail: 'Mail adresiniz',
                   phone: 'Telefon',
                   msg: 'Mesajınız',
-                  send:'Gönder'
-                }
-
+                  send: 'Gönder'
+                },
+                openTime:'Paz - Cum'
               },
               pageCloudServer: {
                 title: 'Bulut Mimarisi'
@@ -256,6 +259,9 @@ export default {
               navbar: {
                 contact: 'CONTACT'
               },
+              errors: {
+                allRequired: 'Please fill de blank Fields'
+              },
               footer: {
                 login: 'Login',
                 apps: 'Apps'
@@ -299,6 +305,9 @@ export default {
               navbar: {
                 contact: 'CONTACT',
                 apps: 'Apps'
+              },
+              errors: {
+                allRequired: 'Please fill de blank Fields'
               },
               footer: {
                 login: 'Login'
