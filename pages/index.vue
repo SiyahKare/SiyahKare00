@@ -257,9 +257,7 @@
       <div class="section index-card" style="display: none !important;">
         <div class="container">
           <div class="md-layout">
-            <div
-              class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
-            >
+            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center">
               <h2 class="title text-center">
                 Diğer Card Alanı
               </h2>
