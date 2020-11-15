@@ -208,7 +208,7 @@ export default {
                 title: 'Referanslar'
               },
               pageFinancialServices: {
-                title: 'Blockchain Finansal Hizmetler'
+                title: 'Finansal Hizmetler'
               },
               pageDigitalMarketing: {
                 title: 'Dijital Pazarlama'
