@@ -102,19 +102,17 @@
               </li>
 
               <li class="md-list-item">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean"
-                >
+                <NuxtLink to="/page/contact" class="md-list-item-router md-list-item-container md-button-clean">
                   <div class="md-list-item-content">
                     <md-button
-                      class="md-success md-round"
+                      class="md-round"
+                      style="background-color: white !important; color: #000000 !important;"
                     >
-                      <i class="fa fa-whatsapp"></i>
+                      <i class="fa fa-globe" style="color: #000000 !important;"></i>
                       {{ $t('navbar.contact') }}
                     </md-button>
                   </div>
-                </a>
+                </NuxtLink>
               </li>
 
             </md-list>

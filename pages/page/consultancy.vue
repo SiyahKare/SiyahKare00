@@ -11,18 +11,8 @@
             class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
           >
             <h1 class="title">
-              How We Built the Most Successful Castle Ever
+              {{ $t('pageConsultancy.title') }}
             </h1>
-            <h4>
-              The last 48 hours of my life were total madness. This is what I
-              did.
-            </h4>
-            <br>
-            <md-button
-              class="md-success md-lg md-round"
-            >
-              <md-icon>format_align_left</md-icon>Read Article
-            </md-button>
           </div>
         </div>
       </div>
@@ -34,12 +24,8 @@
             <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
               <section>
                 <h2 class="title">
-                  lorem
+                  Danışmanlık
                 </h2>
-                <h3>amet dolor</h3>
-                <p>
-                  ipsum
-                </p>
               </section>
             </div>
           </div>
@@ -59,7 +45,7 @@
     mixins: [Mixins.HeaderImage],
     data(){
       return {
-        image: require("@/assets/img/bg5.jpg"),
+        image: require("@/assets/images/uploads/consultancy-bg.jpg"),
       }
     },
     mounted() {

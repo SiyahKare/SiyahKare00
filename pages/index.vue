@@ -98,6 +98,7 @@
                 :no-colored-shadow="false"
                 :card-image="item.img"
                 class="sk-card"
+                :url="item.url"
               >
                 <template slot="cardContent">
                   <h6 class="card-category text-info">
@@ -144,7 +145,7 @@
                     <md-field class="has-white">
                       <label>{{ $t('pageIndex.offerForm.name') }}</label>
                       <md-input
-                        v-model="offerForm.name"
+                        v-model="offerForm.name_surname"
                         type="text"
                       />
                     </md-field>
@@ -162,7 +163,7 @@
                     <md-field class="has-white">
                       <label>{{ $t('pageIndex.offerForm.company') }}</label>
                       <md-input
-                        v-model="offerForm.company"
+                        v-model="offerForm.firm_name"
                         type="email"
                       />
                     </md-field>
@@ -186,7 +187,7 @@
                     <md-field class="has-white">
                       <label>{{ $t('pageIndex.offerForm.mail') }}</label>
                       <md-input
-                        v-model="offerForm.mail"
+                        v-model="offerForm.email"
                         type="email"
                       />
                     </md-field>
@@ -204,10 +205,10 @@
                   <div class="form-item w-100" v-if="errors.length > 0">
                     <div class="alert alert-danger" v-for="(item, index) in errors" :key="index">
                       <div class="container">
-<!--                        <button type="button" aria-hidden="true" class="close"-->
-<!--                                @click="event => removeNotify(event,'alert-danger')">-->
-<!--                          <md-icon>clear</md-icon>-->
-<!--                        </button>-->
+                        <!--                        <button type="button" aria-hidden="true" class="close"-->
+                        <!--                                @click="event => removeNotify(event,'alert-danger')">-->
+                        <!--                          <md-icon>clear</md-icon>-->
+                        <!--                        </button>-->
                         <div class="alert-icon">
                           <md-icon>info_outline</md-icon>
                         </div>
@@ -410,19 +411,22 @@
         ],
         cardSection: [
           {
-            img: require("@/assets/images/card-header/1.jpeg"),
+            img: require("@/assets/images/pages/index/img-1.png"),
             title: 'Blockchain Tabanlı Küresel Ödeme Araçları',
-            text: 'Blockchain, Büyük Veri ve Yapay Zeka ile Finansal Hizmetlerin Yeniden Tasarlanması'
+            text: 'Blockchain, Büyük Veri ve Yapay Zeka ile Finansal Hizmetlerin Yeniden Tasarlanması',
+            url: 'https://bitkare.siyahkare.com'
           },
           {
             img: require("@/assets/images/card-header/3.jpeg"),
             title: 'TEKNOLOJİ DESTEĞİ',
             text: 'Teknoloji Projelerinize Danışmanlık Destek Hizmetleri',
+            url: 'javascript:void(0)'
           },
           {
-            img: require("@/assets/images/card-header/4.jpeg"),
+            img: require("@/assets/images/pages/index/img-3.png"),
             title: 'DİJİTAL PAZARLAMA',
             text: 'Doğru insanlara doğru kanaldan ulaşın',
+            url: 'http://qrkare.com'
           }
         ],
         pageMiddle: {
@@ -490,11 +494,11 @@
           },
         ],
         offerForm: {
-          name: '',
-          phone: '',
-          company: '',
-          service: '',
-          mail: '',
+          name_surname: 'test',
+          phone: '234234',
+          firm_name: 'asdasd',
+          service: '1',
+          email: 'asad',
         },
         offerServiceItems: [
           {
@@ -561,6 +565,13 @@
 
         if (self.checkForm(self.offerForm)) {
           // TODO send api
+
+          self.$axios.post('api/index.php/get-offer', self.offerForm)
+            .then(res => {
+              console.log('MAİl', res)
+            })
+
+          // api/index.php/
         } else {
           self.errors.push(self.$t('errors.allRequired'))
         }
@@ -757,6 +768,7 @@
     cursor: pointer;
     line-height: 30px;
     transition: 300ms;
+
     &:hover {
       background-color: #ffffff;
       color: #000000;

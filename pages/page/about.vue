@@ -158,7 +158,9 @@
               <h2 class="title">
                 {{ $t('pageAbout.sub_bottom_title') }}
               </h2>
-              <h5 class="description" v-html="$t('pageAbout.sub_bottom_text')">
+              <h5 class="description">
+                {{$t('pageAbout.sub_bottom_text')}} <NuxtLink to="/page/contact">{{$t('pageAbout.contact_us')}}</NuxtLink
+              >
               </h5>
             </div>
           </div>

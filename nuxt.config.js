@@ -95,6 +95,10 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    ['nuxt-gmaps', {
+      key: 'AIzaSyBqtFXt-4q2jrPdEoMV_j3bcVlV6b4y7VA',
+      //you can use libraries: ['places']
+    }],
     [
       'nuxt-i18n',
       {
@@ -166,7 +170,8 @@ export default {
                   p4: 'Açıklık ve dürüstlük ilkesiyle tüm işlerimizde ve ilişkilerimizde doğrudan iletişimi esas alıyoruz.Edindiğimiz ilkelerin bize güven, saygı ve bağlılık kazandıracağı bilinciyle hareket ediyor en yüksek iş etik ve değerlerini doğrudan sahipleniyoruz. Bu bilinç ile hazırladığımız çözümleri şartsız olarak önceden belirlenmiş süre, bütçe ve terminler dahilinde tamamlıyor ve sunulan çözümün güncel kalması için takibi ve teknik desteği sürdürüyoruz.'
                 },
                 sub_bottom_title: 'Bizimle çalışmak ister misiniz?',
-                sub_bottom_text: 'Yetenekli ve hevesli dijital kahramanlarla çalışmaya açığız. Daha fazla işbirliği için <a href="mailto:">bize ulaşın.</a>'
+                sub_bottom_text: 'Yetenekli ve hevesli dijital kahramanlarla çalışmaya açığız. Daha fazla işbirliği için',
+                contact_us: 'bize ulaşın.'
               },
               pageFormula: {
                 title: 'Formül',
@@ -199,7 +204,7 @@ export default {
                   msg: 'Mesajınız',
                   send: 'Gönder'
                 },
-                openTime:'Paz - Cuma'
+                openTime: 'Paz - Cuma'
               },
               pageCloudServer: {
                 title: 'Bulut Mimarisi'
@@ -245,6 +250,12 @@ export default {
               },
               pageCorporateIdentity: {
                 title: 'Kurumsal Kimlik'
+              },
+              pageConsultancy: {
+                title: 'Danışmanlık'
+              },
+              pageTeam: {
+                title: 'Ekibimiz'
               }
             },
             en: {
@@ -339,7 +350,8 @@ export default {
           }
         }
       }
-    ]
+    ],
+    '@nuxtjs/axios',
   ],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

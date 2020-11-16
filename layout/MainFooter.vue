@@ -37,7 +37,7 @@
               >
                 <nuxt-link :to="'/' + li.nLink">
                   {{
-                  li.title[$i18n.locale].charAt(0).toUpperCase() + li.title[$i18n.locale].slice(1)
+                  li.title[$i18n.locale].toLocaleUpperCase('tr-TR')
                   }}
                 </nuxt-link>
               </li>

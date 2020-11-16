@@ -75,13 +75,22 @@ export const state = () => ({
         },
         {
           "title": {
+            "tr": "Ekibimiz",
+            "en": "Team",
+            "ru": "Team"
+          },
+          "icon": "people",
+          "nLink": "page/team"
+        },
+        {
+          "title": {
             "tr": "İletişim",
             "en": "Contact",
             "ru": "Contact"
           },
           "icon": "call",
           "nLink": "page/contact"
-        }
+        },
       ]
     },
     {
@@ -220,7 +229,16 @@ export const state = () => ({
           },
           "icon": "attach_money",
           "nLink": "page/software-engineering"
-        }
+        },
+        {
+          "title": {
+            "tr": "Danışmanlık",
+            "en": "Consultancy",
+            "ru": "Consultancy"
+          },
+          "icon": "content_paste",
+          "nLink": "page/consultancy"
+        },
       ]
     },
   ],

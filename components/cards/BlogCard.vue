@@ -12,7 +12,7 @@
         :shadow-normal="shadowNormal"
         :no-colored-shadow="noColoredShadow"
       >
-        <a href="javascript:void(0)">
+        <a :href="url" target="_blank">
           <img
             class="img"
             :src="cardImage"
@@ -95,6 +95,9 @@ export default {
     noColoredShadow: {
       type: Boolean,
       default: false
+    },
+    url:{
+      default:'javscript:void(0)'
     }
   },
   methods: {
