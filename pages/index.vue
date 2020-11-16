@@ -494,11 +494,11 @@
           },
         ],
         offerForm: {
-          name_surname: 'test',
-          phone: '234234',
-          firm_name: 'asdasd',
+          name_surname: 'name surname',
+          phone: '12345',
+          firm_name: 'firm name',
           service: '1',
-          email: 'asad',
+          email: 'e-mail',
         },
         offerServiceItems: [
           {
