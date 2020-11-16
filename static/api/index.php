@@ -1,5 +1,4 @@
 <?php
-
 header('Content-Type: application/json');
 require ('Libs/Validation.php');
 require ('Libs/MailSend.php');
