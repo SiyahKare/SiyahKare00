@@ -91,7 +91,7 @@
           </div>
 
           <div class="md-layout">
-            <div v-for="(item, index) in cardSection" class="md-layout-item md-large-size-33 md-small-size-100"
+            <div v-for="(item, index) in cardSection" style="max-height: 425px;" class="md-layout-item md-large-size-33 md-small-size-100"
                  :key="index">
               <blog-card
                 :shadow-normal="false"
@@ -417,10 +417,10 @@
             url: 'https://bitkare.siyahkare.com'
           },
           {
-            img: require("@/assets/images/card-header/3.jpeg"),
+            img: require("@/assets/images/pages/index/img-2.png"),
             title: 'TEKNOLOJİ DESTEĞİ',
             text: 'Teknoloji Projelerinize Danışmanlık Destek Hizmetleri',
-            url: 'javascript:void(0)'
+            url: 'https://siyahkare.org'
           },
           {
             img: require("@/assets/images/pages/index/img-3.png"),

@@ -97,7 +97,7 @@
           {
             "name": "Onur Mutlu",
             "title": "CEO - Founder - Fullstack",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
             "desc": "",
             "mail": "onurmutlu@gmail.com",
             "social": [
@@ -119,57 +119,9 @@
             ]
           },
           {
-            "name": "Ahmet Atıf DALBAY",
-            "title": "Junior Backend Developer",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "ahmetatifdalbay67@gmail.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "Ebubekir ERYİĞİT",
-            "title": "Senior Frontend Developer",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "eryigitdev@gmail.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
             "name": "Ekim ÜNAL",
             "title": "CTO - CoFounder - Fullstack",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
             "desc": "",
             "mail": "ekim@siyahkare.com",
             "social": [
@@ -191,203 +143,11 @@
             ]
           },
           {
-            "name": "Enes Kabaoğlu",
-            "title": "Director",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "enskbgl@gmail.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "İbrahim Ethem BAKKAL",
-            "title": "Junior Frontend Developer",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "ibrahimethembakkal@gmail.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "Ömer Faruk Kıyak",
-            "title": "Graphics Operator",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "farukkiyak41@gmail.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "Sefa SAYLAN",
-            "title": "Senior Backend Developer",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "sefa.saylan@hotmail.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "Selin Gökmen",
-            "title": "Graphics Designer",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "selin@siyahkare.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "Sercan Zaim",
-            "title": "Field Operator",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "sercan@siyahkare.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "Taylan Yıldız",
-            "title": "Operations Chief",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "taylanyildiz@siyahkare.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
             "name": "Timur Can Zaim",
             "title": "CMO - Agency Director",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
             "desc": "",
             "mail": "timurzaim@siyahkare.com",
-            "social": [
-              {
-                "name": "linkedin",
-                "link": "",
-                "icon": "fa fa-twitter"
-              },
-              {
-                "name": "twitter",
-                "link": "",
-                "icon": "fa fa-linkedin"
-              },
-              {
-                "name": "instagram",
-                "link": "",
-                "icon": "fa fa-instagram"
-              }
-            ]
-          },
-          {
-            "name": "Vahit Kaan Alpay",
-            "title": "Senior Graphics Designer",
-            "img": require('@/assets/img/examples/card-profile4.jpg'),
-            "desc": "",
-            "mail": "kaan@siyahkare.com",
             "social": [
               {
                 "name": "linkedin",
@@ -429,7 +189,249 @@
                 "icon": "fa fa-instagram"
               }
             ]
-          }
+          },
+          {
+            "name": "Enes Kabaoğlu",
+            "title": "Director",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "enskbgl@gmail.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "Taylan Yıldız",
+            "title": "Operations Chief",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "taylanyildiz@siyahkare.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+
+          {
+            "name": "Vahit Kaan Alpay",
+            "title": "Senior Graphics Designer",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "kaan@siyahkare.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "Ebubekir ERYİĞİT",
+            "title": "Team Leader - Senior Frontend Developer",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "eryigitdev@gmail.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "Sefa SAYLAN",
+            "title": "Senior Backend Developer",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "sefa.saylan@hotmail.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "Ahmet Atıf DALBAY",
+            "title": "Junior Backend Developer",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "ahmetatifdalbay67@gmail.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "İbrahim Ethem BAKKAL",
+            "title": "Junior Frontend Developer",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "ibrahimethembakkal@gmail.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "Ömer Faruk Kıyak",
+            "title": "Graphics Operator",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "farukkiyak41@gmail.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+
+          {
+            "name": "Selin Gökmen",
+            "title": "Graphics Designer",
+            "img": require('@/assets/img/examples/card-profile4.jpg'),
+            "desc": "",
+            "mail": "selin@siyahkare.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "Sercan Zaim",
+            "title": "Field Operator",
+            "img": require('@/assets/img/examples/card-profile1.jpg'),
+            "desc": "",
+            "mail": "sercan@siyahkare.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
         ]
       }
     },
