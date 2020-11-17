@@ -114,6 +114,11 @@
                   <p>
                     Siyahkare <br>
                     <a style="color: #999999" href="tel:+902622910101">+90 262 291 0101</a> <br>
+                    <a style="color: #999999" href="tel:+902623310808">+90 262 331 0808</a> <br>
+                    <a style="color: #999999" href="tel:+902623310807">+90 262 331 0807</a> <br>
+                    <a style="color: #999999" href="tel:+902623240505">+90 262 324 0505</a> <br>
+                    <a style="color: #999999" href="tel:+902623240504">+90 262 324 0504</a> <br>
+                    <a style="color: #999999" href="tel:+902623240508">+90 262 324 0508</a> <br>
                     {{ $t('pageContact.openTime') }}, 8:00-18:00
                   </p>
                 </div>
@@ -139,6 +144,7 @@
             :position="{lat: location.lat, lng: location.lng}"
             :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
             @click="currentLocation = location"
+            :icon="markerOptions"
           >
             <GMapInfoWindow :options="{maxWidth: 200}">
               <code>
@@ -168,29 +174,22 @@
     mixins: [Mixins.HeaderImage],
     data() {
       return {
-        // mark:require("@/assets/images/marker.png"),
+        markerOptions: {
+          url: require("@/assets/images/marker.png"),
+          size: {width: 60, height: 90, f: 'px', b: 'px',},
+          scaledSize: {width: 30, height: 45, f: 'px', b: 'px',},
+        },
+        marker:require("@/assets/images/marker.png"),
         currentLocation: {},
         locations: [
           {
             lat: 40.766670,
             lng: 29.931180
-          },
-          // {
-          //   lat: 44.933076,
-          //   lng: 15.629058
-          // },
-          // {
-          //   lat: 45.815,
-          //   lng: "15.9819"
-          // },
-          // {
-          //   lat: "45.12",
-          //   lng: "16.21"
-          // }
+          }
         ],
         pins: {
-          selected: marker,
-          notSelected: "data:image/png;base64,iVBORw0KGgo..."
+          selected: require("@/assets/images/marker.png"),
+          notSelected: require("@/assets/images/marker.png")
         },
         clusterStyle: [
           {
