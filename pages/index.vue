@@ -566,7 +566,7 @@
         if (self.checkForm(self.offerForm)) {
           // TODO send api
 
-          self.$axios.post('yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
+          self.$axios.post('http://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
             .then(res => {
               console.log('MAİl', res)
             })
