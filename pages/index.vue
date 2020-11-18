@@ -224,7 +224,7 @@
               class="md-layout-item md-size-50 md-small-size-100 mx-auto text-center"
             >
               <div class="offer-video">
-                <iframe width='500px' style="border: 0" height='294px'
+                <iframe style="border: 0"
                         src='https://player.vimeo.com/video/349107223?'></iframe>
               </div>
             </div>
@@ -566,7 +566,7 @@
         if (self.checkForm(self.offerForm)) {
           // TODO send api
 
-          self.$axios.post('/mail.php?page=get-offer', self.offerForm)
+          self.$axios.post('yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
             .then(res => {
               console.log('MAİl', res)
             })
@@ -782,8 +782,9 @@
   .offer-video {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 56.27198%;
+    /*height: 0;*/
+    height: 100% !important;
+    /*padding-bottom: 56.27198%;*/
 
     iframe {
       position: absolute;

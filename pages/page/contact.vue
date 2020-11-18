@@ -100,10 +100,10 @@
               </form>
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100 ml-auto">
-              <img :src="miniLogo" alt="logo">
               <info-areas
                 class="pt-0"
                 info-horizontal
+                :img="miniLogo"
               >
                 <h4
                   slot="title"
