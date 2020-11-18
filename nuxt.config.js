@@ -11,6 +11,14 @@ export default {
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {hid: 'description', name: 'description', content: 'SiyahKare Digital Solutions Consulting | 1.0.0'},
       {
+        "http-equiv":'Access-Control-Allow-Origin',
+        content:'*'
+      },
+      {
+        "http-equiv":'Access-Control-Allow-Headers',
+        content:'X-Requested-With'
+      },
+      {
         hid: 'og:title',
         name: 'og:title',
         content: 'SiyahKare Digital Solutions Consulting | Gelecekte yapılabileceklerin sınırı nedir?'
