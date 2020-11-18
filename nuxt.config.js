@@ -96,7 +96,8 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     ['nuxt-gmaps', {
-      key: 'AIzaSyBqtFXt-4q2jrPdEoMV_j3bcVlV6b4y7VA',
+      // key: 'AIzaSyBqtFXt-4q2jrPdEoMV_j3bcVlV6b4y7VA',
+      key: 'AIzaSyCpZE7-k9XpyZkh4eAPeiETDX0xTcQf0lY',
       //you can use libraries: ['places']
     }],
     [
