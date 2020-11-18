@@ -1,22 +1,48 @@
 <template>
   <div class="wrapper app-sub-page">
-    <parallax
-      class="page-header header-filter"
-      parallax-active="true"
-      :style="headerStyle"
+<!--    <parallax-->
+<!--      class="page-header header-filter"-->
+<!--      parallax-active="true"-->
+<!--      :style="headerStyle"-->
+<!--    >-->
+<!--      <div class="container">-->
+<!--        <div class="md-layout">-->
+<!--          <div-->
+<!--            class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"-->
+<!--          >-->
+<!--            <h1 class="title">-->
+<!--              {{ $t('pageContact.title') }}-->
+<!--            </h1>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </parallax>-->
+    <GMap
+      class="page-header"
+      ref="gMap"
+      language="en"
+      :cluster="{options: {styles: clusterStyle}}"
+      :center="{lat: locations[0].lat, lng: locations[0].lng}"
+      :options="{fullscreenControl: false}"
+      :zoom="15"
     >
-      <div class="container">
-        <div class="md-layout">
-          <div
-            class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
-          >
-            <h1 class="title">
-              {{ $t('pageContact.title') }}
-            </h1>
-          </div>
-        </div>
-      </div>
-    </parallax>
+      <GMapMarker
+        v-for="location in locations"
+        :key="location.id"
+        :position="{lat: location.lat, lng: location.lng}"
+        :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
+        @click="currentLocation = location"
+        :icon="markerOptions"
+      >
+        <GMapInfoWindow :options="{maxWidth: 200}">
+          <code>
+            lat: {{ location.lat }},
+            lng: {{ location.lng }}
+          </code>
+        </GMapInfoWindow>
+      </GMapMarker>
+    </GMap>
+
     <div class="main main-raised">
       <div class="section section-contact">
         <div class="container">
@@ -74,11 +100,10 @@
               </form>
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100 ml-auto">
+              <img :src="miniLogo" alt="logo">
               <info-areas
                 class="pt-0"
                 info-horizontal
-                icon-color="primary"
-                icon="pin_drop"
               >
                 <h4
                   slot="title"
@@ -90,9 +115,12 @@
                   class="description"
                 >
                   <p>
+                    <b>Siyahkare Yazılım <br> Teknoloji San. Tic. A.Ş.</b> <br>
                     Körfez Mah. Yüce Rıfat Sokak <br>
                     NO: 73 Kat: 4 Daire: 9 <br>
-                    İzmit/Kocaeli
+                    İzmit/Kocaeli <br>
+                    Alemdar V.D. 772 134 8192 <br>
+                    Mersis No. 0772 134 8192 00001
                   </p>
                 </div>
               </info-areas>
@@ -114,11 +142,11 @@
                   <p>
                     Siyahkare <br>
                     <a style="color: #999999" href="tel:+902622910101">+90 262 291 0101</a> <br>
-                    <a style="color: #999999" href="tel:+902623310808">+90 262 331 0808</a> <br>
                     <a style="color: #999999" href="tel:+902623310807">+90 262 331 0807</a> <br>
                     <a style="color: #999999" href="tel:+902623240505">+90 262 324 0505</a> <br>
                     <a style="color: #999999" href="tel:+902623240504">+90 262 324 0504</a> <br>
                     <a style="color: #999999" href="tel:+902623240508">+90 262 324 0508</a> <br>
+                    <span>Fax: </span><a style="color: #999999" href="fax:+902623310808">+90 262 331 0808</a> <br>
                     {{ $t('pageContact.openTime') }}, 8:00-18:00
                   </p>
                 </div>
@@ -127,38 +155,6 @@
           </div>
         </div>
       </div>
-
-      <div class="section-contactus-2">
-
-        <GMap
-          ref="gMap"
-          language="en"
-          :cluster="{options: {styles: clusterStyle}}"
-          :center="{lat: locations[0].lat, lng: locations[0].lng}"
-          :options="{fullscreenControl: false}"
-          :zoom="15"
-        >
-          <GMapMarker
-            v-for="location in locations"
-            :key="location.id"
-            :position="{lat: location.lat, lng: location.lng}"
-            :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
-            @click="currentLocation = location"
-            :icon="markerOptions"
-          >
-            <GMapInfoWindow :options="{maxWidth: 200}">
-              <code>
-                lat: {{ location.lat }},
-                lng: {{ location.lng }}
-              </code>
-            </GMapInfoWindow>
-          </GMapMarker>
-        </GMap>
-
-
-      </div>
-
-
     </div>
 
   </div>
@@ -174,6 +170,7 @@
     mixins: [Mixins.HeaderImage],
     data() {
       return {
+        miniLogo:require("@/assets/images/siyahkare-mini.jpg"),
         markerOptions: {
           url: require("@/assets/images/marker.png"),
           size: {width: 60, height: 90, f: 'px', b: 'px',},

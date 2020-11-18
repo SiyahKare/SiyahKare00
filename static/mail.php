@@ -1,12 +1,5 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
-
-header('Access-Control-Allow-Methods: GET, POST');
-
-header("Access-Control-Allow-Headers: X-Requested-With");
-
-
 header('Content-Type: application/json');
 require ('Libs/Validation.php');
 require ('Libs/MailSend.php');
@@ -16,11 +9,11 @@ require ('Libs/MailSend.php');
 $validation = new Validation();
 $method = $_SERVER['REQUEST_METHOD'];
 $url    = $_SERVER['PHP_SELF'];
-$path = explode("api/index.php/",$url)[1];
-
+$path = explode("mail.php",$url)[1];
+$page = $_GET['page'];
 if ($method =='POST')
 {
-    switch ($path)
+    switch ($page)
     {
         case 'get-offer':
 
