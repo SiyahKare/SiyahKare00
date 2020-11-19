@@ -145,7 +145,7 @@
                     <md-field class="has-white">
                       <label>{{ $t('pageIndex.offerForm.name') }}</label>
                       <md-input
-                        v-model="offerForm.name_surname"
+                        v-model="offerForm.name"
                         type="text"
                       />
                     </md-field>
@@ -378,6 +378,13 @@
     },
     data() {
       return {
+        offerForm: {
+          name: 'name surname',
+          phone: '12345',
+          firm_name: 'firm name',
+          service: '1',
+          email: 'e-mail',
+        },
         errors: [],
         isReady: false,
         video: require("@/assets/images/siyahkare_video.mp4"),
@@ -493,13 +500,6 @@
             ]
           },
         ],
-        offerForm: {
-          name_surname: 'name surname',
-          phone: '12345',
-          firm_name: 'firm name',
-          service: '1',
-          email: 'e-mail',
-        },
         offerServiceItems: [
           {
             text: 'Tanıtım Filmi',
@@ -566,7 +566,8 @@
         if (self.checkForm(self.offerForm)) {
           // TODO send api
 
-          self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
+          // self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
+          self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)
             .then(res => {
               console.log('MAİl', res)
             })

@@ -80,7 +80,7 @@
                 </md-field>
                 <md-field>
                   <label>{{ $t('pageContact.form.msg') }}</label>
-                  <md-textarea v-model="form.textarea"/>
+                  <md-textarea v-model="form.msg"/>
                 </md-field>
                 <div class="submit text-center mt-3">
                   <md-button class="md-primary md-round" @click="sendContact">
@@ -202,7 +202,7 @@
           name: '',
           email: '',
           phone: '',
-          textarea: '',
+          msg: '',
         },
         errors: [],
       }
@@ -219,6 +219,13 @@
 
         if (self.checkForm(self.form)) {
           // TODO send api
+
+          self.$axios.post('https://panel.siyahkare.com/api/contact', self.form)
+            .then(res => {
+              console.log('MAİl', res)
+            })
+
+
         } else {
           self.errors.push(self.$t('errors.allRequired'))
         }
