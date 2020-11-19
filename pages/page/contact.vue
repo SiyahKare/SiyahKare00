@@ -238,7 +238,7 @@
           self.$axios.post('https://panel.siyahkare.com/api/contact', self.form)
             .then(res => {
               // console.log('MAİl', res)
-              if(res.data.result !== undefined) {
+              if(res.data.Result !== undefined) {
                 self.success.push(self.$t('errors.successContact'))
                 self.resetForm()
               }

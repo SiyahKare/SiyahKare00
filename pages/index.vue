@@ -582,7 +582,7 @@
           self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)
             .then(res => {
               // console.log('MAİl', res)
-              if(res.data.result !== undefined) {
+              if(res.data.Result !== undefined) {
                 self.success.push(self.$t('errors.successOffer'))
                 self.resetForm()
               }
