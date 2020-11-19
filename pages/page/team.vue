@@ -5,6 +5,7 @@
       parallax-active="true"
       :style="headerStyle"
     >
+<!--      <loader></loader>-->
       <div class="container">
         <div class="md-layout">
           <div
@@ -27,12 +28,8 @@
               class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"
             >
               <h2 class="title">
-                The Executive Team 5
+                Ekibimiz
               </h2>
-              <h5 class="description">
-                This is the paragraph where you can write more details about your
-                team. Keep you user engaged by providing meaningful information.
-              </h5>
             </div>
           </div>
           <div class="md-layout">
@@ -73,6 +70,11 @@
               </profile-card>
 
             </div>
+          </div>
+          <div class="md-layout">
+            <section style="width: 100%;text-align: center">
+              <h3>Ekibimize Katılmak İster misiniz?</h3>
+            </section>
           </div>
         </div>
       </div>
