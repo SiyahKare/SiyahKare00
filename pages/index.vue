@@ -193,7 +193,7 @@
                     </md-field>
                   </div>
                   <div class="form-item">
-                    <span class="color-white">Im not a robot</span>
+                    <div class="g-recaptcha" data-sitekey="6Ld73OQZAAAAAN929fwX0U7JSVLHOfjyg0yfcN4t"></div>
                   </div>
                   <div class="form-item w-100">
                     <div class="submit mt-3">
@@ -211,6 +211,16 @@
                         <!--                        </button>-->
                         <div class="alert-icon">
                           <md-icon>info_outline</md-icon>
+                        </div>
+                        <b> {{item}} </b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-item w-100" v-if="success.length > 0">
+                    <div class="alert alert-danger" v-for="(item, index) in success" :key="index">
+                      <div class="container">
+                        <div class="alert-icon">
+                          <md-icon>check_circle</md-icon>
                         </div>
                         <b> {{item}} </b>
                       </div>
@@ -379,12 +389,13 @@
     data() {
       return {
         offerForm: {
-          name: 'name surname',
-          phone: '12345',
-          firm_name: 'firm name',
-          service: '1',
-          email: 'e-mail',
+          name: '',
+          phone: '',
+          firm_name: '',
+          service: '',
+          email: '',
         },
+        success:'',
         errors: [],
         isReady: false,
         video: require("@/assets/images/siyahkare_video.mp4"),
@@ -562,6 +573,7 @@
       sendOffer() {
         const self = this;
         self.errors = [];
+        self.success = [];
 
         if (self.checkForm(self.offerForm)) {
           // TODO send api
@@ -569,7 +581,11 @@
           // self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
           self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)
             .then(res => {
-              console.log('MAİl', res)
+              // console.log('MAİl', res)
+              if(res.data.result !== undefined) {
+                self.success.push(self.$t('errors.successOffer'))
+                self.resetForm()
+              }
             })
 
           // api/index.php/
@@ -585,6 +601,12 @@
           if (value.trim() === '') status = false
         }
         return status
+      },
+      resetForm() {
+        for (const [key, value] of Object.entries(this.form)) {
+          // console.log(`${key}: ${value}`);
+          this.form[key] = ''
+        }
       }
     }
   };

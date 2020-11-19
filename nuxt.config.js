@@ -11,12 +11,12 @@ export default {
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {hid: 'description', name: 'description', content: 'SiyahKare Digital Solutions Consulting | 1.0.0'},
       {
-        "http-equiv":'Access-Control-Allow-Origin',
-        content:'*'
+        "http-equiv": 'Access-Control-Allow-Origin',
+        content: '*'
       },
       {
-        "http-equiv":'Access-Control-Allow-Headers',
-        content:'X-Requested-With'
+        "http-equiv": 'Access-Control-Allow-Headers',
+        content: 'X-Requested-With'
       },
       {
         hid: 'og:title',
@@ -81,7 +81,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons'
       }
-    ]
+    ],
+    script: {
+      src: 'https://www.google.com/recaptcha/api.js'
+    }
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -123,7 +126,9 @@ export default {
                 pssw: 'Şifre',
                 references: 'Referanslarımız',
                 webpage: 'Web Sitesi',
-                goToWebSite: 'Web Siteye Git'
+                goToWebSite: 'Web Siteye Git',
+                successContact: 'Mesajınız Başarıyla İletildi',
+                successOffer: 'Teklifiniz Başarıyla İletildi'
               },
               navbar: {
                 contact: 'İLETİŞİM'
@@ -133,7 +138,7 @@ export default {
                 apps: 'Uygulamalar'
               },
               errors: {
-                allRequired: 'Lütfen Tüm Alanları Doldurunuz'
+                allRequired: 'Lütfen Tüm Alanları Doldurunuz',
               },
               pageIndex: {
                 headDesc: 'Gelecekte Yapılabileceklerin Sınırı Nedir?',

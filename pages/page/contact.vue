@@ -1,22 +1,22 @@
 <template>
   <div class="wrapper app-sub-page">
-<!--    <parallax-->
-<!--      class="page-header header-filter"-->
-<!--      parallax-active="true"-->
-<!--      :style="headerStyle"-->
-<!--    >-->
-<!--      <div class="container">-->
-<!--        <div class="md-layout">-->
-<!--          <div-->
-<!--            class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"-->
-<!--          >-->
-<!--            <h1 class="title">-->
-<!--              {{ $t('pageContact.title') }}-->
-<!--            </h1>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </parallax>-->
+    <!--    <parallax-->
+    <!--      class="page-header header-filter"-->
+    <!--      parallax-active="true"-->
+    <!--      :style="headerStyle"-->
+    <!--    >-->
+    <!--      <div class="container">-->
+    <!--        <div class="md-layout">-->
+    <!--          <div-->
+    <!--            class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center"-->
+    <!--          >-->
+    <!--            <h1 class="title">-->
+    <!--              {{ $t('pageContact.title') }}-->
+    <!--            </h1>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </parallax>-->
     <GMap
       class="page-header"
       ref="gMap"
@@ -82,6 +82,9 @@
                   <label>{{ $t('pageContact.form.msg') }}</label>
                   <md-textarea v-model="form.msg"/>
                 </md-field>
+                <md-field>
+                  <div class="g-recaptcha" data-sitekey="6Ld73OQZAAAAAN929fwX0U7JSVLHOfjyg0yfcN4t"></div>
+                </md-field>
                 <div class="submit text-center mt-3">
                   <md-button class="md-primary md-round" @click="sendContact">
                     {{ $t('pageContact.form.send') }}
@@ -92,6 +95,16 @@
                     <div class="container">
                       <div class="alert-icon">
                         <md-icon>info_outline</md-icon>
+                      </div>
+                      <b> {{item}} </b>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-item w-100" v-if="success.length > 0">
+                  <div class="alert alert-danger" v-for="(item, index) in success" :key="index">
+                    <div class="container">
+                      <div class="alert-icon">
+                        <md-icon>check_circle</md-icon>
                       </div>
                       <b> {{item}} </b>
                     </div>
@@ -170,13 +183,13 @@
     mixins: [Mixins.HeaderImage],
     data() {
       return {
-        miniLogo:require("@/assets/images/siyahkare-mini.jpg"),
+        miniLogo: require("@/assets/images/siyahkare-mini.jpg"),
         markerOptions: {
           url: require("@/assets/images/marker.png"),
           size: {width: 60, height: 90, f: 'px', b: 'px',},
           scaledSize: {width: 30, height: 45, f: 'px', b: 'px',},
         },
-        marker:require("@/assets/images/marker.png"),
+        marker: require("@/assets/images/marker.png"),
         currentLocation: {},
         locations: [
           {
@@ -205,6 +218,7 @@
           msg: '',
         },
         errors: [],
+        success: []
       }
     },
     mounted() {
@@ -216,13 +230,18 @@
       sendContact() {
         const self = this;
         self.errors = [];
+        self.success = [];
 
         if (self.checkForm(self.form)) {
           // TODO send api
 
           self.$axios.post('https://panel.siyahkare.com/api/contact', self.form)
             .then(res => {
-              console.log('MAİl', res)
+              // console.log('MAİl', res)
+              if(res.data.result !== undefined) {
+                self.success.push(self.$t('errors.successContact'))
+                self.resetForm()
+              }
             })
 
 
@@ -238,6 +257,12 @@
           if (value.trim() === '') status = false
         }
         return status
+      },
+      resetForm() {
+        for (const [key, value] of Object.entries(this.form)) {
+          // console.log(`${key}: ${value}`);
+          this.form[key] = ''
+        }
       }
     }
   }
