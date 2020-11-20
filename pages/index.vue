@@ -193,7 +193,7 @@
                     </md-field>
                   </div>
                   <div class="form-item">
-                    <div class="g-recaptcha" data-sitekey="6Ld73OQZAAAAAN929fwX0U7JSVLHOfjyg0yfcN4t"></div>
+                    <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
                   </div>
                   <div class="form-item w-100">
                     <div class="submit mt-3">
@@ -558,6 +558,17 @@
       document.removeEventListener("scroll", this.scrollListener);
     },
     methods: {
+      onSuccess(token) {
+        console.log('Succeeded:', token)
+        // here you submit the form
+        // this.$refs.form.submit()
+      },
+      onExpired() {
+        console.log('Expired')
+      },
+      onError(error) {
+        console.log('Error happened:', error)
+      },
       leafActive() {
         if (window.innerWidth < 768) {
           this.leafShow = false;
@@ -576,7 +587,6 @@
         self.success = [];
 
         if (self.checkForm(self.offerForm)) {
-          // TODO send api
 
           // self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
           self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)

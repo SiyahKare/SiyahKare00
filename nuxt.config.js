@@ -81,10 +81,7 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons'
       }
-    ],
-    script: {
-      src: 'https://www.google.com/recaptcha/api.js'
-    }
+    ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -106,6 +103,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/recaptcha',
     ['nuxt-gmaps', {
       // key: 'AIzaSyBqtFXt-4q2jrPdEoMV_j3bcVlV6b4y7VA',
       key: 'AIzaSyCpZE7-k9XpyZkh4eAPeiETDX0xTcQf0lY',
@@ -367,6 +365,12 @@ export default {
     ],
     '@nuxtjs/axios',
   ],
+  recaptcha: {
+    hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
+    siteKey: '6LfitOUZAAAAACd1DQGKJY04q46yWz0DNIXVb3D1', // Site key for requests
+    version: 2, // Version
+    size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     publicPath: '/nuxt/',
