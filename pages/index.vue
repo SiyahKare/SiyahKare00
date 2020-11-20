@@ -195,7 +195,6 @@
                   <div class="form-item">
                     <client-only>
                       <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
-                      <comments />
                     </client-only>
                   </div>
                   <div class="form-item w-100">

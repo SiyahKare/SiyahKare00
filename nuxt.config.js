@@ -369,7 +369,7 @@ export default {
     hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
     siteKey: '6LfitOUZAAAAACd1DQGKJY04q46yWz0DNIXVb3D1', // Site key for requests
     version: 2, // Version
-    size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
+    size: 'normal' // Size: 'compact', 'normal', 'invisible' (v2)
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
