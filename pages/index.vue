@@ -599,7 +599,6 @@
 
           if (self.captcha) {
             self.loader = true
-            // self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
             self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)
               .then(res => {
                 // console.log('MAİl', res)
