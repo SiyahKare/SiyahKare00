@@ -244,6 +244,8 @@
 
         if (self.checkForm(self.form)) {
 
+          // TODO loader
+
 
           if(self.captcha) {
             self.$axios.post('https://panel.siyahkare.com/api/contact', self.form)
@@ -254,11 +256,11 @@
                   self.$axios.post('https://panel.siyahkare.com/api/sendEmailContacts', self.form)
                     .then(mail => {
                       console.log('MAİL', mail)
+                      self.success.push(self.$t('basic.successContact'))
+                      self.resetForm()
+                      this.$recaptcha.reset()
                     })
 
-
-                  self.success.push(self.$t('basic.successContact'))
-                  self.resetForm()
                 }
               })
           }else {
