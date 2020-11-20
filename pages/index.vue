@@ -91,7 +91,8 @@
           </div>
 
           <div class="md-layout">
-            <div v-for="(item, index) in cardSection" style="max-height: 425px;" class="md-layout-item md-large-size-33 md-small-size-100"
+            <div v-for="(item, index) in cardSection" style="max-height: 425px;"
+                 class="md-layout-item md-large-size-33 md-small-size-100"
                  :key="index">
               <blog-card
                 :shadow-normal="false"
@@ -192,9 +193,9 @@
                       />
                     </md-field>
                   </div>
-                  <div class="form-item">
+                  <div class="form-item w-100">
                     <client-only>
-                      <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
+                      <recaptcha @error="onError" @success="onSuccess" @expired="onExpired"/>
                     </client-only>
                   </div>
                   <div class="form-item w-100">
@@ -390,6 +391,7 @@
     },
     data() {
       return {
+        captcha: false,
         offerForm: {
           name: '',
           phone: '',
@@ -397,7 +399,7 @@
           service: '',
           email: '',
         },
-        success:'',
+        success: '',
         errors: [],
         isReady: false,
         video: require("@/assets/images/siyahkare_video.mp4"),
@@ -561,15 +563,18 @@
     },
     methods: {
       onSuccess(token) {
-        console.log('Succeeded:', token)
+        // console.log('Succeeded:', token)
         // here you submit the form
         // this.$refs.form.submit()
+        this.captcha = true
       },
       onExpired() {
         console.log('Expired')
+        this.captcha = false
       },
       onError(error) {
-        console.log('Error happened:', error)
+        // console.log('Error happened:', error)
+        this.captcha = false
       },
       leafActive() {
         if (window.innerWidth < 768) {
@@ -590,15 +595,19 @@
 
         if (self.checkForm(self.offerForm)) {
 
-          // self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
-          self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)
-            .then(res => {
-              // console.log('MAİl', res)
-              if(res.data.Result !== undefined) {
-                self.success.push(self.$t('errors.successOffer'))
-                self.resetForm()
-              }
-            })
+          if(self.captcha) {
+            // self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
+            self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)
+              .then(res => {
+                // console.log('MAİl', res)
+                if (res.data.Result !== undefined) {
+                  self.success.push(self.$t('errors.successOffer'))
+                  self.resetForm()
+                }
+              })
+          }else {
+            self.errors.push(self.$t('errors.captcha'))
+          }
 
           // api/index.php/
         } else {
