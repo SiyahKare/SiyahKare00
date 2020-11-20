@@ -193,7 +193,10 @@
                     </md-field>
                   </div>
                   <div class="form-item">
-                    <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
+                    <client-only>
+                      <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
+                      <comments />
+                    </client-only>
                   </div>
                   <div class="form-item w-100">
                     <div class="submit mt-3">
