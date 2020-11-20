@@ -1,36 +1,32 @@
 <template>
   <div class="wrapper app-sub-page">
-        <parallax
-          class="page-header header-filter"
-          parallax-active="true"
-          :style="headerStyle"
-        >
-          <GMap
-            class="page-header"
-            ref="gMap"
-            language="en"
-            :cluster="{options: {styles: clusterStyle}}"
-            :center="{lat: locations[0].lat, lng: locations[0].lng}"
-            :options="{fullscreenControl: false}"
-            :zoom="15"
-          >
-            <GMapMarker
-              v-for="location in locations"
-              :key="location.id"
-              :position="{lat: location.lat, lng: location.lng}"
-              :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
-              @click="currentLocation = location"
-              :icon="markerOptions"
-            >
-              <GMapInfoWindow :options="{maxWidth: 200}">
-                <code>
-                  lat: {{ location.lat }},
-                  lng: {{ location.lng }}
-                </code>
-              </GMapInfoWindow>
-            </GMapMarker>
-          </GMap>
-        </parallax>
+
+    <div class="map-header"></div>
+    <GMap
+      class="page-header "
+      ref="gMap"
+      language="en"
+      :cluster="{options: {styles: clusterStyle}}"
+      :center="{lat: locations[0].lat, lng: locations[0].lng}"
+      :options="{fullscreenControl: false}"
+      :zoom="15"
+    >
+      <GMapMarker
+        v-for="location in locations"
+        :key="location.id"
+        :position="{lat: location.lat, lng: location.lng}"
+        :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
+        @click="currentLocation = location"
+        :icon="markerOptions"
+      >
+        <GMapInfoWindow :options="{maxWidth: 200}">
+          <code>
+            lat: {{ location.lat }},
+            lng: {{ location.lng }}
+          </code>
+        </GMapInfoWindow>
+      </GMapMarker>
+    </GMap>
 
 
 
@@ -298,5 +294,14 @@
 <style lang="scss" scoped>
   .info .info-title {
     margin: 1.35rem 0 0.875rem;
+  }
+
+  .map-header {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #212121 !important;
   }
 </style>
