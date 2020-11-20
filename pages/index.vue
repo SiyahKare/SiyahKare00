@@ -193,7 +193,7 @@
                       />
                     </md-field>
                   </div>
-                  <div class="form-item w-100">
+                  <div class="form-item w-100" style="overflow: hidden">
                     <client-only>
                       <recaptcha @error="onError" @success="onSuccess" @expired="onExpired"/>
                     </client-only>
@@ -220,7 +220,7 @@
                     </div>
                   </div>
                   <div class="form-item w-100" v-if="success.length > 0">
-                    <div class="alert alert-danger" v-for="(item, index) in success" :key="index">
+                    <div class="alert alert-success" v-for="(item, index) in success" :key="index">
                       <div class="container">
                         <div class="alert-icon">
                           <md-icon>check_circle</md-icon>
@@ -601,7 +601,7 @@
               .then(res => {
                 // console.log('MAİl', res)
                 if (res.data.Result !== undefined) {
-                  self.success.push(self.$t('errors.successOffer'))
+                  self.success.push(self.$t('basic.successOffer'))
                   self.resetForm()
                 }
               })

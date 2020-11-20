@@ -82,8 +82,13 @@
                   <label>{{ $t('pageContact.form.msg') }}</label>
                   <md-textarea v-model="form.msg"/>
                 </md-field>
+
                 <md-field>
-                  <div class="g-recaptcha" data-sitekey="6Ld73OQZAAAAAN929fwX0U7JSVLHOfjyg0yfcN4t"></div>
+                  <div class="w-100" style="overflow: hidden">
+                    <client-only>
+                      <recaptcha @error="onError" @success="onSuccess" @expired="onExpired"/>
+                    </client-only>
+                  </div>
                 </md-field>
                 <div class="submit text-center mt-3">
                   <md-button class="md-primary md-round" @click="sendContact">
@@ -101,7 +106,7 @@
                   </div>
                 </div>
                 <div class="form-item w-100" v-if="success.length > 0">
-                  <div class="alert alert-danger" v-for="(item, index) in success" :key="index">
+                  <div class="alert alert-success" v-for="(item, index) in success" :key="index">
                     <div class="container">
                       <div class="alert-icon">
                         <md-icon>check_circle</md-icon>
@@ -183,6 +188,7 @@
     mixins: [Mixins.HeaderImage],
     data() {
       return {
+        captcha: false,
         miniLogo: require("@/assets/images/siyahkare-mini.jpg"),
         markerOptions: {
           url: require("@/assets/images/marker.png"),
@@ -227,22 +233,42 @@
       })
     },
     methods: {
+      onSuccess(token) {
+        // console.log('Succeeded:', token)
+        // here you submit the form
+        // this.$refs.form.submit()
+        this.captcha = true
+      },
+      onExpired() {
+        console.log('Expired')
+        this.captcha = false
+      },
+      onError(error) {
+        // console.log('Error happened:', error)
+        this.captcha = false
+      },
       sendContact() {
         const self = this;
         self.errors = [];
         self.success = [];
 
         if (self.checkForm(self.form)) {
-          // TODO send api
 
-          self.$axios.post('https://panel.siyahkare.com/api/contact', self.form)
-            .then(res => {
-              // console.log('MAİl', res)
-              if(res.data.Result !== undefined) {
-                self.success.push(self.$t('errors.successContact'))
-                self.resetForm()
-              }
-            })
+
+          if(self.captcha) {
+            self.$axios.post('https://panel.siyahkare.com/api/contact', self.form)
+              .then(res => {
+                // console.log('MAİl', res)
+                if(res.data.Result !== undefined) {
+                  self.success.push(self.$t('basic.successContact'))
+                  self.resetForm()
+                }
+              })
+          }else {
+            self.errors.push(self.$t('errors.captcha'))
+          }
+
+
 
 
         } else {
