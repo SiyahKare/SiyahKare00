@@ -254,6 +254,13 @@
               .then(res => {
                 // console.log('MAİl', res)
                 if(res.data.Result !== undefined) {
+
+                  self.$axios.post('https://panel.siyahkare.com/api/sendEmailOffers', self.form)
+                    .then(mail => {
+                      console.log('MAİL', mail)
+                    })
+
+
                   self.success.push(self.$t('basic.successContact'))
                   self.resetForm()
                 }
