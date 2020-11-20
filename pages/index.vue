@@ -636,7 +636,7 @@
       resetForm() {
         for (const [key, value] of Object.entries(this.offerForm)) {
           // console.log(`${key}: ${value}`);
-          this.form[key] = ''
+          this.offerForm[key] = ''
         }
       }
     }
