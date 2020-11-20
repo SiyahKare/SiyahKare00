@@ -200,8 +200,9 @@
                   </div>
                   <div class="form-item w-100">
                     <div class="submit mt-3">
-                      <button class="offer-btn" type="button" @click="sendOffer">{{ $t('pageIndex.offerForm.submit')
-                        }}
+                      <action-loader v-if="loader"></action-loader>
+                      <button v-else class="offer-btn" type="button" @click="sendOffer">{{
+                        $t('pageIndex.offerForm.submit') }}
                       </button>
                     </div>
                   </div>
@@ -391,6 +392,7 @@
     },
     data() {
       return {
+        loader: false,
         captcha: false,
         offerForm: {
           name: '',
@@ -595,17 +597,26 @@
 
         if (self.checkForm(self.offerForm)) {
 
-          if(self.captcha) {
+          if (self.captcha) {
+            self.loader = true
             // self.$axios.post('https://yazilimhatalari.com/mail/mail.php?page=get-offer', self.offerForm)
             self.$axios.post('https://panel.siyahkare.com/api/offers', self.offerForm)
               .then(res => {
                 // console.log('MAİl', res)
                 if (res.data.Result !== undefined) {
-                  self.success.push(self.$t('basic.successOffer'))
-                  self.resetForm()
+
+                  self.$axios.post('https://panel.siyahkare.com/api/sendEmailOffers', self.offerForm)
+                    .then(mail => {
+                      // console.log('MAİL', mail)
+                      self.loader = false
+                      self.success.push(self.$t('basic.successOffer'))
+                      self.resetForm()
+                      this.$recaptcha.reset()
+                    })
+
                 }
               })
-          }else {
+          } else {
             self.errors.push(self.$t('errors.captcha'))
           }
 

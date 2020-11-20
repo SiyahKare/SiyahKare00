@@ -29,7 +29,6 @@
     </GMap>
 
 
-
     <div class="main main-raised">
       <div class="section section-contact">
         <div class="container">
@@ -70,7 +69,7 @@
                   <md-textarea v-model="form.msg"/>
                 </md-field>
 
-                <md-field>
+                <md-field class="no-After">
                   <div class="w-100" style="overflow: hidden">
                     <client-only>
                       <recaptcha @error="onError" @success="onSuccess" @expired="onExpired"/>
@@ -78,7 +77,8 @@
                   </div>
                 </md-field>
                 <div class="submit text-center mt-3">
-                  <md-button class="md-primary md-round" @click="sendContact">
+                  <action-loader v-if="loader"></action-loader>
+                  <md-button v-else class="md-primary md-round" @click="sendContact">
                     {{ $t('pageContact.form.send') }}
                   </md-button>
                 </div>
@@ -129,6 +129,35 @@
                   </p>
                 </div>
               </info-areas>
+<!--              <info-areas-->
+<!--                class="pt-0"-->
+<!--                info-horizontal-->
+<!--                :img="miniLogo"-->
+<!--              >-->
+<!--                <h4-->
+<!--                  slot="title"-->
+<!--                  class="info-title"-->
+<!--                >-->
+<!--                </h4>-->
+<!--                <div-->
+<!--                  slot="content"-->
+<!--                  class="description"-->
+<!--                >-->
+<!--                  <p>-->
+<!--                    Onur Mutlu IBAN <br>-->
+<!--                    TR86 0006 2000 7170 0006 6533 77 <br>-->
+<!--                    Garanti USD <br>-->
+<!--                    TR34 0006 2000 7170 0009 0847 45 <br>-->
+<!--                    BTC <br>-->
+<!--                    1BeT6VBcK7wsYz2TVLvgnz52AzRHMg5dN7 <br>-->
+<!--                    Ziraat <br>-->
+<!--                    TR75 0011 1000 0000 0050 3399 27 <br>-->
+<!--                    EnPara - Finansbank <br>-->
+<!--                    1060936740 <br>-->
+<!--                    -->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </info-areas>-->
               <info-areas
                 class="pt-0"
                 info-horizontal
@@ -175,6 +204,7 @@
     mixins: [Mixins.HeaderImage],
     data() {
       return {
+        loader: false,
         captcha: false,
         miniLogo: require("@/assets/images/siyahkare-mini.jpg"),
         markerOptions: {
@@ -219,7 +249,7 @@
         setTimeout(() => this.$nuxt.$loading.finish(), 500)
       })
     },
-    created(){
+    created() {
       console.log('CFEATET', this.$refs)
     },
     methods: {
@@ -244,18 +274,18 @@
 
         if (self.checkForm(self.form)) {
 
-          // TODO loader
 
-
-          if(self.captcha) {
+          if (self.captcha) {
+            self.loader = true
             self.$axios.post('https://panel.siyahkare.com/api/contact', self.form)
               .then(res => {
                 // console.log('MAİl', res)
-                if(res.data.Result !== undefined) {
+                if (res.data.Result !== undefined) {
 
                   self.$axios.post('https://panel.siyahkare.com/api/sendEmailContacts', self.form)
                     .then(mail => {
-                      console.log('MAİL', mail)
+                      // console.log('MAİL', mail)
+                      self.loader = false
                       self.success.push(self.$t('basic.successContact'))
                       self.resetForm()
                       this.$recaptcha.reset()
@@ -263,11 +293,9 @@
 
                 }
               })
-          }else {
+          } else {
             self.errors.push(self.$t('errors.captcha'))
           }
-
-
 
 
         } else {
@@ -305,5 +333,11 @@
     top: 0;
     left: 0;
     background-color: #212121 !important;
+  }
+</style>
+
+<style>
+  .no-After:after {
+    display: none !important;
   }
 </style>
