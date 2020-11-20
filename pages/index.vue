@@ -200,7 +200,7 @@
                   </div>
                   <div class="form-item w-100">
                     <div class="submit mt-3">
-                      <action-loader v-if="loader"></action-loader>
+                      <action-loader v-if="loader" :center="true"></action-loader>
                       <button v-else class="offer-btn" type="button" @click="sendOffer">{{
                         $t('pageIndex.offerForm.submit') }}
                       </button>
@@ -635,7 +635,7 @@
         return status
       },
       resetForm() {
-        for (const [key, value] of Object.entries(this.form)) {
+        for (const [key, value] of Object.entries(this.offerForm)) {
           // console.log(`${key}: ${value}`);
           this.form[key] = ''
         }

@@ -77,7 +77,7 @@
                   </div>
                 </md-field>
                 <div class="submit text-center mt-3">
-                  <action-loader v-if="loader"></action-loader>
+                  <action-loader v-if="loader" :center="true"></action-loader>
                   <md-button v-else class="md-primary md-round" @click="sendContact">
                     {{ $t('pageContact.form.send') }}
                   </md-button>
