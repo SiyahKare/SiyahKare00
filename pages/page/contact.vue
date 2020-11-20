@@ -255,7 +255,7 @@
                 // console.log('MAİl', res)
                 if(res.data.Result !== undefined) {
 
-                  self.$axios.post('https://panel.siyahkare.com/api/sendEmailOffers', self.form)
+                  self.$axios.post('https://panel.siyahkare.com/api/sendEmailContacts', self.form)
                     .then(mail => {
                       console.log('MAİL', mail)
                     })
