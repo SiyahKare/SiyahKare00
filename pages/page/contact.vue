@@ -216,8 +216,8 @@
         currentLocation: {},
         locations: [
           {
-            lat: 40.766670,
-            lng: 29.931180
+            lat: 40.7636207,
+            lng: 29.949071
           }
         ],
         pins: {
