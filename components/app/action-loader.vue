@@ -10,9 +10,6 @@
     props: {
       center: {default: false}
     },
-    created(){
-      console.log('lloader', this.center)
-    },
     name: 'action-loader',
     data() {
       return {}

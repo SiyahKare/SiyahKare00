@@ -73,7 +73,8 @@
               v-if="!multiple"
               :id="inputName + 'Hidden'"
               type="file"
-              @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
+              @change="
+              newValue($event, inputName + 'Visible', inputName + 'Hidden')"
             >
             <input
               v-else
@@ -81,7 +82,7 @@
               type="file"
               :multiple="multiple"
               @change="
-                newValueMultiple(inputName + 'Visible', inputName + 'Hidden')
+                newValueMultiple($event, inputName + 'Visible', inputName + 'Hidden')
               "
             >
           </md-field>
@@ -146,13 +147,21 @@ export default {
       let element = document.getElementById(hiddenID);
       element.click();
     },
-    newValue(visibleID, hiddenID) {
+    newValue(e, visibleID, hiddenID) {
       let element = document.getElementById(hiddenID);
       let visibleElem = document.getElementById(visibleID);
       let elemValue = element.value;
       let filename = elemValue.replace(/C:\\fakepath\\/i, "");
 
       visibleElem.value = filename;
+      this.getVal(e)
+    },
+    getVal(e){
+      let files = e.target.files || e.dataTransfer.files;
+
+      if (!files.length) return;
+
+      this.$emit('onChange', files)
     },
     newValueMultiple(visibleID, hiddenID) {
       let element = document.getElementById(hiddenID);

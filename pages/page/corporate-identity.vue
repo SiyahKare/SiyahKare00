@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper app-sub-page">
     <parallax
       class="page-header header-filter"
       parallax-active="true"

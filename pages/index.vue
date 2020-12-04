@@ -248,6 +248,52 @@
       </div>
 
 
+      <div class="section index-job">
+        <div class="container">
+          <h2 class="title text-center">
+            {{ $t('basic.job') }}
+          </h2>
+          <el-carousel
+            indicator-position="none"
+            class="no-border no-height ref-slider-job"
+            trigger="click"
+            :loop="true"
+            :autoplay="false"
+            type="card"
+            height="250px !important"
+          >
+
+            <el-carousel-item class="job-list" v-for="(item, index) in jobItems" :key="index">
+              <!--              <div class="reference-item" v-for="(subItem, i) in item.images" :key="i"><img :src="subItem.src" alt="">-->
+              <!--              </div>-->
+              <profile-card
+                :shadow-normal="false"
+                :no-colored-shadow="false"
+              >
+                <template slot="cardContent">
+                  <h6 class="card-category text-gray">
+                    {{item.category}}
+                  </h6>
+                  <h4 class="card-title">
+                    {{item.title}}
+                  </h4>
+                  <p class="card-description">
+                    {{item.desc}}
+                  </p>
+                  <md-button @click="goTo('/page/job-detail/'+item.id)" class="md-primary md-round small">
+                    İncele
+                  </md-button>
+                </template>
+              </profile-card>
+            </el-carousel-item>
+          </el-carousel>
+          <NuxtLink to="/page/job-postings">
+            Tüm İlanlar
+          </NuxtLink>
+        </div>
+      </div>
+
+
       <div class="section index-references">
         <div class="container">
           <h2 class="title text-center">
@@ -517,6 +563,7 @@
             ]
           },
         ],
+        jobItems: [],
         offerServiceItems: [
           {
             text: 'Tanıtım Filmi',
@@ -549,6 +596,15 @@
       this.leafActive();
       window.addEventListener("resize", this.leafActive);
       document.addEventListener("scroll", this.scrollListener);
+
+      this.$axios.get('https://panel.siyahkare.com/api/jobAdvs').then(res => {
+        // console.log(res.data.result)
+        this.jobItems = res.data.result;
+        // this.$nextTick(() => {
+        //   setTimeout(() => this.$nuxt.$loading.finish(), 500)
+        // })
+      })
+
       setTimeout(() => this.$nuxt.$loading.finish(), 500)
     },
     created() {
@@ -638,6 +694,11 @@
           // console.log(`${key}: ${value}`);
           this.offerForm[key] = ''
         }
+      },
+      goTo(link) {
+        this.$router.push({
+          path: link
+        })
       }
     }
   };
@@ -847,6 +908,25 @@
       width: 100%;
       height: 100% !important;
     }
+  }
+
+  .index-job {
+    .md-card-header-image {
+      display: none !important;
+    }
+
+    .job-list {
+      /*display: flex;*/
+      /*justify-content: space-between;*/
+      /*align-items: center;*/
+
+      .md-card {
+        width: 61%;
+        margin: 0 auto;
+      }
+    }
+
+
   }
 
 

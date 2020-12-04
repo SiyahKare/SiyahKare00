@@ -123,6 +123,7 @@ export default {
                 mail: 'E-Posta',
                 pssw: 'Şifre',
                 references: 'Referanslarımız',
+                job: 'İş Başvurusu',
                 webpage: 'Web Sitesi',
                 goToWebSite: 'Web Siteye Git',
                 successContact: 'Mesajınız Başarıyla İletildi',
@@ -137,7 +138,8 @@ export default {
               },
               errors: {
                 allRequired: 'Lütfen Tüm Alanları Doldurunuz',
-                captcha: "Lütfen Robot Değilim'e Tıklayınız"
+                captcha: "Lütfen Robot Değilim'e Tıklayınız",
+                onlyPdf: 'Lütfen Sadece PDF Yükleyin'
               },
               pageIndex: {
                 headDesc: 'Gelecekte Yapılabileceklerin Sınırı Nedir?',
