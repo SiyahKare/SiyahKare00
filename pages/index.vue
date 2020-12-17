@@ -260,10 +260,11 @@
             :loop="true"
             :autoplay="false"
             type="card"
-            height="250px !important"
+            height="275px !important"
           >
 
-            <el-carousel-item class="job-list" v-for="(item, index) in jobItems" :key="index">
+            <el-carousel-item class="job-list" v-for="(item, index) in jobItems" :key="index"
+                              @click="goTo('/page/job-detail/'+item.id)">
               <!--              <div class="reference-item" v-for="(subItem, i) in item.images" :key="i"><img :src="subItem.src" alt="">-->
               <!--              </div>-->
               <profile-card
@@ -271,25 +272,27 @@
                 :no-colored-shadow="false"
               >
                 <template slot="cardContent">
-                  <h6 class="card-category text-gray">
+                  <h6 class="card-category text-gray" @click="goTo('/page/job-detail/'+item.id)">
                     {{item.category}}
                   </h6>
-                  <h4 class="card-title">
+                  <h4 class="card-title" @click="goTo('/page/job-detail/'+item.id)">
                     {{item.title}}
                   </h4>
-                  <p class="card-description">
-                    {{item.desc}}
+                  <p class="card-description" @click="goTo('/page/job-detail/'+item.id)">
+                    {{maxStr(item.description)}}
                   </p>
-                  <md-button @click="goTo('/page/job-detail/'+item.id)" class="md-primary md-round small">
+                  <md-button @click="goTo('/page/job-detail/'+item.id)" class="md-primary small">
                     İncele
                   </md-button>
                 </template>
               </profile-card>
             </el-carousel-item>
           </el-carousel>
-          <NuxtLink to="/page/job-postings">
-            Tüm İlanlar
-          </NuxtLink>
+          <div class="text-center" style="margin-top: 10px">
+            <md-button @click="goTo('/page/job-postings')" class="md-info small">
+              Tüm İlanlar
+            </md-button>
+          </div>
         </div>
       </div>
 
@@ -608,7 +611,9 @@
       setTimeout(() => this.$nuxt.$loading.finish(), 500)
     },
     created() {
-      console.log('cratete index', process.browser)
+
+      this.maxStr('Some very long string')
+
       if (process.browser) {
         window.onNuxtReady((app) => {
           this.isReady = true
@@ -620,6 +625,11 @@
       document.removeEventListener("scroll", this.scrollListener);
     },
     methods: {
+      maxStr(str, numb = 90) {
+        if (str.length > numb) str = str.substring(0, numb).trim() + '...';
+
+        return str;
+      },
       onSuccess(token) {
         // console.log('Succeeded:', token)
         // here you submit the form
@@ -796,10 +806,6 @@
         object-fit: cover;
       }
     }
-
-    .md-card-content {
-
-    }
   }
 
   .features-list {
@@ -922,7 +928,14 @@
 
       .md-card {
         width: 61%;
-        margin: 0 auto;
+        margin: 10px auto 0 auto;
+
+        .card-title {
+          height: 50px;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
       }
     }
 

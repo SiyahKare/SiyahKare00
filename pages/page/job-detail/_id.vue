@@ -33,7 +33,7 @@
             <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
               <section>
                 <h3 class="title">
-                  description
+                  Açıklama
                 </h3>
                 <p>
                   {{selected.description}}
@@ -41,7 +41,7 @@
               </section>
               <section>
                 <h3 class="title">
-                  to_do
+                  İş Tanımı
                 </h3>
                 <p>
                   {{selected.to_do}}
@@ -49,7 +49,7 @@
               </section>
               <section>
                 <h3 class="title">
-                  skills
+                  Aranan Nitelikler
                 </h3>
                 <p>
                   {{selected.skills}}
@@ -57,7 +57,7 @@
               </section>
               <section>
                 <h3 class="title">
-                  learn
+                  Öğreneceklerin
                 </h3>
                 <p>
                   {{selected.learn}}

@@ -145,7 +145,7 @@
             ]
           },
           {
-            "name": "Timur Can Zaim",
+            "name": "Timur Zaim",
             "title": "CMO - Agency Director",
             "img": require('@/assets/img/examples/card-profile1.jpg'),
             "desc": "",
@@ -434,6 +434,55 @@
               }
             ]
           },
+          {
+            "name": "Sinem Işık",
+            "title": "Sales",
+            "img": require('@/assets/img/examples/card-profile4.jpg'),
+            "desc": "",
+            "mail": "sercan@siyahkare.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          },
+          {
+            "name": "Sedacan Öksüz",
+            "title": "Photographer",
+            "img": require('@/assets/img/examples/card-profile4.jpg'),
+            "desc": "",
+            "mail": "sercan@siyahkare.com",
+            "social": [
+              {
+                "name": "linkedin",
+                "link": "",
+                "icon": "fa fa-twitter"
+              },
+              {
+                "name": "twitter",
+                "link": "",
+                "icon": "fa fa-linkedin"
+              },
+              {
+                "name": "instagram",
+                "link": "",
+                "icon": "fa fa-instagram"
+              }
+            ]
+          }
+
         ]
       }
     },

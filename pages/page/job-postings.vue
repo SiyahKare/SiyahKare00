@@ -28,7 +28,7 @@
                 </h2>
               </section>
             </div>
-            <div class="section">
+            <div class="section job-postings-list">
               <div class="container">
                 <div class="md-layout">
                   <div class="md-layout-item md-size-12 md-small-size-100">
@@ -39,6 +39,8 @@
                           :shadow-normal="false"
                           :no-colored-shadow="false"
                           :card-image="item.image !== null ? item.image : defaultImg"
+                          :url="'/page/job-detail/'+item.id"
+                          :blank="false"
                         >
                           <template slot="cardContent">
                             <h6 class="card-category">
@@ -48,7 +50,7 @@
                               <NuxtLink :to="'/page/job-detail/'+item.id">{{item.title}}</NuxtLink>
                             </h4>
                             <p class="card-description">
-                              {{item.description}}
+                              {{maxStr(item.description)}}
                               <NuxtLink :to="'/page/job-detail/'+item.id">İncele</NuxtLink>
                             </p>
                           </template>
@@ -90,6 +92,32 @@
           setTimeout(() => this.$nuxt.$loading.finish(), 500)
         })
       })
+    },
+    methods: {
+      maxStr(str, numb = 90) {
+        if (str.length > numb) str = str.substring(0, numb).trim() + '...';
+
+        return str;
+      }
     }
   }
 </script>
+
+<style lang="scss">
+  .job-postings-list {
+
+    .md-card {
+      .md-card-header-image {
+        object-fit: cover;
+        height: 163px;
+        overflow: hidden;
+      }
+
+      .card-title {
+        height: 50px;
+        align-items: center;
+        display: flex;
+      }
+    }
+  }
+</style>
