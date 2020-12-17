@@ -453,8 +453,8 @@
         success: '',
         errors: [],
         isReady: false,
-        video: require("@/assets/images/siyahkare_video.mp4"),
-        videoPoster: require("@/assets/images/video_poster.png"),
+        video: require("@/assets/video/siyahkare.mp4"),
+        videoPoster: require("@/assets/video/video_poster.png"),
         firstname: null,
         email: null,
         password: null,
@@ -612,9 +612,18 @@
     },
     created() {
 
-      this.maxStr('Some very long string')
+      this.maxStr('Some very long string');
+
 
       if (process.browser) {
+
+        if (screen.width >= 1400) {
+          this.video = require("@/assets/video/siyahkare_720.mp4");
+        } else if (screen.width >= 900) {
+        } else {
+          this.video = require("@/assets/video/siyahkare_360.mp4");
+        }
+
         window.onNuxtReady((app) => {
           this.isReady = true
         })
