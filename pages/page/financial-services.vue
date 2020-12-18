@@ -23,10 +23,7 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
               <section>
-                <h2 class="title">
-                  Finansal Hizmetler
-                </h2>
-                <h3>1-Varlık ve Servet Yönetimi</h3>
+                <h3><b>Varlık ve Servet Yönetimi</b></h3>
                 <p>
                   Varlık yönetimi sektörüne küresel olarak entegre edilmiş güvence,
                   vergi danışmanlığı, risk yönetimi, araştırma ve analiz hizmetleri sunmaktayız.
@@ -64,7 +61,7 @@
                   <li>Aile ofisleri</li>
                   <li>Emeklilik fonları</li>
                 </ul>
-                <h3>2-Gayrimenkul Danışmanlığı</h3>
+                <h3><b>Gayrimenkul Danışmanlığı</b></h3>
                 <p>
                   Amacımız, mevcut gayrimenkullerin en iyi şekilde kullanılmasını sağlamak, yatırım yapma ya da yatırımı
                   azaltma sürecini etkili bir şekilde kolaylaştırmaktır.
@@ -74,7 +71,7 @@
                   Her proje için müşterilerimize mümkün olan en iyi faydayı sunan profesyonel hizmeti sağlamak üzere
                   gayrimenkul uzmanlarından oluşan çekirdek bir ekip seçiyoruz.
                 </p>
-                <h3>3-Finansal Strateji</h3>
+                <h3><b>Finansal Strateji</b></h3>
                 <p>
                   Denetim, muhasebe danışmanlığı, vergi, uyum süreçleri ve risk yönetimi, dış kaynak kullanımı, sermaye
                   piyasalarına erişim, bilgi riski ve güvenliği,

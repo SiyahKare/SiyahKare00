@@ -13,76 +13,73 @@
             <h1 class="title">
               {{ $t('pageFormula.title') }}
             </h1>
-            <h3 class="title">
-              "{{ $t('pageFormula.subTitle') }}".
-            </h3>
           </div>
         </div>
       </div>
     </parallax>
     <div class="main main-raised">
-      <div class="section section-text">
-        <div class="container">
-          <div class="md-layout">
-            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center">
-              <h3 class="title">
-                {{ $t('pageFormula.sub_top_title') }}
-              </h3>
-              <p>
-                {{ $t('pageFormula.sub_top_text') }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section pt-0">
-        <div class="container">
-          <div class="text-center">
-            <div class="md-layout">
-              <div class="md-layout-item md-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-info">
-                    <md-icon>chat</md-icon>
-                  </div>
-                  <h4 class="info-title">
-                    {{ $t('pageFormula.list.item_1_title') }}
-                  </h4>
-                  <p>
-                    {{ $t('pageFormula.list.item_1_text') }}
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-success">
-                    <md-icon>verified_user</md-icon>
-                  </div>
-                  <h4 class="info-title">
-                    {{ $t('pageFormula.list.item_2_title') }}
-                  </h4>
-                  <p>
-                    {{ $t('pageFormula.list.item_2_text') }}
-                  </p>
-                </div>
-              </div>
-              <div class="md-layout-item md-size-33 md-small-size-100">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>fingerprint</md-icon>
-                  </div>
-                  <h4 class="info-title">
-                    {{ $t('pageFormula.list.item_3_title') }}
-                  </h4>
-                  <p>
-                    {{ $t('pageFormula.list.item_3_text') }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--      <div class="section section-text">-->
+<!--        <div class="container">-->
+<!--          <div class="md-layout">-->
+<!--            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto text-center">-->
+<!--              <h3 class="title">-->
+<!--                {{ $t('pageFormula.sub_top_title') }}-->
+<!--              </h3>-->
+<!--              <p>-->
+<!--                {{ $t('pageFormula.sub_top_text') }}-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="section pt-0">-->
+<!--        <div class="container">-->
+<!--          <div class="text-center">-->
+<!--            <div class="md-layout">-->
+<!--              <div class="md-layout-item md-size-33 md-small-size-100">-->
+<!--                <div class="info">-->
+<!--                  <div class="icon icon-info">-->
+<!--                    <md-icon>chat</md-icon>-->
+<!--                  </div>-->
+<!--                  <h4 class="info-title">-->
+<!--                    {{ $t('pageFormula.list.item_1_title') }}-->
+<!--                  </h4>-->
+<!--                  <p>-->
+<!--                    {{ $t('pageFormula.list.item_1_text') }}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="md-layout-item md-size-33 md-small-size-100">-->
+<!--                <div class="info">-->
+<!--                  <div class="icon icon-success">-->
+<!--                    <md-icon>verified_user</md-icon>-->
+<!--                  </div>-->
+<!--                  <h4 class="info-title">-->
+<!--                    {{ $t('pageFormula.list.item_2_title') }}-->
+<!--                  </h4>-->
+<!--                  <p>-->
+<!--                    {{ $t('pageFormula.list.item_2_text') }}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="md-layout-item md-size-33 md-small-size-100">-->
+<!--                <div class="info">-->
+<!--                  <div class="icon icon-danger">-->
+<!--                    <md-icon>fingerprint</md-icon>-->
+<!--                  </div>-->
+<!--                  <h4 class="info-title">-->
+<!--                    {{ $t('pageFormula.list.item_3_title') }}-->
+<!--                  </h4>-->
+<!--                  <p>-->
+<!--                    {{ $t('pageFormula.list.item_3_text') }}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
 
-        </div>
-      </div>
+<!--        </div>-->
+<!--      </div>-->
       <div class="section pb-0">
         <div class="container">
           <div class="inner" v-if="$i18n.locale === 'tr'" style="max-width: 610px; margin: 0 auto;">

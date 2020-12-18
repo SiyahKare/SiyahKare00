@@ -255,7 +255,7 @@ export default {
                 title: 'Endüstriyel Blockchain'
               },
               pageCourseAutomation: {
-                title: 'Ders Otomasyonu'
+                title: 'Kurs Otomasyonu'
               },
               pageProactiveManagement: {
                 title: 'Proaktif Yönetim'

@@ -16,17 +16,17 @@
           </video>
         </div>
       </div>
-      <div class="header-layout md-layout">
-        <div class="md-layout-item">
-          <div class="image-wrapper">
-            <div class="brand">
-              <h3 class="title">
-                {{ $t('pageIndex.headDesc') }}
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
+<!--      <div class="header-layout md-layout">-->
+<!--        <div class="md-layout-item">-->
+<!--          <div class="image-wrapper">-->
+<!--            <div class="brand">-->
+<!--              <h3 class="title">-->
+<!--                {{ $t('pageIndex.headDesc') }}-->
+<!--              </h3>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </parallax>
     <div
       id="main-panel"

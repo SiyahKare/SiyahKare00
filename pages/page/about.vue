@@ -32,6 +32,75 @@
           </div>
         </div>
       </div>
+      <div class="md-layout">
+        <div class="md-layout-item md-size-33 md-small-size-100">
+          <info-areas
+            info-horizontal
+            icon-color="rose"
+            icon="gesture"
+          >
+            <h4
+              slot="title"
+              class="info-title"
+            >
+              {{ $t('pageAbout.list.item_1_title') }}
+            </h4>
+            <div
+              slot="content"
+              class="description"
+            >
+              <p>
+                {{ $t('pageAbout.list.item_1_text') }}
+              </p>
+            </div>
+          </info-areas>
+        </div>
+        <div class="md-layout-item md-size-33 md-small-size-100">
+          <info-areas
+            info-horizontal
+            icon-color="rose"
+            icon="build"
+          >
+            <h4
+              slot="title"
+              class="info-title"
+            >
+              {{ $t('pageAbout.list.item_2_title') }}
+            </h4>
+            <div
+              slot="content"
+              class="description"
+            >
+              <p>
+                {{ $t('pageAbout.list.item_2_text') }}
+              </p>
+            </div>
+          </info-areas>
+        </div>
+        <div class="md-layout-item md-size-33 md-small-size-100">
+          <info-areas
+            info-horizontal
+            icon-color="rose"
+            icon="mode_edit"
+          >
+            <h4
+              slot="title"
+              class="info-title"
+            >
+              {{ $t('pageAbout.list.item_3_title') }}
+            </h4>
+            <div
+              slot="content"
+              class="description"
+            >
+              <p>
+                {{ $t('pageAbout.list.item_3_text') }}
+              </p>
+            </div>
+          </info-areas>
+        </div>
+      </div>
+
       <div class="section text-center">
         <img :src="images.logo" alt="Logo" style="width: auto">
       </div>
@@ -47,74 +116,6 @@
               <h5 class="description">
                 {{ $t('pageAbout.sub_middle_text') }}
               </h5>
-            </div>
-          </div>
-          <div class="md-layout">
-            <div class="md-layout-item md-size-33 md-small-size-100">
-              <info-areas
-                info-horizontal
-                icon-color="rose"
-                icon="gesture"
-              >
-                <h4
-                  slot="title"
-                  class="info-title"
-                >
-                  {{ $t('pageAbout.list.item_1_title') }}
-                </h4>
-                <div
-                  slot="content"
-                  class="description"
-                >
-                  <p>
-                    {{ $t('pageAbout.list.item_1_text') }}
-                  </p>
-                </div>
-              </info-areas>
-            </div>
-            <div class="md-layout-item md-size-33 md-small-size-100">
-              <info-areas
-                info-horizontal
-                icon-color="rose"
-                icon="build"
-              >
-                <h4
-                  slot="title"
-                  class="info-title"
-                >
-                  {{ $t('pageAbout.list.item_2_title') }}
-                </h4>
-                <div
-                  slot="content"
-                  class="description"
-                >
-                  <p>
-                    {{ $t('pageAbout.list.item_2_text') }}
-                  </p>
-                </div>
-              </info-areas>
-            </div>
-            <div class="md-layout-item md-size-33 md-small-size-100">
-              <info-areas
-                info-horizontal
-                icon-color="rose"
-                icon="mode_edit"
-              >
-                <h4
-                  slot="title"
-                  class="info-title"
-                >
-                  {{ $t('pageAbout.list.item_3_title') }}
-                </h4>
-                <div
-                  slot="content"
-                  class="description"
-                >
-                  <p>
-                    {{ $t('pageAbout.list.item_3_text') }}
-                  </p>
-                </div>
-              </info-areas>
             </div>
           </div>
         </div>
