@@ -94,7 +94,8 @@
       return {
         teamBg: require("@/assets/img/bg5.jpg"),
         image: require("@/assets/images/uploads/team-bg.jpg"),
-        members: [
+        members:[],
+        members_old: [
 
           {
             "name": "Onur Mutlu",

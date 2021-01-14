@@ -73,15 +73,15 @@ export const state = () => ({
           "icon": "content_paste",
           "nLink": "page/references"
         },
-        {
-          "title": {
-            "tr": "Ekibimiz",
-            "en": "Team",
-            "ru": "Team"
-          },
-          "icon": "people",
-          "nLink": "page/team"
-        },
+        // {
+        //   "title": {
+        //     "tr": "Ekibimiz",
+        //     "en": "Team",
+        //     "ru": "Team"
+        //   },
+        //   "icon": "people",
+        //   "nLink": "page/team"
+        // },
         {
           "title": {
             "tr": "İletişim",
